@@ -1,7 +1,7 @@
 class Admin::Pitches::RevenuesController < AdminController
   before_action :load_pitch, only: :show
   before_action :load_revenue_owner, :load_revenue_admin, only: :index
-  before_action ->{check_pitch_owner(@pitch)}, only: :show
+  before_action  ->{check_pitch_owner(@pitch)}, only: :show
 
   def index; end
 

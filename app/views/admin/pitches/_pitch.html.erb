@@ -14,6 +14,8 @@
   <td><%= pitch.limit %></td>
   <td>
     <%= link_to t(".edit"), edit_admin_pitch_path(pitch) %>
+    <%= link_to t(".revenue"), revenue_admin_pitch_path(pitch) %>
+    <% current_user.admin? %>
     <%= link_to t(".subpitch"), admin_pitch_subpitches_path(pitch) %>
     <% current_user.admin? %>
     <%= link_to t(".delete"), admin_pitch_path(pitch), method: :delete,

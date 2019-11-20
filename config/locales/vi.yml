@@ -168,22 +168,6 @@ vi:
       canceled: Đã hủy
       payment: Chờ thanh toán
   layouts:
-    application:
-      title: "Đặt lịch sân bóng đá nhanh chóng"
-    header:
-      login: "Đăng nhập"
-      register: "Đăng ký"
-      lang_vi: "Việt Nam"
-      lang_en: "Tiếng Anh"
-      home: "Trang chủ"
-      about: "Giới thiệu"
-      blog: "Blog"
-      contact: "Liên hệ"
-      connect_facebook: Đăng nhập qua Facebook
-      log_in: Đăng nhập
-      profile: Hồ sơ
-      setting: Cài đặt
-      logout: Đăng xuất
     admin:
       sidebar:
         home: "Trang chủ"
@@ -191,6 +175,10 @@ vi:
         manage: "Quản lý"
         link1: "Link1"
         link2: "Link2"
+        pitch: "Sân bóng"
+        revenue: "Doanh thu"
+        booking: "Sân đã đặt"
+        subpitch_type: "Loại Sân"
       header:
         Admin: "Admin"
         home: "Trang chủ"
@@ -219,6 +207,16 @@ vi:
       contact: "Liên hệ"
       language: "Ngôn ngữ"
       english: "Tiếng Anh"
+      home: "Trang chủ"
+      about: "Giới thiệu"
+      blog: "Blog"
+      contact: "Liên hệ"
+      connect_facebook: Đăng nhập qua Facebook
+      log_in: Đăng nhập
+      profile: Hồ sơ
+      setting: Cài đặt
+      logout: Đăng xuất
+      manage: Quan ly
     right_sidebar:
       pitch: "Sân bóng"
       search_pitch: "Tìm kiếm sân"
@@ -230,14 +228,6 @@ vi:
       profile: Hồ sơ
       setting: Cài đặt
       logout: Đăng xuất
-    right:
-      pitch: "Sân bóng"
-      search_pitch: "Tìm kiếm sân"
-    left:
-      passion: "Niềm đam mê bóng đá"
-      book_soccer: "Đặt sân bóng"
-      content1: "Nếu bạn không thực sự biết sân phù hợp cho bạn và đồng đội của bạn, hãy đến với chúng tôi!"
-      get_started: "Bắt đầu"
     footer:
       about: "Giới thiệu"
       content1: "Bóng đá là môn thể thao đồng đội được chơi giữa hai đội với nhau, mỗi đội có 11 cầu thủ trên sân. Trò chơi này dùng một quả bóng và thường được chơi trên sân cỏ hình chữ nhật với hai khung thành ở hai đầu sân."
@@ -281,117 +271,11 @@ vi:
       subpitch:
         create: "Tạo sân nhỏ"
         update: "Cập nhật sân nhỏ"
-  admin:
-    subpitch_types:
-      show:
-        title: "Thông tin loại sân bóng"
-      index:
-        title: "Danh sách loại sân bóng"
-        add: "Thêm"
-      edit:
-        title: "Chỉnh sửa loại sân bóng"
-      new:
-        title: "Tạo mới loại sân bóng"
-      create:
-        success: "Tạo thành công!"
-        danger: "Tạo thất bại!"
-      destroy:
-        success: "Xóa thành công!"
-        danger: "Xóa thất bại!"
-      update:
-        success: "Cập nhật thành công!"
-        danger: "Cập nhật thất bại"
-      subpitch_type:
-        edit: "Chỉnh sửa"
-        delete: "Xóa"
-        confirm: "Bạn chắc chứ?"
-        create: "Tạo sân"
-        update: "Cập nhật sân"
-      subpitch:
-        create: "Tạo sân nhỏ"
-        update: "Cập nhật sân nhỏ"
   shared:
     error_messages:
       count:
         one: "1 error"
         other: "%{count} errors"
-  layouts:
-    admin:
-      sidebar:
-        home: "Trang chủ"
-        new: "MỚI"
-        manage: "Quản lý"
-        link1: "Link1"
-        link2: "Link2"
-        pitch: "Sân bóng"
-        review: "Review"
-        subpitch_type: "Loại sân"
-        booking: "Đặt"
-        link1: "Link1"
-        link2: "Link2"
-        pitch: "Sân bóng"
-        review: "Review"
-        subpitch_type: "Loại sân"
-      header:
-        Admin: "Admin"
-        home: "Trang chủ"
-        users: "Người dùng"
-        settings: "Thiết lập"
-        vn: "Tiếng việt"
-        en: "Tiếng anh"
-        profile: "Thông tin"
-        lock: "Khóa tài khoản"
-        logout: "Đăng xuất"
-        hello: "Xin chào: "
-      footer:
-        link: "CoreUI"
-        content1_html: "&copy; 2019 creativeLabs."
-        content2_html: "Powered by&nbsp;"
-    application:
-      title: "Đặt lịch sân bóng đá nhanh chóng"
-    header:
-      login: "Đăng nhập"
-      register: "Đăng ký"
-      lang_vi: "Việt Nam"
-      lang_en: "Tiếng Anh"
-      home: "Trang chủ"
-      about: "Giới thiệu"
-      blog: "Blog"
-      contact: "Liên hệ"
-      language: "Ngôn ngữ"
-      english: "Tiếng Anh"
-    right_sidebar:
-      pitch: "Sân bóng"
-      search_pitch: "Tìm kiếm sân"
-    left_sidebar:
-      passion: "Niềm đam mê bóng đá"
-      get_started: "Bắt đầu đặt"
-      connect_facebook: Đăng nhập qua Facebook
-      log_in: Đăng nhập
-      profile: Hồ sơ
-      setting: Cài đặt
-      logout: Đăng xuất
-    right:
-      pitch: "Sân bóng"
-      search_pitch: "Tìm kiếm sân"
-    left:
-      passion: "Niềm đam mê bóng đá"
-      language: "Ngôn ngữ"
-      english: "Tiếng Anh"
-    right_sidebar:
-      pitch: "Sân bóng"
-      search_pitch: "Tìm kiếm sân"
-    left_sidebar:
-      passion: "Niềm đam mê bóng đá"
-      get_started: "Bắt đầu đặt"
-      book_soccer: "Đặt sân bóng"
-      content1: "Nếu bạn không thực sự biết sân phù hợp cho bạn và đồng đội của bạn, hãy đến với chúng tôi!"
-      get_started: "Bắt đầu"
-    footer:
-      about: "Giới thiệu"
-      content1: "Bóng đá là môn thể thao đồng đội được chơi giữa hai đội với nhau, mỗi đội có 11 cầu thủ trên sân. Trò chơi này dùng một quả bóng và thường được chơi trên sân cỏ hình chữ nhật với hai khung thành ở hai đầu sân."
-      news: "Bản tin"
-      content2: "Hàng triệu người đến sân vận động để xem các trận thi đấu có đội bóng mà họ yêu thích, và hàng triệu người khác theo dõi qua tivi nếu không thể đến sân vận động."
   static_pages:
     home:
       soccer_update: "Sân bóng đá được cập nhật mới nhất"
@@ -747,114 +631,6 @@ vi:
     danger_permission: "Không có quyền"
     danger_load_rating: "Không thể đánh giá"
     confirm: "Bạn chắc chứ?"
-  admin:
-    subpitch_types:
-      show:
-        title: "Thông tin loại sân bóng"
-      index:
-        title: "Danh sách loại sân bóng"
-        add: "Thêm"
-      edit:
-        title: "Chỉnh sửa loại sân bóng"
-      new:
-        title: "Tạo mới loại sân bóng"
-      create:
-        success: "Tạo thành công!"
-        danger: "Tạo thất bại!"
-      destroy:
-        success: "Xóa thành công!"
-        danger: "Xóa thất bại!"
-      update:
-        success: "Cập nhật thành công!"
-        danger: "Cập nhật thất bại"
-      subpitch_type:
-        edit: "Chỉnh sửa"
-        delete: "Xóa"
-        confirm: "Bạn chắc chứ?"
-    pitchs:
-      danger_load: "Tải thất bại"
-      create:
-        success: "Tạo thành công"
-        danger: "Tạo thất bại"
-      update:
-        success: "Cập nhật thành công"
-        danger: "Cập nhật thất bại"
-      destroy:
-        success: "Xóa thành công"
-        danger: "Xóa thất bại."
-      show:
-        title: "Sân bóng %{name}"
-        owner: "Chủ sở hữu: %{add}"
-        name: "Tên: %{add}"
-        description: "Mô tả: %{add}"
-        country: "Quốc gia: %{add}"
-        city: "Thành phố: %{add}"
-        start_time: "Giờ bắt đầu: %{add}"
-        end_time: "Giờ kết thúc: %{add}"
-      index:
-        title: "Danh sách sân bóng"
-        id: "#"
-        user: "Người dùng"
-        name: "Tên sân bóng"
-        description: "Mô tả"
-        country: "Quốc gia"
-        city: "Thành phố"
-        district: "Quận huyện"
-        picture: "Hình ảnh"
-        start_time: "Giờ bắt đầu"
-        end_time: "Giờ kết thúc"
-        option: "Tùy chọn"
-      pitch:
-        edit: "Chỉnh sửa"
-        delete: "Xóa"
-        confirm: "Bạn chắc chứ?"
-    subpitches:
-      danger_load: "Tải thất bại"
-      show:
-        pitch_name: "Tên sân bóng: %{add}"
-        name: "Tên sân nhỏ: %{add}"
-        price: "Giá một giờ: %{add}"
-        currency: "Tiền tệ: %{add}"
-        desc: "Mô tả: %{add}"
-        subpitch_type: "Loại sân nhỏ: %{add}"
-        size: "Kích cỡ: %{add}"
-      create:
-        success: "Tạo thành công"
-        danger: "Tạo thất bại"
-      update:
-        success: "Cập nhật thành công"
-        danger: "Cập nhật thất bại"
-      destroy:
-        success: "Xóa thành công"
-        danger: "Xóa thất bại"
-      new:
-        title: "Tạo sân nhỏ"
-      edit:
-        title: "Chỉnh sửa sân nhỏ"
-      index:
-        title: "Danh sách sân nhỏ"
-        id: "#"
-        pitch_name: "Tên sân bóng"
-        subpitch_type: "Loại sân bóng"
-        name: "Tên sân nhỏ"
-        description: "Mô tả"
-        price: "Giá"
-        currency: "Tiền tệ"
-        picture: "Hình ảnh"
-        size: "Kích cỡ"
-        option: "Tùy chọn"
-      subpitch:
-        edit: "Chỉnh sửa"
-        delete: "Xóa"
-        confirm: "Bạn chắc chứ?"
-        rating: "Đánh giá"
-      ratings:
-        index:
-          id: "#"
-          user: "user"
-          star: "star"
-          content: "content"
-          option: "option"
   general:
     search: "Search"
     delete: "Delete"
@@ -880,6 +656,54 @@ vi:
       desc: "Mô tả: %{add}"
       like: "Like(%{add})"
   admin:
+    pages:
+      home:
+        title: "Admin"
+    subpitch_types:
+      show:
+        title: "Thông tin loại sân bóng"
+      index:
+        id: "#"
+        name: "Tên"
+        description: "Mô tả"
+        Option: "Tùy chọn"
+        title: "Danh sách loại sân bóng"
+        add: "Thêm"
+      edit:
+        title: "Chỉnh sửa loại sân bóng"
+      new:
+        title: "Tạo mới loại sân bóng"
+      create:
+        success: "Tạo thành công!"
+        danger: "Tạo thất bại!"
+      destroy:
+        success: "Xóa thành công!"
+        danger: "Xóa thất bại!"
+      update:
+        success: "Cập nhật thành công!"
+        danger: "Cập nhật thất bại"
+      subpitch_type:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+        confirm: "Bạn chắc chứ?"
+        create: "Tạo sân"
+        update: "Cập nhật sân"
+      subpitch:
+        create: "Tạo sân nhỏ"
+        update: "Cập nhật sân nhỏ"
+    bookings:
+      index:
+        title: "Danh sách đặt sân"
+        id: "#"
+        user: "Người dùng"
+        subpitch: "Sân nhỏ"
+        start_time: "Giờ bắt đầu"
+        end_time: "Giờ kết thúc"
+        message: "Tin nhắn"
+        status: "Trạng thái"
+        total_price: "Tổng giá"
+        option: "Lựa chọn"
+        search: "Tìm kiếm"
     pitches:
       form:
         vi: "VietNam"

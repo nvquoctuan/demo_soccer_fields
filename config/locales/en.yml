@@ -194,6 +194,9 @@ en:
       rating:
         create: "Create rating"
         update: "Update rating"
+      subpitch_type:
+        create: "Create Subpitch Type"
+        update: "Update Subpitch Type"
   bookings:
     new:
       booking: Booking
@@ -258,6 +261,10 @@ en:
         manage: "Manage"
         link1: "Link1"
         link2: "Link2"
+        pitch: "Pitch"
+        revenue: "Renvenue"
+        booking: "Booking"
+        subpitch_type: "Subpitch"
       header:
         admin: "Admin"
         home: "Home"
@@ -391,30 +398,6 @@ en:
     index:
       address: "Address: "
       notification: "There are no valid football fields!"
-  admin:
-    subpitch_types:
-      show:
-        title: "Info Subpitch Type"
-      index:
-        title: "List Subpitch Types"
-        add: "Add"
-      edit:
-        title: "Edit info Subpitch Type"
-      new:
-        title: "Create new Subpitch Type"
-      create:
-        success: "Create success"
-        danger: "Create failure"
-      destroy:
-        success: "Destroy success"
-        danger: "Destroy failure"
-      update:
-        success: "Update success"
-        danger: "Update failure"
-      subpitch_type:
-        edit: "Edit"
-        delete: "Delete"
-        confirm: "You sure?"
   shared:
     error_messages:
       count:
@@ -477,10 +460,14 @@ en:
       pitch: "Pitch"
       search_pitch: "Search pitch"
     left:
+      language: "Language"
+    right_sidebar:
+      pitch: "Pitch"
+      search_pitch: "Search pitch"
+    left_sidebar:
       passion: "Passion for football"
-      book_soccer: "Book soccer field"
-      content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
       get_started: "Get Started"
+      content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
     footer:
       about: "About agency"
       content1: "Football is a team sport played between two teams, each team has 11 players on the field. This game uses a ball and is usually played on a rectangular grass field with two goal frames on either end."
@@ -491,6 +478,7 @@ en:
       title: "Quick schedule of football field"
   static_pages:
     home:
+      home: "Home"
       soccer_update: "Soccer field is new updated"
       address: "Address: "
       pitch: "Pitch"
@@ -918,11 +906,31 @@ en:
     danger_load_rating: "Can't load rating"
     confirm: "You sure?"
   admin:
+    pages:
+      home:
+        title: "Admin"
+    bookings:
+      index:
+        title: "List booking"
+        id: "#"
+        user: "User"
+        subpitch: "Subpitch"
+        start_time: "Start time"
+        end_time: "End time"
+        message: "Message"
+        status: "Status"
+        total_price: "Total price"
+        option: "Option"
+        search: "Search"
     subpitch_types:
       show:
         title: "Info Subpitch Type"
       index:
         title: "List Subpitch Types"
+        id: "#"
+        name: "Name"
+        description: "Description"
+        Option: "Option"
         add: "Add"
       edit:
         title: "Edit info Subpitch Type"
@@ -941,7 +949,7 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "You sure?"
-    pitchs:
+    pitches:
       danger_load: "Load failure"
       create:
         success: "Create success"
@@ -978,6 +986,47 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "You sure?"
+      revenues:
+        index:
+          asc: "asc"
+          desc: "desc"
+          asc_total: "Ascending total"
+          desc_total: "Decrease total"
+          title: "Revenue Pitch"
+          id: "#"
+          user: "User"
+          name: "Name"
+          description: "Description"
+          country: "Country"
+          city: "City"
+          district: "District"
+          phone: "Phone"
+          picture: "Picture"
+          start_time: "Start_time"
+          end_time: "End_time"
+          limit: "Limit"
+          total: "Total"
+          option: "Option"
+        revenue:
+          subpitch: "Subpitch"
+        show:
+          asc: "asc"
+          desc: "desc"
+          asc_total: "Tổng tiền tăng dần"
+          desc_total: "Tổng tiền giảm dầm"
+          new: "New"
+          title: "Detail revenue"
+          id: "#"
+          pitch_name: "Pitch name"
+          subpitch_type: "Subpitch type"
+          name: "Name"
+          description: "Description"
+          price: "Price"
+          currency: "Currency"
+          picture: "Picture"
+          size: "Size"
+          option: "Option"
+          total: "Total"
     subpitches:
       danger_load: "Load failure"
       show:
@@ -1051,131 +1100,6 @@ en:
     likes:
       count:
         like: "Like(%{add})"
-  admin:
-    pitches:
-      form:
-        vi: "VietNam"
-        en: "EngLish"
-      danger_load: "Load failure"
-      create:
-        success: "Create success"
-        danger: "Create danger"
-      update:
-        success: "Update success"
-        danger: "Update danger"
-      destroy:
-        success: "Destroy success"
-        danger: "Destroy danger"
-      show:
-        title: "%{name} Pitch"
-        owner: "Owner: %{add}"
-        name: "Name pitch: %{add}"
-        description: "description: %{add}"
-        country: "Country: %{add}"
-        phone: "Phone; %{add}"
-        city: "City: %{add}"
-        start_time: "Start_time: %{add}"
-        end_time: "End_time: %{add}"
-      index:
-        title: "List Pitch"
-        id: "#"
-        user: "User"
-        name: "Name"
-        description: "Description"
-        country: "Country"
-        city: "City"
-        district: "District"
-        phone: "Phone"
-        picture: "Picture"
-        start_time: "Start_time"
-        end_time: "End_time"
-        option: "Option"
-      pitch:
-        edit: "Edit"
-        delete: "Delete"
-        confirm: "You sure?"
-        subpitch: "Subpitch"
-      revenues:
-        index:
-          asc: "asc"
-          desc: "desc"
-          asc_total: "Ascending total"
-          desc_total: "Decrease total"
-          title: "Revenue Pitch"
-          id: "#"
-          user: "User"
-          name: "Name"
-          description: "Description"
-          country: "Country"
-          city: "City"
-          district: "District"
-          phone: "Phone"
-          picture: "Picture"
-          start_time: "Start_time"
-          end_time: "End_time"
-          limit: "Limit"
-          total: "Total"
-          option: "Option"
-        revenue:
-          subpitch: "Subpitch"
-        show:
-          asc: "asc"
-          desc: "desc"
-          asc_total: "Tổng tiền tăng dần"
-          desc_total: "Tổng tiền giảm dầm"
-          new: "New"
-          title: "Detail revenue"
-          id: "#"
-          pitch_name: "Pitch name"
-          subpitch_type: "Subpitch type"
-          name: "Name"
-          description: "Description"
-          price: "Price"
-          currency: "Currency"
-          picture: "Picture"
-          size: "Size"
-          option: "Option"
-          total: "Total"
-      subpitches:
-        danger_load: "Load failure"
-        show:
-          pitch_name_html: "Pitch name: <b>%{add}</b>"
-          name_html: "Subpitch name: <b>%{add}</b>"
-          price_html: "Price per hour: <b>%{add}</b>"
-          currency_html: "Currency: <b>%{add}</b>"
-          desc_html: "Description: <b>%{add}</b>"
-          subpitch_type_html: "Subpitch type: <b>%{add}</b>"
-          size_html: "Size: <b>%{add}</b>"
-        create:
-          success: "Create success"
-          danger: "Create danger"
-        update:
-          success: "Update success"
-          danger: "Update danger"
-        destroy:
-          success: "Destroy success"
-          danger: "Destroy danger"
-        new:
-          title: "New subpitch"
-        edit:
-          title: "Edit subpitch"
-        index:
-          new: "New"
-          title: "List Subpitch"
-          id: "#"
-          pitch_name: "Pitch name"
-          subpitch_type: "Subpitch type"
-          name: "Name"
-          description: "Description"
-          price: "Price"
-          currency: "Currency"
-          picture: "Picture"
-          size: "Size"
-          option: "Option"
-        subpitch:
-          edit: "Edit"
-          delete: "Delete"
-          confirm: "You sure?"
   msg:
     danger_permission: "Người dùng không có quyền"
   generate:

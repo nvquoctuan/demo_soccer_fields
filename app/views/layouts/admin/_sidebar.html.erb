@@ -12,36 +12,31 @@
     </li>
     <li class="c-sidebar-nav-title"><%= t ".manage" %></li>
     <li class="c-sidebar-nav-item">
-      <%= link_to "#", class: "c-sidebar-nav-link" do %>
+      <%= link_to admin_pitches_path, class: "c-sidebar-nav-link" do %>
         <svg class="c-sidebar-nav-icon">
         </svg> <%= t ".pitch" %>
       <% end %>
     </li>
     <li class="c-sidebar-nav-item">
-      <%= link_to "#", class: "c-sidebar-nav-link" do %>
+      <%= link_to admin_revenue_path, class: "c-sidebar-nav-link" do %>
         <svg class="c-sidebar-nav-icon">
-        </svg> <%= t ".review" %>
+        </svg> <%= t ".revenue" %>
       <% end %>
     </li>
-     <li class="c-sidebar-nav-item">
+    <li class="c-sidebar-nav-item">
       <%= link_to admin_bookings_path, class: "c-sidebar-nav-link" do %>
         <svg class="c-sidebar-nav-icon">
-        </svg> <%= t ".booking" %>
+        </svg> <%= t ".revenue" %>
       <% end %>
     </li>
+
     <% if current_user.admin? %>
       <li class="c-sidebar-nav-item">
-        <%= link_to "#", class: "c-sidebar-nav-link" do %>
+        <%= link_to admin_subpitch_types_path, class: "c-sidebar-nav-link" do %>
           <svg class="c-sidebar-nav-icon">
           </svg> <%= t ".subpitch_type" %>
         <% end %>
       </li>
     <% end %>
-    <li class="c-sidebar-nav-item">
-      <%= link_to revenue_admin_pitches_path, class: "c-sidebar-nav-link" do %>
-        <svg class="c-sidebar-nav-icon">
-        </svg> <%= t ".revenue" %>
-      <% end %>
-    </li>
   </ul>
 </div>

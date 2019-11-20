@@ -4,23 +4,16 @@ Rails.application.routes.draw do
   namespace :admin do
     root "pages#home"
     resources :subpitch_types
+    get "/revenue", to: "pitches/revenues#index"
     resources :pitches do
-      resources :subpitches do
+      resources :subpitches, controller: "pitches/subpitches" do
         resources :ratings, only: %i(index destroy), controller: "subpitches/ratings"
       end
-    end
-    resources :users
-    resources :bookings
-    resources :pitches do
-      resources :subpitches, controller: "pitches/subpitches"
-      get "/revenue", to: "pitches/revenues#index", on: :collection
       get "/revenue", to: "pitches/revenues#show", on: :member
     end
     resources :users do
       resources :roles, only: :create, controller: "users/roles"
     end
-    get "/logout", to: "sessions#destroy"
-    resources :bookings
   end
 
   post "/login", to: "sessions#create"
@@ -52,4 +45,6 @@ Rails.application.routes.draw do
   patch "bookings/update", to: "bookings#update"
   post "bookings/create"
   resources :users
+  patch "bookings/update", to: "bookings#update"
+  post "bookings/create", to: "bookings#create"
 end

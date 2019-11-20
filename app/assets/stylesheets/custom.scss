@@ -243,10 +243,6 @@ input {
   height: auto !important;
 }
 
-label{
-  color: $white;
-}
-
 #error_explanation {
   color: $red;
   background: $bg-error;
@@ -504,9 +500,6 @@ input {
   height: auto !important;
 }
 
-label{
-  color: $white;
-}
 
 #error_explanation {
   color: $red;
@@ -539,6 +532,7 @@ label{
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
 
 /* PAGINATION */
 .pagination {
@@ -740,10 +734,6 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
-}
-
-label{
-  color: $white;
 }
 
 #error_explanation {

@@ -18,7 +18,7 @@
           <% else %>
             <div class="schedule p-40px">
           <% end %>
-              <%= form_for :booking, url: bookings_create_path do |f| %>
+              <%= form_for :booking, url: bookings_path do |f| %>
                 <%= f.hidden_field :subpitch_id, value: @subpitch.id %>
                 <% @schedule_detail.each_with_index do |box,index| %>
                   <% if box[2] == "pasttime" %>

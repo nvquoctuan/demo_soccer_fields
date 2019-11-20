@@ -1,5 +1,5 @@
-<div class="col-sm-6 col-lg-4" id = "<%= "subpitch_#{subpitch.id}" %>">
-  <div class="card" style="margin-bottom: 15px;">
+<div class="col-md-6" style="float:left" id = "<%= "subpitch_#{subpitch.id}" %>">
+  <div class="card">
     <%= link_to pitch_subpitch_path(@pitch, subpitch) do %>
       <% if subpitch.picture.attached? %>
         <div class="card-header bg-facebook content-center">

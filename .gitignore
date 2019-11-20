@@ -12,6 +12,7 @@
 !/log/.keep
 !/tmp/.keep
 /storage/*
+.rubocop*
 !/storage/.keep
 .byebug_history
 /config/master.key
