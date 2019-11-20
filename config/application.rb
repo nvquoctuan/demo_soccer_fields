@@ -1,9 +1,9 @@
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails/all'
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
+# you"ve limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module SoccerField
@@ -14,5 +14,7 @@ module SoccerField
     config.autoload_paths << Rails.root.join('assets')
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :en
+    config.time_zone = "Asia/Bangkok"
+    config.active_record.default_timezone = :local
   end
 end

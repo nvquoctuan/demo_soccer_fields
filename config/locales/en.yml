@@ -1,7 +1,62 @@
 en:
-  users:
+  bookings:
+    new:
+      booking: Booking
+      schedule: Schedule for this pitch
+      not_found_subpitch_id: Subpitch is not found!
+      choose_suitable: Let choose suitable time
+      history_booking: History booking
+      pitch: Pitch
+      subpitch: Subpitch
+      address: Address
+      start: Start
+      end: End
+      to: to
+    create:
+      please_log_in: Please log in to continue!
+      not_choose_or_invalid_time: The Period is not valid.
+        Please select at least one period!
+      time_has_passed: This period has passed!
+      time off schedule: Period off schedule!
+      time has been taken: Period has been taken!
+      error_insert_booking: An error occurred while processing!
+      success_booking: You book pitch successfully
+      not_found_subpitch_id: Subpitch is not found!
+      wrong_cycle_time: wrong cycle time!
+      booking_success: Book pitch success
+    update:
+      not_allow: You are not allowed!
+      please_log_in: Please log in to continue!
+      failed: Can't cancel!
+      not_found: Booking not found!
+      cancel_success: Cancel successfully
+    booking:
+      review: Review
+      confirm: Are you sure?
+      cancel: Cancel
+      canceled: Canceled
+  subpitches:
+    index:
+      subpitches:
+        danger_load: "Load failure"
+        danger_load_subpitch: "Load failure Subpitch"
     show:
-      title: "Quick schedule of football field"
+      name: "Name: %{add}"
+      price_per_hour: "Price per hour: %{add}"
+      currency: "Currency: %{add}"
+      size: "Size: %{add}"
+      subpitch_type: "Subpitch type: %{add}"
+      desc: "Description: %{add}"
+      content: "Comment here"
+      comment: "Comment"
+    subpitch:
+      name: "Name: %{add}"
+      price_per_hour: "Price per hour: %{add}"
+      currency: "Currency: %{add}"
+      size: "Size: %{add}"
+      subpitch_type: "Subpitch type: %{add}"
+      desc: "Description: %{add}"
+      show_schedule: Show schedule
   layouts:
     admin:
       sidebar:
@@ -44,6 +99,7 @@ en:
       search_pitch: "Search pitch"
     left_sidebar:
       passion: "Passion for football"
+      book_soccer: "Book soccer field"
       get_started: "Get Started"
       content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
     footer:
@@ -69,6 +125,10 @@ en:
     contact:
       contact: "Contact"
       text1: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
+    home:
+      home: Home
+      soccer_update: Soccer field is new updated
+      address: "Address: "
   users:
     id_unexist: ID not exist!
     please_log_in: You has not been logged in
@@ -145,7 +205,6 @@ en:
   helpers:
     label:
       user:
-        name: Name
         email: Email
         password: Password
         password_confirmation: Password confirmation

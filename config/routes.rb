@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "static_pages#home"
 
+  patch "bookings/update", to: "bookings#update"
+  post "bookings/create"
   namespace :admin do
     root "pages#home"
   end
@@ -16,4 +18,10 @@ Rails.application.routes.draw do
   resources :password_resets, except: :index
   resources :users
   resources :account_activations, only: :edit
+  resources :pitches, only: :index do
+    resources :subpitches, only: %i(index show)
+  end
+  resources :subpitches do
+    resources :bookings, only: :new
+  end
 end

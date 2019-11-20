@@ -1,5 +1,57 @@
 vi:
+  bookings:
+    new:
+      booking: Đặt sân bóng
+      schedule: Lịch trình
+      not_found_subpitch_id: Sân không tồn tại!
+      choose_suitable: Hãy chọn thời gian cho kế hoạch của bạn
+      history_booking: Lịch sử đặt sân
+      pitch: Khu vực
+      subpitch: Tên sân
+      address: Địa chỉ
+      start: Từ
+      end: Đến
+      to: đến
+    create:
+      please_log_in: Vui lòng đăng nhập trước khi đặt sân!
+      not_choose_or_invalid_time: Thời gian không hợp lệ, phải chọn ít nhất
+        một giai đoạn!
+      time_has_passed: Chỉ được chọn thời gian sau thời điểm hiện tại!
+      time off schedule: Sân đã đóng cửa rồi!
+      time has been taken: Thời gian này đã được ai đó đặt rồi!
+      error_insert_booking: Xảy ra lỗi trong khi xử lý!
+      success_booking: Bạn đặt sân thành công
+      not_found_subpitch_id: Sân không tồn tại!
+      wrong_cycle_time: Sai chu kì thơi gian!
+      booking_success: Đặt sân thành công
+    update:
+      not_allow: Bạn không được phép!
+      please_log_in: Làm ơn đăng nhập để tiếp tục!
+      failed: Không thể hủy!
+      not_found: Không tồn tại booking id!
+      cancel_success: Hủy thành công rực rỡ
+    booking:
+      review: Đánh giá
+      confirm: Bạn chắc chắn?
+      cancel: Hủy
+      canceled: Đã hủy
   layouts:
+    application:
+      title: "Đặt lịch sân bóng đá nhanh chóng"
+    header:
+      login: "Đăng nhập"
+      register: "Đăng ký"
+      lang_vi: "Việt Nam"
+      lang_en: "Tiếng Anh"
+      home: "Trang chủ"
+      about: "Giới thiệu"
+      blog: "Blog"
+      contact: "Liên hệ"
+      connect_facebook: Đăng nhập qua Facebook
+      log_in: Đăng nhập
+      profile: Hồ sơ
+      setting: Cài đặt
+      logout: Đăng xuất
     admin:
       sidebar:
         home: "Trang chủ"
@@ -21,30 +73,13 @@ vi:
         link: "CoreUI"
         content1_html: "&copy; 2019 creativeLabs."
         content2_html: "Powered by&nbsp;"
-    application:
-      title: "Đặt lịch sân bóng đá nhanh chóng"
-    header:
-      login: "Đăng nhập"
-      register: "Đăng ký"
-      lang_vi: "Việt Nam"
-      lang_en: "Tiếng Anh"
-      home: "Trang chủ"
-      about: "Giới thiệu"
-      blog: "Blog"
-      contact: "Liên hệ"
-      language: "Ngôn ngữ"
-      english: "Tiếng Anh"
-      connect_facebook: Đăng nhập qua Facebook
-      log_in: Đăng nhập
-      profile: Hồ sơ
-      setting: Cài đặt
-      logout: Đăng xuất
     right_sidebar:
       pitch: "Sân bóng"
       search_pitch: "Tìm kiếm sân"
     left_sidebar:
       passion: "Niềm đam mê bóng đá"
       get_started: "Bắt đầu đặt"
+      book_soccer: "Đặt sân bóng"
       content1: "Nếu bạn không thực sự biết sân phù hợp cho bạn và đồng đội của bạn, hãy đến với chúng tôi!"
       get_started: "Bắt đầu"
     footer:
@@ -58,7 +93,6 @@ vi:
       soccer_update: "Sân bóng đá được cập nhật mới nhất"
       address: "Địa chỉ: "
       pitch: "Sân bóng"
-      soccer_update: "Sân bóng đá được cập nhật mới nhất"
       rss_feed: "rss feed"
       name: "Sân bóng"
       description: "Sân có rộng, có 3 sân mini, mỗi sân dành từ 5-7 người."
@@ -83,6 +117,27 @@ vi:
       notification: "Không có sân bóng nào hợp lệ!"
   generate:
     page_title: "Sân bóng đá"
+  subpitches:
+    index:
+      subpitches:
+        danger_load: "Tải thất bại"
+        danger_load_subpitch: "Tải thất bại sân nhỏ"
+    show:
+      name: "Tên: %{add}"
+      price_per_hour: "Giá mỗi giờ: %{add}"
+      currency: "Tiền tệ: %{add}"
+      size: "Kích cỡ: %{add}"
+      subpitch_type: "Loại sân: %{add}"
+      desc: "Mô tả: %{add}"
+      content: "Bình luận ở đây"
+      comment: "Bình luận"
+    subpitch:
+      name: "Tên: %{add}"
+      price_per_hour: "Giá mỗi giờ: %{add}"
+      currency: "Tiền tệ: %{add}"
+      size: "Kích cỡ: %{add}"
+      subpitch_type: "Loại sân: %{add}"
+      desc: "Mô tả: %{add}"
   users:
     id_unexist: ID không tồn tại!
     please_log_in: Vui lòng đăng nhập
@@ -118,7 +173,7 @@ vi:
     new:
       sign_up: Đăng kí ngay!
       log_in: Đăng nhập
-      new_user: "Chưa có tài khoản ? "
+      new_user: "Chưa có tài khoản? "
       remember_text: Duy trì trạng thái đăng nhập
       forgot_password: (Quên mật khẩu)
     create:
@@ -162,8 +217,6 @@ vi:
         email: Email
         password: Mật khẩu
     submit:
-      pitch:
-        search_pitch: "Tìm kiếm sân"
       user:
         create: Tạo tài khoản
         update: Lưu thay đổi
@@ -171,6 +224,10 @@ vi:
         submit: Đăng nhập
       password_reset:
         submit: Tiếp tục
+      pitch:
+        search_pitch: Tìm kiếm sân
+      booking:
+        submit: Đặt sân
   user_mailer:
     account_activation_subject: Kích hoạt tài khoản
     account_activation:

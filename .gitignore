@@ -16,8 +16,6 @@
 .byebug_history
 /config/master.key
 config/settings/local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
 # Used by dotenv library to load environment variables.
 # .env
 .dat*
@@ -68,3 +66,4 @@ soccer_dev
 .rubocop.yml
 .rubocop_enabled.yml
 .rubocop_disabled.yml
+database.sql
