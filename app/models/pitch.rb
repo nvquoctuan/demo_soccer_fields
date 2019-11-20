@@ -32,10 +32,6 @@ class Pitch < ApplicationRecord
     end
   end)
 
-<<<<<<< HEAD
-  scope :latest_pitches, ->{order(created_at: :desc)}
-  scope :pitch_owner, ->(id_user){where("user_id = ?", id_user)}
-=======
   scope :pitch_owner, ->(id_user){where("user_id = ?", id_user)}
 
   scope(:revenue_pitch, lambda do

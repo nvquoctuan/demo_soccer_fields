@@ -376,6 +376,14 @@ vi:
       search_pitch: "Tìm kiếm sân"
     left:
       passion: "Niềm đam mê bóng đá"
+      language: "Ngôn ngữ"
+      english: "Tiếng Anh"
+    right_sidebar:
+      pitch: "Sân bóng"
+      search_pitch: "Tìm kiếm sân"
+    left_sidebar:
+      passion: "Niềm đam mê bóng đá"
+      get_started: "Bắt đầu đặt"
       book_soccer: "Đặt sân bóng"
       content1: "Nếu bạn không thực sự biết sân phù hợp cho bạn và đồng đội của bạn, hãy đến với chúng tôi!"
       get_started: "Bắt đầu"
@@ -1010,3 +1018,23 @@ vi:
     danger_permision: "Người dùng không có quyền"
     confirm: "Bạn chắc chứ?"
     login: "Hãy đăng nhập"
+  users:
+    new:
+      update: "Cập nhật"
+      text1: "Đăng ký"
+    create:
+     welcome_user: "Đăng ký tài khoản thành công!"
+  sessions:
+    new:
+      sign_up: "Đăng ký ngay?"
+      log_in: "Đăng nhập"
+  user:
+    success: "Thành công!"
+    danger: "Thất bại!"
+  pitches:
+    search_soccer:
+      address: "Địa chỉ: "
+    index:
+      notification: "Không có sân bóng nào hợp lệ!"
+  generate:
+    page_title: "Sân bóng đá"

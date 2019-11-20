@@ -307,6 +307,12 @@ en:
       pitch: "Pitch"
       search_pitch: "Search pitch"
     left:
+      language: "Language"
+    right_sidebar:
+      pitch: "Pitch"
+      search_pitch: "Search pitch"
+    left_sidebar:
+      get_started: "Get Started"
       passion: "Passion for football"
       book_soccer: "Book soccer field"
       content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
@@ -1183,3 +1189,24 @@ en:
     danger_permision: "Danger permission"
     confirm: "You sure?"
     login: "Please login"
+  users:
+    new:
+      update: "Update"
+      text1: "Sign in"
+    create:
+     welcome_user: "Register account successfly!"
+  sessions:
+    new:
+      sign_up: "Sign up"
+      log_in: "Log in"
+  user:
+    success: "Success!"
+    danger: "Failed!"
+  pitches:
+    search_soccer:
+      address: "Address: "
+    index:
+      address: "Address: "
+      notification: "There are no valid football fields!"
+  generate:
+    page_title: "soccer fields"
