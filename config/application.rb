@@ -18,5 +18,7 @@ module SoccerField
     config.active_record.default_timezone = :local
     config.autoload_paths += %W["#{config.root}/app/validators/"]
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.autoload_paths += %W["#{config.root}/app/validators/"]
+    config.autoload_paths << Rails.root.join('assets')
   end
 end

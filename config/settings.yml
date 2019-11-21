@@ -48,4 +48,16 @@ default_status_booking: 2
 paid_status_booking: 0
 size:
   s_12: 12
+  s255: 255
+  s100: 100
+  s97: 97
+  s50: 50
+  s46: 46
+  s12: 12
   s10: 10
+  s6: 6
+  s2: 2
+  s1: 1
+  x100: '100x100'
+  pitch: '500x300'
+resizie_limit: [100, 100]

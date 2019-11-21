@@ -106,6 +106,17 @@ en:
       subpitch_type:
         name: "Name"
         Description: "Desciption"
+      pitch:
+        name: "Name"
+        description: "Description"
+        country: "Country"
+        city: "City"
+        district: "District"
+        address: "Address"
+        picture: "Picture"
+        start_time: "Start_time"
+        end_time: "End_time"
+        limit: "Limit"
       user:
         full_name: "Full name"
         email: "Email address"
@@ -946,3 +957,48 @@ en:
     likes:
       count:
         like: "Like(%{add})"
+  admin:
+    pitchs:
+      form:
+        vi: "VietNam"
+        en: "EngLish"
+      danger_load: "Load failure"
+      create:
+        success: "Create success"
+        danger: "Create danger"
+      update:
+        success: "Update success"
+        danger: "Update danger"
+      destroy:
+        success: "Destroy success"
+        danger: "Destroy danger"
+      show:
+        title: "%{name} Pitch"
+        owner: "Owner: %{add}"
+        name: "Name pitch: %{add}"
+        description: "description: %{add}"
+        country: "Country: %{add}"
+        phone: "Phone; %{add}"
+        city: "City: %{add}"
+        start_time: "Start_time: %{add}"
+        end_time: "End_time: %{add}"
+      index:
+        title: "List Pitch"
+        id: "#"
+        user: "User"
+        name: "Name"
+        description: "Description"
+        country: "Country"
+        city: "City"
+        district: "District"
+        phone: "Phone"
+        picture: "Picture"
+        start_time: "Start_time"
+        end_time: "End_time"
+        option: "Option"
+      pitch:
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "You sure?"
+  msg:
+    danger_permission: "Người dùng không có quyền"

@@ -1,0 +1,20 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title", name: @pitch.name  %></h1>
+<div>
+  <div style="float:left">
+  <%= image_tag(@pitch.picture, size: Settings.size.pitch, style: "float:left") if @pitch.picture.attached? %>
+  </div>
+
+  <div style="float:left; margin-left: 20px;">
+    <p>
+    <% t ".owner", add:  @pitch.user.full_name %>
+    </p>
+    <hr class="mt-0">
+
+    <p><%= t ".description", add: @pitch.description %></p>
+    <p><%= t ".country", add: @pitch.country %></p>
+    <p><%= t ".city", add: @pitch.city %></p>
+    <p><%= t ".start_time", add: @pitch.start_time.strftime("%H:%M")  if @pitch.start_time %></p>
+    <p><%= t ".end_time", add: @pitch.end_time.strftime("%H:%M")  if @pitch.start_time %></p>
+  </div>
+</div>

@@ -14,7 +14,6 @@ class AdminController < ApplicationController
     current_user.owner?
   end
 
-
   def check_admin
     return if current_user.admin?
 
@@ -34,5 +33,12 @@ class AdminController < ApplicationController
 
     redirect_to root_path
     flash[:danger] = t "admin.danger_permission"
+  end
+
+  def check_owner
+    return if check_owner? || check_admin?
+
+    flash[:danger] = t "msg.danger_permission"
+    redirect_to root_path
   end
 end

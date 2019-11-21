@@ -52,6 +52,17 @@ vi:
       subpitch_type:
         name: "Tên loại sân bóng"
         Description: "Mô tả"
+      pitch:
+        name: "Tên"
+        description: "Mô tả"
+        country: "quốc gia"
+        city: "Thành phố"
+        district: "Quận huyện"
+        address: "Địa chỉ"
+        picture: "Hình ahr"
+        start_time: "Giờ bắt đầu"
+        end_time: "Giờ kết thúc"
+        limit: "Giới hạn giờ"
       user:
         full_name: "Tên đầy đủ"
         email: "Địa chỉ email"
@@ -68,17 +79,6 @@ vi:
         email: "Email"
         password: "Mật khẩu"
         danger: "Tạo tài khoản thất bại!"
-      pitch:
-        name: "Tên"
-        description: "Mô tả"
-        country: "quốc gia"
-        city: "Thành phố"
-        district: "Quận huyện"
-        address: "Địa chỉ"
-        picture: "Hình ahr"
-        start_time: "Giờ bắt đầu"
-        end_time: "Giờ kết thúc"
-        limit: "Giới hạn giờ"
       subpitch:
         name: "Tên sân nhỏ"
         desription: "Mô tả"
@@ -831,3 +831,44 @@ vi:
       subpitch_type: "Loại sân: %{add}"
       desc: "Mô tả: %{add}"
       like: "Like(%{add})"
+  admin:
+    pitches:
+      form:
+        vi: "VietNam"
+        en: "EngLish"
+      danger_load: "Tải thất bại"
+      create:
+        success: "Tạo thành công"
+        danger: "Tạo thất bại"
+      update:
+        success: "Cập nhật thành công"
+        danger: "Cập nhật thất bại"
+      destroy:
+        success: "Xóa thành công"
+        danger: "Xóa thất bại."
+      show:
+        title: "Sân bóng %{name}"
+        owner: "Chủ sở hữu: %{add}"
+        name: "Tên: %{add}"
+        description: "Mô tả: %{add}"
+        country: "Quốc gia: %{add}"
+        city: "Thành phố: %{add}"
+        start_time: "Giờ bắt đầu: %{add}"
+        end_time: "Giờ kết thúc: %{add}"
+      index:
+        title: "Danh sách sân bóng"
+        id: "#"
+        user: "Người dùng"
+        name: "Tên sân bóng"
+        description: "Mô tả"
+        country: "Quốc gia"
+        city: "Thành phố"
+        district: "Quận huyện"
+        picture: "Hình ảnh"
+        start_time: "Giờ bắt đầu"
+        end_time: "Giờ kết thúc"
+        option: "Tùy chọn"
+      pitch:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+        confirm: "Bạn chắc chứ?"
