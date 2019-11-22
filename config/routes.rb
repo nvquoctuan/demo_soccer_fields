@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         resources :ratings, only: %i(index destroy), controller: "subpitches/ratings"
       end
     end
+    resources :users
   end
   post "/login", to: "sessions#create"
   get "/signup", to: "users#new"

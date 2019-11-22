@@ -1,9 +1,23 @@
 require "open-uri"
 class UsersController < ApplicationController
+  layout :load_layout
+  before_action :get_path, only: %i(create update)
+  before_action :load_user, except: %i(index new create)
   before_action :logged_in_user, except: %i(new create)
+<<<<<<< HEAD
   before_action :load_user, except: %i(new create)
   before_action :correct_user, only: [:edit, :update]
 
+=======
+  before_action :correct_user, only: %i(edit update)
+  before_action :admin_user, only: %i(destroy index)
+
+  def index
+    @users = User.order_active.search(params[:search])
+                 .paginate page: params[:page], per_page: Settings.size.s10
+  end
+
+>>>>>>> Check admin, owner
   def show; end
 
   def new
@@ -19,7 +33,7 @@ class UsersController < ApplicationController
       )
       @user.send_activation_email
       flash[:info] = t ".please_check_mail"
-      redirect_to root_path
+      redirect_to send("#{@link}root_path")
     else
       render :new
     end
@@ -28,11 +42,21 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update_attributes update_user_params
+    if @user.update user_params
       flash[:success] = t ".profile_updated"
-      redirect_to edit_user_path
+      redirect_to send("#{@link}user_path")
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "msg.destroy_success"
+      redirect_to admin_users_path
+    else
+      flash.now[:success] = t "msg.destroy_danger"
+      redirect_to admin_root_path
     end
   end
 
@@ -51,4 +75,50 @@ class UsersController < ApplicationController
       params.require(:user).permit User::DATA_TYPE_UPDATE_PROFILE
     end
   end
+<<<<<<< HEAD
+=======
+
+  def admin_user
+    redirect_to root_path unless current_user.admin?
+  end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t ".id_unexist"
+    redirect_to root_path
+  end
+
+  def correct_user
+    return if current_user? @user
+
+    flash[:danger] = t ".not_allow"
+    redirect_to root_path
+  end
+
+  def admin_user
+    redirect_to root_path unless current_user.admin?
+  end
+
+  def logged_in_user
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t ".please_log_in"
+    redirect_to login_path
+  end
+
+  def get_path
+    @link = "admin_" if request.referer.include? "admin"
+    return if @link
+
+    @link = ""
+  end
+
+  def load_layout
+    @link = request.original_url.include?("admin") ? "admin" : nil
+    @link ? "admin/application" : "application"
+  end
+>>>>>>> Check admin, owner
 end

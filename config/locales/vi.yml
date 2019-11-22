@@ -212,6 +212,124 @@ vi:
       address: "Address: "
     index:
       notification: "Không có sân bóng nào hợp lệ!"
+      subpitch:
+        create: "Tạo sân nhỏ"
+        update: "Cập nhật sân nhỏ"
+  admin:
+    subpitch_types:
+      show:
+        title: "Thông tin loại sân bóng"
+      index:
+        title: "Danh sách loại sân bóng"
+        add: "Thêm"
+      edit:
+        title: "Chỉnh sửa loại sân bóng"
+      new:
+        title: "Tạo mới loại sân bóng"
+      create:
+        success: "Tạo thành công!"
+        danger: "Tạo thất bại!"
+      destroy:
+        success: "Xóa thành công!"
+        danger: "Xóa thất bại!"
+      update:
+        success: "Cập nhật thành công!"
+        danger: "Cập nhật thất bại"
+      subpitch_type:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+        confirm: "Bạn chắc chứ?"
+        create: "Tạo sân"
+        update: "Cập nhật sân"
+      subpitch:
+        create: "Tạo sân nhỏ"
+        update: "Cập nhật sân nhỏ"
+  layouts:
+    admin:
+      sidebar:
+        home: "Trang chủ"
+        new: "MỚI"
+        manage: "Quản lý"
+        pitch: "Sân bóng"
+        review: "Review"
+        subpitch_type: "Loại sân"
+      header:
+        Admin: "Admin"
+        home: "Trang chủ"
+        users: "Người dùng"
+        settings: "Thiết lập"
+        vn: "Tiếng việt"
+        en: "Tiếng anh"
+        profile: "Thông tin"
+        lock: "Khóa tài khoản"
+        logout: "Đăng xuất"
+        hello: "Xin chào: "
+      footer:
+        link: "CoreUI"
+        content1_html: "&copy; 2019 creativeLabs."
+        content2_html: "Powered by&nbsp;"
+    application:
+      title: "Đặt lịch sân bóng đá nhanh chóng"
+    header:
+      login: "Đăng nhập"
+      register: "Đăng ký"
+      lang_vi: "Việt Nam"
+      lang_en: "Tiếng Anh"
+      home: "Trang chủ"
+      about: "Giới thiệu"
+      blog: "Blog"
+      contact: "Liên hệ"
+      language: "Ngôn ngữ"
+      english: "Tiếng Anh"
+    right_sidebar:
+      pitch: "Sân bóng"
+      search_pitch: "Tìm kiếm sân"
+    left_sidebar:
+      passion: "Niềm đam mê bóng đá"
+      get_started: "Bắt đầu đặt"
+      content1: "Nếu bạn không thực sự biết sân phù hợp cho bạn và đồng đội của bạn, hãy đến với chúng tôi!"
+      get_started: "Bắt đầu"
+    footer:
+      about: "Giới thiệu"
+      content1: "Bóng đá là môn thể thao đồng đội được chơi giữa hai đội với nhau, mỗi đội có 11 cầu thủ trên sân. Trò chơi này dùng một quả bóng và thường được chơi trên sân cỏ hình chữ nhật với hai khung thành ở hai đầu sân."
+      news: "Bản tin"
+      content2: "Hàng triệu người đến sân vận động để xem các trận thi đấu có đội bóng mà họ yêu thích, và hàng triệu người khác theo dõi qua tivi nếu không thể đến sân vận động."
+  static_pages:
+    home:
+      soccer_update: "Sân bóng đá được cập nhật mới nhất"
+      address: "Địa chỉ: "
+      pitch: "Sân bóng"
+      soccer_update: "Sân bóng đá được cập nhật mới nhất"
+      rss_feed: "rss feed"
+      name: "Sân bóng"
+      description: "Sân có rộng, có 3 sân mini, mỗi sân dành từ 5-7 người."
+    about:
+      about: "Giới thiệu"
+      text_html: "Bóng đá hay Túc cầu (tiếng Anh-Anh: Football, tiếng Anh-Mỹ: Soccer) là môn thể thao đồng đội được chơi giữa hai đội với nhau."
+    blog:
+      blog: "Bloger"
+      text1: "Bóng đá hay Túc cầu (tiếng Anh-Anh: Football, tiếng Anh-Mỹ: Soccer) là môn thể thao đồng đội được chơi giữa hai đội với nhau."
+    contact:
+      contact: "Liên hệ"
+      text1: "Bóng đá hay Túc cầu (tiếng Anh-Anh: Football, tiếng Anh-Mỹ: Soccer) là môn thể thao đồng đội được chơi giữa hai đội với nhau."
+  users:
+    new:
+      update: "Cập nhật"
+      text1: "Đăng ký"
+    create:
+     welcome_user: "Đăng ký tài khoản thành công!"
+  sessions:
+    new:
+      sign_up: "Đăng ký ngay?"
+      log_in: "Đăng nhập"
+  user:
+    success: "Thành công!"
+    danger: "Thất bại!"
+  pitches:
+    search_soccer:
+      address: "Địa chỉ: "
+    index:
+      notification: "Không có sân bóng nào hợp lệ!"
   generate:
     page_title: "Sân bóng đá"
   subpitches:

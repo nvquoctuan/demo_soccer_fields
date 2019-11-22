@@ -14,12 +14,21 @@
     <li class="c-sidebar-nav-item">
       <%= link_to "#", class: "c-sidebar-nav-link" do %>
         <svg class="c-sidebar-nav-icon">
-        </svg> <%= t ".link1" %>
+        </svg> <%= t ".pitch" %>
       <% end %>
+
     <li class="c-sidebar-nav-item">
       <%= link_to "#", class: "c-sidebar-nav-link" do %>
         <svg class="c-sidebar-nav-icon">
-        </svg> <%= t ".link2" %>
+        </svg> <%= t ".review" %>
       <% end %>
     </li>
+    <% if current_user.admin? %>
+      <li class="c-sidebar-nav-item">
+        <%= link_to "#", class: "c-sidebar-nav-link" do %>
+          <svg class="c-sidebar-nav-icon">
+          </svg> <%= t ".subpitch_type" %>
+        <% end %>
+      </li>
+    <% end %>
 </div>
