@@ -958,7 +958,7 @@ en:
       count:
         like: "Like(%{add})"
   admin:
-    pitchs:
+    pitches:
       form:
         vi: "VietNam"
         en: "EngLish"
@@ -1000,5 +1000,45 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "You sure?"
+      subpitches:
+        danger_load: "Load failure"
+        show:
+          pitch_name_html: "Pitch name: <b>%{add}</b>"
+          name_html: "Subpitch name: <b>%{add}</b>"
+          price_html: "Price per hour: <b>%{add}</b>"
+          currency_html: "Currency: <b>%{add}</b>"
+          desc_html: "Description: <b>%{add}</b>"
+          subpitch_type_html: "Subpitch type: <b>%{add}</b>"
+          size_html: "Size: <b>%{add}</b>"
+        create:
+          success: "Create success"
+          danger: "Create danger"
+        update:
+          success: "Update success"
+          danger: "Update danger"
+        destroy:
+          success: "Destroy success"
+          danger: "Destroy danger"
+        new:
+          title: "New subpitch"
+        edit:
+          title: "Edit subpitch"
+        index:
+          new: "New"
+          title: "List Subpitch"
+          id: "#"
+          pitch_name: "Pitch name"
+          subpitch_type: "Subpitch type"
+          name: "Name"
+          description: "Description"
+          price: "Price"
+          currency: "Currency"
+          picture: "Picture"
+          size: "Size"
+          option: "Option"
+        subpitch:
+          edit: "Edit"
+          delete: "Delete"
+          confirm: "You sure?"
   msg:
     danger_permission: "Người dùng không có quyền"

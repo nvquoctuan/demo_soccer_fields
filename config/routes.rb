@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     end
     resources :users
     resources :bookings
-    resources :pitches
+    resources :pitches do
+      resources :subpitches, controller: "pitches/subpitches"
+    end
   end
 
   post "/login", to: "sessions#create"

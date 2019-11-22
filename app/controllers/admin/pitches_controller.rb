@@ -71,12 +71,4 @@ class Admin::PitchesController < AdminController
                     .pitch_owner(current_user.id)
                     .paginate page: params[:page], per_page: Settings.size.s10
   end
-
-  def check_pitch_owner
-    return unless check_owner?
-    return if @pitch.user_id == current_user.id
-
-    flash[:danger] = t "msg.danger_permission"
-    redirect_to admin_pitches_path
-  end
 end

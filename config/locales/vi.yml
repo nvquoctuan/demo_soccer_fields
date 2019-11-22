@@ -872,3 +872,43 @@ vi:
         edit: "Chỉnh sửa"
         delete: "Xóa"
         confirm: "Bạn chắc chứ?"
+      subpitches:
+        danger_load: "Tải thất bại"
+        show:
+          pitch_name_html: "Tên sân bóng: <b>%{add}</b>"
+          name_html: "Tên sân nhỏ: <b>%{add}</b>"
+          price_html: "Giá một giờ: <b>%{add}</b>"
+          currency_html: "Tiền tệ: <b>%{add}</b>"
+          desc_html: "Mô tả: <b>%{add}</b>"
+          subpitch_type_html: "Loại sân nhỏ: <b>%{add}</b>"
+          size_html: "Kích cỡ: <b>%{add}</b>"
+        create:
+          success: "Tạo thành công"
+          danger: "Tạo thất bại"
+        update:
+          success: "Cập nhật thành công"
+          danger: "Cập nhật thất bại"
+        destroy:
+          success: "Xóa thành công"
+          danger: "Xóa thất bại"
+        new:
+          title: "Tạo sân nhỏ"
+        edit:
+          title: "Chỉnh sửa sân nhỏ"
+        index:
+          new: "Tạo mới"
+          title: "Danh sách sân nhỏ"
+          id: "#"
+          pitch_name: "Tên sân bóng"
+          subpitch_type: "Loại sân bóng"
+          name: "Tên sân nhỏ"
+          description: "Mô tả"
+          price: "Giá"
+          currency: "Tiền tệ"
+          picture: "Hình ảnh"
+          size: "Kích cỡ"
+          option: "Tùy chọn"
+        subpitch:
+          edit: "Chỉnh sửa"
+          delete: "Xóa"
+          confirm: "Bạn chắc chứ?"

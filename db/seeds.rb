@@ -44,8 +44,11 @@ end
            address: address,
            limit: 2})
 end
-SubpitchType.create!({name:  "SubpitchType 1",
-           description: "Day la mot ta 1"})
+
+
+SubpitchType.create!({name: "loai vip"})
+
+SubpitchType.create!({name: "Subpitch type 1", description: "Mo ta 1"})
 
 pitches = Pitch.order(created_at: :desc).take(3)
 pitches.each{|pitch|
