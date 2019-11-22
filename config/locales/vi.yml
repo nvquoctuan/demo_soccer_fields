@@ -327,6 +327,11 @@ vi:
         review: "Review"
         subpitch_type: "Loại sân"
         booking: "Đặt"
+        link1: "Link1"
+        link2: "Link2"
+        pitch: "Sân bóng"
+        review: "Review"
+        subpitch_type: "Loại sân"
       header:
         Admin: "Admin"
         home: "Trang chủ"
@@ -423,6 +428,20 @@ vi:
       male: Nam
       female: Nữ
       title: "Đặt lịch sân bóng đá nhanh chóng"
+    index:
+      title: "Danh sách người dùng"
+      id: "#"
+      avatar: "Ảnh đại diện"
+      email: "email"
+      full_name: "Họ tên"
+      gender: "Giới tính"
+      phone: "Điện thoại"
+      activated: "Trạng thái"
+      option: "Tùy chọn"
+      search: "Tìm kiếm"
+    user:
+      edit: "Chỉnh sửa"
+      delete: "Xóa"
   account_activations:
     edit:
       account_activated: Tài khoản đã kích hoạt thành công!
@@ -983,3 +1002,9 @@ vi:
   oversize_upload_picture: nên nhỏ hơn 5MB
   oversize_upload: Dung lượng tệp tải lên tối đa 5MB. Vui lòng chọn tệp nhỏ hơn
   not_allow: Bạn không được phép
+  msg:
+    destroy_success: "Xóa thành công"
+    destroy_danger: "Xóa thất bại"
+    create_success: "Tạo thành công"
+    create_danger: "Tạo thất bại"
+    danger_permision: "Người dùng không có quyền"

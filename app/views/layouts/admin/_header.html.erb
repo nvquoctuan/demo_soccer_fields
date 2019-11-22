@@ -6,9 +6,7 @@
   <% end %>
   <%= link_to "#", class: "c-header-brand d-sm-none" do %>
     <% link_image = (current_user.avatar.attached?) ? current_user.avatar : "admin/coreui-base.svg" %>
-    <%= image_tag link_image, width: Settings.size.s97,
-                   height: Settings.size.s46,
-                   class: "c-header-brand d-sm-none" %>
+    <%= image_tag link_image, width: Settings.size.s97, height: Settings.size.s46, class: "c-header-brand d-sm-none" %>
   <% end %>
   <%= button_tag type: "button", "data-target" => "#sidebar",
       "data-class" => "c-sidebar-lg-show",
@@ -43,12 +41,12 @@
       <% end %>
       <div class="dropdown-menu dropdown-menu-right pt-0">
         <div class="dropdown-header bg-light py-2"><strong><%= t ".settings" %></strong></div>
-        <%= link_to "#", class: "dropdown-item" do %>
+        <%= link_to admin_user_path(current_user), class: "dropdown-item" do %>
           <svg class="c-icon mr-2">
             <use xlink:href="/asset/images/admin/sprites/free.svg#cil-user"></use>
           </svg> <%= t ".profile" %>
         <% end %>
-        <%= link_to "#", class: "dropdown-item" do %>
+        <%= link_to edit_admin_user_path(current_user), class: "dropdown-item" do %>
           <svg class="c-icon mr-2">
             <use xlink:href="/asset/images/admin/sprites/free.svg#cil-settings"></use>
           </svg> <%= t ".settings" %>

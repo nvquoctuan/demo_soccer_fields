@@ -53,4 +53,11 @@ class AdminController < ApplicationController
     flash[:danger] = t "msg.danger_permission"
     redirect_to admin_pitches_path
   end
+
+  def check_user
+    return unless current_user.user?
+
+    redirect_to root_path
+    flash[:danger] = t "msg.danger_permission"
+  end
 end

@@ -1,15 +1,16 @@
 <tr>
   <td><%= user.id %></td>
-  <td><%= image_tag user.avatar, style: "max-width: 100px; max-height: 100px;" if user.avatar.attached? %></td>
+  <td><%= image_tag user.avatar, class: "max-w100 max-h100" if user.avatar.attached? %></td>
   <td><%= user.email %></td>
   <td><%= user.full_name %></td>
   <td><%= user.gender %></td>
   <td><%= user.phone %></td>
   <td><%= user.activated %></td>
   <td>
-    <%= link_to t(".edit"), edit_admin_user_path(user) %>
+    <%= link_to t(".edit"), edit_admin_user_path(user), class: "btn btn-primary" %>
     <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to t(".delete"), user, method: :delete,
-                                  data: { confirm: t(".you_sure?") } %>
-  <% end %></td>
+      <%= link_to t(".delete"), user, class: "btn btn-danger", method: :delete,
+                                  data: {confirm: t(".you_sure?")} %>
+    <% end %>
+  </td>
 </tr>

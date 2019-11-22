@@ -424,6 +424,11 @@ en:
         review: "Review"
         subpitch_type: "Subpitch type"
         booking: "Booking"
+        link1: "Link1"
+        link2: "Link2"
+        pitch: "Pitch"
+        review: "Review"
+        subpitch_type: "Subpitch type"
       header:
         admin: "Admin"
         home: "Home"
@@ -528,6 +533,20 @@ en:
       male: Male
       female: Femalel
       title: Quick schedule of football field
+    index:
+      title: "List users"
+      id: "#"
+      avatar: "Avatar"
+      email: "Email"
+      full_name: "Full name"
+      gender: "Gender"
+      phone: "Phone"
+      activated: "Activated"
+      option: "Option"
+      search: "Search"
+    user:
+      edit: "Edit"
+      delete: "Delete"
   account_activations:
     edit:
       account_activated: Account activated!
@@ -1153,3 +1172,12 @@ en:
           confirm: "You sure?"
   msg:
     danger_permission: "Người dùng không có quyền"
+  generate:
+    page_title: "soccer fields"
+    title: "soccer fields"
+  msg:
+    destroy_success: "Destroy success"
+    destroy_danger: "Destroy danger"
+    create_success: "Create success"
+    create_danger: "Destroy danger"
+    danger_permision: "Danger permission"
