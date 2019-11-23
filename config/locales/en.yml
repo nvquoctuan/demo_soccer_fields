@@ -924,3 +924,22 @@ en:
     search: "Search"
     delete: "Delete"
     confirm: "You sure?"
+  subpitches:
+    danger_load: "Load failure"
+    danger_load_subpitch: "Load failure Subpitch"
+    show:
+      name: "Name: %{add}"
+      price_per_hour: "Price per hour: %{add}"
+      currency: "Currency: %{add}"
+      size: "Size: %{add}"
+      subpitch_type: "Subpitch type: %{add}"
+      desc: "Description: %{add}"
+      content: "Comment here"
+      comment: "Comment"
+    subpitch:
+      name: "Name: %{add}"
+      price_per_hour: "Price per hour: %{add}"
+      currency: "Currency: %{add}"
+      size: "Size: %{add}"
+      subpitch_type: "Subpitch type: %{add}"
+      desc: "Description: %{add}"
