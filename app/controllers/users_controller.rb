@@ -51,8 +51,4 @@ class UsersController < ApplicationController
       params.require(:user).permit User::DATA_TYPE_UPDATE_PROFILE
     end
   end
-
-  def admin_user
-    redirect_to root_path unless current_user.admin?
-  end
 end

@@ -21,6 +21,10 @@ class CreateUsers < ActiveRecord::Migration[6.0]
     end
 
     add_index :users, [:provider, :email], unique: true
+<<<<<<< HEAD
     add_index :users, :uid, unique: true
+=======
+    add_index :users, :uid, unique: :true
+>>>>>>> signup, login, logout, manager profile
   end
 end

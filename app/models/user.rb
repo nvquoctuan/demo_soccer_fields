@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   before_save{email.downcase!}
   before_create :create_activation_digest
   attr_accessor :remember_token, :activation_token, :reset_token

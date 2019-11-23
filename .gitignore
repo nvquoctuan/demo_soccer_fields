@@ -1,5 +1,7 @@
 *.gem
 *.rbc
+/.config
+!/.config/certs
 /coverage/
 /InstalledFiles
 /pkg/

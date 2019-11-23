@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "pages#home"
   end
+
   post "/login", to: "sessions#create"
   get "/signup", to: "users#new"
   get "/login", to: "sessions#new"

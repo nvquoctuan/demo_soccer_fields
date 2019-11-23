@@ -97,6 +97,19 @@ vi:
         link: "CoreUI"
         content1_html: "&copy; 2019 creativeLabs."
         content2_html: "Powered by&nbsp;"
+    application:
+      title: "Đặt lịch sân bóng đá nhanh chóng"
+    header:
+      login: "Đăng nhập"
+      register: "Đăng ký"
+      lang_vi: "Việt Nam"
+      lang_en: "Tiếng Anh"
+      home: "Trang chủ"
+      about: "Giới thiệu"
+      blog: "Blog"
+      contact: "Liên hệ"
+      language: "Ngôn ngữ"
+      english: "Tiếng Anh"
     right_sidebar:
       pitch: "Sân bóng"
       search_pitch: "Tìm kiếm sân"
@@ -120,6 +133,7 @@ vi:
       rss_feed: "rss feed"
       name: "Sân bóng"
       description: "Sân có rộng, có 3 sân mini, mỗi sân dành từ 5-7 người."
+      home: Trang chủ
     about:
       about: "Giới thiệu"
       text_html: "Bóng đá hay Túc cầu (tiếng Anh-Anh: Football, tiếng Anh-Mỹ: Soccer) là môn thể thao đồng đội được chơi giữa hai đội với nhau."
@@ -200,6 +214,7 @@ vi:
       sign_up: Đăng kí ngay!
       log_in: Đăng nhập
       new_user: "Chưa có tài khoản? "
+      new_user: Chưa có tài khoản
       remember_text: Duy trì trạng thái đăng nhập
       forgot_password: (Quên mật khẩu)
     create:
