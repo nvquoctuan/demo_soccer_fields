@@ -361,6 +361,17 @@ vi:
     left_sidebar:
       passion: "Niềm đam mê bóng đá"
       get_started: "Bắt đầu đặt"
+      connect_facebook: Đăng nhập qua Facebook
+      log_in: Đăng nhập
+      profile: Hồ sơ
+      setting: Cài đặt
+      logout: Đăng xuất
+    right:
+      pitch: "Sân bóng"
+      search_pitch: "Tìm kiếm sân"
+    left:
+      passion: "Niềm đam mê bóng đá"
+      book_soccer: "Đặt sân bóng"
       content1: "Nếu bạn không thực sự biết sân phù hợp cho bạn và đồng đội của bạn, hãy đến với chúng tôi!"
       get_started: "Bắt đầu"
     footer:
@@ -447,7 +458,6 @@ vi:
     new:
       forgot_password: Quên mật khẩu
     email_address_not_found: Địa chỉ email chưa được đăng kí!
-
   user_mailer:
     account_activation_subject: Kích hoạt tài khoản
     account_activation:
@@ -968,3 +978,8 @@ vi:
   msg:
     danger_permission: "Lỗi phân quyền"
     destroy_danger: "Xóa lỗi"
+  generate:
+    title: "Sân bóng đá"
+  oversize_upload_picture: nên nhỏ hơn 5MB
+  oversize_upload: Dung lượng tệp tải lên tối đa 5MB. Vui lòng chọn tệp nhỏ hơn
+  not_allow: Bạn không được phép
