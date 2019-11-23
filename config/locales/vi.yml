@@ -146,6 +146,8 @@ vi:
       subpitches:
         danger_load: "Tải thất bại"
         danger_load_subpitch: "Tải thất bại sân nhỏ"
+    danger_load: "Tải thất bại"
+    danger_load_subpitch: "Tải thất bại sân nhỏ"
     show:
       name: "Tên: %{add}"
       price_per_hour: "Giá mỗi giờ: %{add}"
@@ -170,7 +172,7 @@ vi:
       sign_up: Đăng kí
       title: "Đặt lịch sân bóng đá nhanh chóng"
     create:
-      please_check_mail: Vui lòng kiểm tra email của bạn để kích hoạt tài 
+      please_check_mail: Vui lòng kiểm tra email của bạn để kích hoạt tài
         khoản của bạn.
     update:
       profile_updated: Hồ sơ đã được cập nhật
