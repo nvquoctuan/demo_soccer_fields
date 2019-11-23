@@ -12,6 +12,7 @@ class User < ApplicationRecord
   VALID_PHONE_REGEX = /\A[\d]{10,}\z/i.freeze
 
   has_many :bookings, dependent: :destroy
+
   has_one_attached :avatar
   validates :full_name, presence: true,
     length: {maximum: Settings.name_in_users_max}
@@ -30,6 +31,8 @@ class User < ApplicationRecord
     {minimum: Settings.password_min}, on: :reset_password
   validates :wallet, numericality: {greater_than_or_equal_to: 0},
     allow_nil: true
+
+  enum role: {admin: 0, owner: 1, user: 2}
 
   class << self
     # Returns the hash digest of the given string.

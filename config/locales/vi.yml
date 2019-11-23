@@ -45,6 +45,8 @@ vi:
         update: "Cập nhật"
       pitch:
         search_pitch: "Tìm kiếm sân"
+      booking:
+        submit: Đặt sân
   bookings:
     new:
       booking: Đặt sân bóng
@@ -139,6 +141,16 @@ vi:
     left_sidebar:
       passion: "Niềm đam mê bóng đá"
       get_started: "Bắt đầu đặt"
+      connect_facebook: Đăng nhập qua Facebook
+      log_in: Đăng nhập
+      profile: Hồ sơ
+      setting: Cài đặt
+      logout: Đăng xuất
+    right:
+      pitch: "Sân bóng"
+      search_pitch: "Tìm kiếm sân"
+    left:
+      passion: "Niềm đam mê bóng đá"
       book_soccer: "Đặt sân bóng"
       content1: "Nếu bạn không thực sự biết sân phù hợp cho bạn và đồng đội của bạn, hãy đến với chúng tôi!"
       get_started: "Bắt đầu"
@@ -166,6 +178,12 @@ vi:
     contact:
       contact: "Liên hệ"
       text1: "Bóng đá hay Túc cầu (tiếng Anh-Anh: Football, tiếng Anh-Mỹ: Soccer) là môn thể thao đồng đội được chơi giữa hai đội với nhau."
+    home:
+      home: "Trang chủ"
+  sessions:
+    new:
+      sign_up: "Đăng ký ngay?"
+      log_in: "Đăng nhập"
   user:
     success: "Thành công!"
     danger: "Thất bại!"
@@ -202,6 +220,11 @@ vi:
       subpitch_type: "Loại sân: %{add}"
       desc: "Mô tả: %{add}"
   users:
+    new:
+      update: "Cập nhật"
+      text1: "Đăng ký"
+    create:
+     welcome_user: "Đăng ký tài khoản thành công!"
     id_unexist: ID không tồn tại!
     please_log_in: Vui lòng đăng nhập
     not_allow: Bạn không được phép

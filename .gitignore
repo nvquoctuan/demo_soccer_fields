@@ -16,14 +16,11 @@
 .byebug_history
 /config/master.key
 config/settings/local.yml
-<<<<<<< HEAD
-=======
 config/settings/*.local.yml
 config/environments/*.local.yml
 config/*.yml
 !/config/settings.yml
 !/config/database.yml
->>>>>>> booking + show + cancel
 # Used by dotenv library to load environment variables.
 # .env
 .dat*

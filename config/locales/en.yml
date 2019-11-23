@@ -192,6 +192,17 @@ en:
       book_soccer: "Book soccer field"
       get_started: "Get Started"
       content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
+      connect_facebook: Connect With Facebook
+      log_out: Logout
+      setting: Setting
+    right:
+      pitch: "Pitch"
+      search_pitch: "Search pitch"
+    left:
+      passion: "Passion for football"
+      book_soccer: "Book soccer field"
+      content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
+      get_started: "Get Started"
     footer:
       about: "About agency"
       content1: "Football is a team sport played between two teams, each team has 11 players on the field. This game uses a ball and is usually played on a rectangular grass field with two goal frames on either end."
@@ -387,6 +398,47 @@ en:
       size: "Size: %{add}"
       subpitch_type: "Subpitch type: %{add}"
       desc: "Description: %{add}"
+  users:
+    show:
+      title: "Quick schedule of football field"
+    new:
+      update: "Update"
+      text1: "Sign in"
+    create:
+     welcome_user: "Register account successfly!"
+    id_unexist: ID not exist!
+    please_log_in: You has not been logged in
+    not_allow: you are not allowed
+    new:
+      sign_up: Sign up
+      title: Quick schedule of football field
+    create:
+      please_check_mail: Please check your email to activate your account.
+    update:
+      profile_updated: Profile has been updated
+    edit:
+      edit_user: Edit user profile
+      update_your_profile: Update user profile
+    show:
+      name: Name
+      gender: Gender
+      email: Email
+      phone: Phone
+      your_profile: Your profile
+      male: Male
+      female: Femalel
+      title: Quick schedule of football field
+  account_activations:
+    edit:
+      account_activated: Account activated!
+      invalid_activation_link: Invalid activation link!
+  shared:
+    error_messages:
+      error:
+        one: "Form has %{count} error"
+        other: "Form has %{count} errors"
+  sessions:
+    new:
       sign_up: Sign up
       log_in: Log in
       new_user: New user
