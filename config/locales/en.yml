@@ -943,3 +943,6 @@ en:
       size: "Size: %{add}"
       subpitch_type: "Subpitch type: %{add}"
       desc: "Description: %{add}"
+    likes:
+      count:
+        like: "Like(%{add})"

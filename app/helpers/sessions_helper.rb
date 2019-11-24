@@ -49,7 +49,13 @@ module SessionsHelper
     session.delete :forwarding_url
   end
 
-  # Stores the URL trying to be accessed.
+  def logged_in_user
+    return if logged_in?
+
+    store_location
+    redirect_to signin_url
+  end
+
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end

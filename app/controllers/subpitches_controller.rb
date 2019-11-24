@@ -1,9 +1,10 @@
 class SubpitchesController < ApplicationController
   before_action :load_pitch
-  before_action :load_subpitch, only: :show
+  before_action ->{load_subpitch(params[:id])}, only: :show
 
   def index
     @subpitches = Subpitch.pitch(params[:pitch_id].to_i)
+    @like = current_user.likes.build subpitch_id: params[:id] if logged_in?
   end
 
   def show
@@ -20,8 +21,9 @@ class SubpitchesController < ApplicationController
     redirect_to root_path
   end
 
-  def load_subpitch
-    @subpitch = Subpitch.find_by id: params[:id]
+  def load_subpitch params
+    @subpitch = Subpitch.find_by id: params
+
     return if @subpitch
 
     flash[:danger] = t ".subpitches.danger_load_subpitch"

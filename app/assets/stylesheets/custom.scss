@@ -300,6 +300,13 @@ label{
 
 /* general */
 
+.pad-r10{
+  padding-right: 10px;
+}
+.left{
+  float: left
+}
+
 .wid15{
   width: 15%;
 }
@@ -370,7 +377,18 @@ p {
   line-height: 1.7em;
 }
 
+
+/* like subpitch */
+
+.like_subpitch{
+  width: 25%;
+  margin: 0 auto;
+  font-size: 15px;
+  padding: 5px;
+}
+
 /* header */
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -514,4 +532,3 @@ label{
 #session_remember_me {
   width: auto;
   margin-left: 0;
-}

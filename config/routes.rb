@@ -26,7 +26,9 @@ Rails.application.routes.draw do
   resources :password_resets, except: :index
   resources :account_activations, only: :edit
   resources :pitches, only: :index do
-    resources :subpitches, only: %i(index show)
+    resources :subpitches, only: %i(index show) do
+      resources :likes, only: %i(create destroy), controller: "subpitches/likes"
+    end
   end
   resources :subpitches do
     resources :bookings, only: :new
