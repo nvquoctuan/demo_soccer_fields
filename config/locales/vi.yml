@@ -437,3 +437,115 @@ vi:
     danger_permission: "Không có quyền"
     danger_load_rating: "Không thể đánh giá"
     confirm: "Bạn chắc chứ?"
+  admin:
+    subpitch_types:
+      show:
+        title: "Thông tin loại sân bóng"
+      index:
+        title: "Danh sách loại sân bóng"
+        add: "Thêm"
+      edit:
+        title: "Chỉnh sửa loại sân bóng"
+      new:
+        title: "Tạo mới loại sân bóng"
+      create:
+        success: "Tạo thành công!"
+        danger: "Tạo thất bại!"
+      destroy:
+        success: "Xóa thành công!"
+        danger: "Xóa thất bại!"
+      update:
+        success: "Cập nhật thành công!"
+        danger: "Cập nhật thất bại"
+      subpitch_type:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+        confirm: "Bạn chắc chứ?"
+    pitchs:
+      danger_load: "Tải thất bại"
+      create:
+        success: "Tạo thành công"
+        danger: "Tạo thất bại"
+      update:
+        success: "Cập nhật thành công"
+        danger: "Cập nhật thất bại"
+      destroy:
+        success: "Xóa thành công"
+        danger: "Xóa thất bại."
+      show:
+        title: "Sân bóng %{name}"
+        owner: "Chủ sở hữu: %{add}"
+        name: "Tên: %{add}"
+        description: "Mô tả: %{add}"
+        country: "Quốc gia: %{add}"
+        city: "Thành phố: %{add}"
+        start_time: "Giờ bắt đầu: %{add}"
+        end_time: "Giờ kết thúc: %{add}"
+      index:
+        title: "Danh sách sân bóng"
+        id: "#"
+        user: "Người dùng"
+        name: "Tên sân bóng"
+        description: "Mô tả"
+        country: "Quốc gia"
+        city: "Thành phố"
+        district: "Quận huyện"
+        picture: "Hình ảnh"
+        start_time: "Giờ bắt đầu"
+        end_time: "Giờ kết thúc"
+        option: "Tùy chọn"
+      pitch:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+        confirm: "Bạn chắc chứ?"
+    subpitches:
+      danger_load: "Tải thất bại"
+      show:
+        pitch_name: "Tên sân bóng: %{add}"
+        name: "Tên sân nhỏ: %{add}"
+        price: "Giá một giờ: %{add}"
+        currency: "Tiền tệ: %{add}"
+        desc: "Mô tả: %{add}"
+        subpitch_type: "Loại sân nhỏ: %{add}"
+        size: "Kích cỡ: %{add}"
+      create:
+        success: "Tạo thành công"
+        danger: "Tạo thất bại"
+      update:
+        success: "Cập nhật thành công"
+        danger: "Cập nhật thất bại"
+      destroy:
+        success: "Xóa thành công"
+        danger: "Xóa thất bại"
+      new:
+        title: "Tạo sân nhỏ"
+      edit:
+        title: "Chỉnh sửa sân nhỏ"
+      index:
+        title: "Danh sách sân nhỏ"
+        id: "#"
+        pitch_name: "Tên sân bóng"
+        subpitch_type: "Loại sân bóng"
+        name: "Tên sân nhỏ"
+        description: "Mô tả"
+        price: "Giá"
+        currency: "Tiền tệ"
+        picture: "Hình ảnh"
+        size: "Kích cỡ"
+        option: "Tùy chọn"
+      subpitch:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+        confirm: "Bạn chắc chứ?"
+        rating: "Đánh giá"
+      ratings:
+        index:
+          id: "#"
+          user: "user"
+          star: "star"
+          content: "content"
+          option: "option"
+  general:
+    search: "Search"
+    delete: "Delete"
+    confirm: "You sure?"

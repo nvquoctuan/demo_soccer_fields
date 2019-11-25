@@ -585,3 +585,115 @@ en:
     danger_permission: "Can't permission"
     danger_load_rating: "Can't load rating"
     confirm: "You sure?"
+  admin:
+    subpitch_types:
+      show:
+        title: "Info Subpitch Type"
+      index:
+        title: "List Subpitch Types"
+        add: "Add"
+      edit:
+        title: "Edit info Subpitch Type"
+      new:
+        title: "Create new Subpitch Type"
+      create:
+        success: "Create success"
+        danger: "Create failure"
+      destroy:
+        success: "Destroy success"
+        danger: "Destroy failure"
+      update:
+        success: "Update success"
+        danger: "Update failure"
+      subpitch_type:
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "You sure?"
+    pitchs:
+      danger_load: "Load failure"
+      create:
+        success: "Create success"
+        danger: "Create danger"
+      update:
+        success: "Update success"
+        danger: "Update danger"
+      destroy:
+        success: "Destroy success"
+        danger: "Destroy danger"
+      show:
+        title: "%{name} Pitch"
+        owner: "Owner: %{add}"
+        name: "Name pitch: %{add}"
+        description: "description: %{add}"
+        country: "Country: %{add}"
+        city: "City: %{add}"
+        start_time: "Start_time: %{add}"
+        end_time: "End_time: %{add}"
+      index:
+        title: "List Pitch"
+        id: "#"
+        user: "User"
+        name: "Name"
+        description: "Description"
+        country: "Country"
+        city: "City"
+        district: "District"
+        picture: "Picture"
+        start_time: "Start_time"
+        end_time: "End_time"
+        option: "Option"
+      pitch:
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "You sure?"
+    subpitches:
+      danger_load: "Load failure"
+      show:
+        pitch_name: "Pitch name: %{add}"
+        name: "Subpitch name: %{add}"
+        price: "Price per hour: %{add}"
+        currency: "Currency: %{add}"
+        desc: "Description: %{add}"
+        subpitch_type: "Subpitch type: %{add}"
+        size: "Size: %{add}"
+      create:
+        success: "Create success"
+        danger: "Create danger"
+      update:
+        success: "Update success"
+        danger: "Update danger"
+      destroy:
+        success: "Destroy success"
+        danger: "Destroy danger"
+      new:
+        title: "New subpitch"
+      edit:
+        title: "Edit subpitch"
+      index:
+        title: "List Subpitch"
+        id: "#"
+        pitch_name: "Pitch name"
+        subpitch_type: "Subpitch type"
+        name: "Name"
+        description: "Description"
+        price: "Price"
+        currency: "Currency"
+        picture: "Picture"
+        size: "Size"
+        option: "Option"
+      subpitch:
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "You sure?"
+        rating: "Rating"
+      ratings:
+        index:
+          id: "#"
+          user: "user"
+          star: "star"
+          content: "content"
+          option: "option"
+  general:
+    search: "Search"
+    delete: "Delete"
+    confirm: "You sure?"

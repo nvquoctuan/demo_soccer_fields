@@ -99,3 +99,29 @@ subpitches.each{|subpitch|
   end
 
 }
+
+50.times do |n|
+  name = "Subpitch_#{n}"
+  desc = "Day la mot ta #{n}"
+  size = "5 người"
+
+  Subpitch.create!({
+           name: name,
+           description: desc,
+           pitch_id: 1,
+           price_per_hour: 1000000.0,
+           size: size,
+           subpitch_type_id: 1})
+end
+
+30.times do |n|
+  Booking.create!({user_id: 1, subpitch_id: 2, start_time: Time.now, end_time: Time.now, message: "123", status: 2, total_price: 50000})
+end
+subpitches = Subpitch.all
+
+10.times do |n|
+  subpitches.each{|subpitch|
+    Booking.create!({user_id: 1, subpitch_id: 1, start_time: DateTime.strptime("09/14/2019 8:00", "%m/%d/%Y %H:%M"), end_time: DateTime.strptime("09/14/2019 10:00", "%m/%d/%Y %H:%M"), message: "hello every body", status: 1,
+      total_price: 500000})
+  }
+end

@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "pages#home"
+    resources :subpitch_types
+    resources :pitches do
+      resources :subpitches do
+        resources :ratings, only: %i(index destroy), controller: "subpitches/ratings"
+      end
+    end
   end
   post "/login", to: "sessions#create"
   get "/signup", to: "users#new"
