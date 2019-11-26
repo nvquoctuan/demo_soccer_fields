@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :bookings
     resources :pitches do
       resources :subpitches, controller: "pitches/subpitches"
+      get "/revenue", to: "pitches/revenues#index", on: :collection
+      get "/revenue", to: "pitches/revenues#show", on: :member
     end
   end
 

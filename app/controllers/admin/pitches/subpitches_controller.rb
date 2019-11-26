@@ -68,7 +68,7 @@ class Admin::Pitches::SubpitchesController < AdminController
   end
 
   def load_info
-    @pitches = Pitch.all
+    @pitches = check_owner? ? Pitch.pitch_owner(current_user.id) : Pitch.all
     @subpitch_types = SubpitchType.all
   end
 

@@ -22,6 +22,13 @@ vi:
       not_found: Booking không tồn tại!
       error_process: Xảy ra lỗi khi xử lý!
       success_payment: Thanh toán thành công
+  activerecord:
+    errors:
+      models:
+        pitch:
+          attributes:
+            end_time:
+              after: "phải lớn hơn start_time"
   helpers:
     label:
       user:
@@ -290,6 +297,11 @@ vi:
       subpitch:
         create: "Tạo sân nhỏ"
         update: "Cập nhật sân nhỏ"
+  shared:
+    error_messages:
+      count:
+        one: "1 error"
+        other: "%{count} errors"
   layouts:
     admin:
       sidebar:
@@ -872,6 +884,48 @@ vi:
         edit: "Chỉnh sửa"
         delete: "Xóa"
         confirm: "Bạn chắc chứ?"
+        subpitch: "Sân nhỏ"
+      revenues:
+        index:
+          asc: "asc"
+          desc: "desc"
+          asc_total: "Tổng tiền tăng dần"
+          desc_total: "Tổng tiền giảm dầm"
+          title: "Doanh thu sân bóng"
+          id: "#"
+          user: "Chủ sân"
+          name: "Tên sân bóng"
+          description: "Mô tả"
+          country: "Quốc gia"
+          city: "Thành phố"
+          district: "Quận/Huyện"
+          phone: "Điện thoại"
+          picture: "Hình ảnh"
+          start_time: "Giờ mở cửa"
+          end_time: "Giờ đóng cửa"
+          limit: "Limit"
+          total: "Tổng"
+          option: "Tùy chọn"
+        revenue:
+          subpitch: "Sân nhỏ"
+        show:
+          asc: "asc"
+          desc: "desc"
+          asc_total: "Tổng tiền tăng dần"
+          desc_total: "Tổng tiền giảm dầm"
+          new: "Tạo mới"
+          title: "Chi tiết doanh thu"
+          id: "#"
+          pitch_name: "Tên sân bóng"
+          subpitch_type: "Loại sân bóng"
+          name: "Tên sân nhỏ"
+          description: "Mô tả"
+          price: "Giá"
+          currency: "Tiền tệ"
+          picture: "Hình ảnh"
+          size: "Kích cỡ"
+          option: "Tùy chọn"
+          total: "Tổng tiền"
       subpitches:
         danger_load: "Tải thất bại"
         show:
@@ -912,3 +966,6 @@ vi:
           edit: "Chỉnh sửa"
           delete: "Xóa"
           confirm: "Bạn chắc chứ?"
+  msg:
+    danger_permission: "Lỗi phân quyền"
+    destroy_danger: "Xóa lỗi"

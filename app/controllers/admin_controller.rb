@@ -43,7 +43,7 @@ class AdminController < ApplicationController
   end
 
   def get_pitch pitch
-    @pitch.user_id
+    pitch.user_id
   end
 
   def check_pitch_owner pitch

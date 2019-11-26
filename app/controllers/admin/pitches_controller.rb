@@ -1,7 +1,7 @@
 class Admin::PitchesController < AdminController
   before_action :load_pitch, except: %i(index new create)
   before_action :load_pitch_admin, :load_pitch_owner, only: :index
-  before_action :check_pitch_owner, only: %i(edit update destroy)
+  before_action ->{check_pitch_owner(@pitch)}, only: %i(edit update destroy)
 
   def index; end
 

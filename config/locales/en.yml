@@ -77,6 +77,10 @@ en:
           attributes:
             phone:
               invalid: include only numbers and must be 10 characters or more
+        pitch:
+          attribute:
+            end_time:
+              after: "bigger start time"
   helpers:
     label:
       user:
@@ -391,6 +395,11 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "You sure?"
+  shared:
+    error_messages:
+      count:
+        one: "1 error"
+        other: "%{count} errors"
   layouts:
     admin:
       sidebar:
@@ -1000,6 +1009,48 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "You sure?"
+        subpitch: "Subpitch"
+      revenues:
+        index:
+          asc: "asc"
+          desc: "desc"
+          asc_total: "Ascending total"
+          desc_total: "Decrease total"
+          title: "Revenue Pitch"
+          id: "#"
+          user: "User"
+          name: "Name"
+          description: "Description"
+          country: "Country"
+          city: "City"
+          district: "District"
+          phone: "Phone"
+          picture: "Picture"
+          start_time: "Start_time"
+          end_time: "End_time"
+          limit: "Limit"
+          total: "Total"
+          option: "Option"
+        revenue:
+          subpitch: "Subpitch"
+        show:
+          asc: "asc"
+          desc: "desc"
+          asc_total: "Tổng tiền tăng dần"
+          desc_total: "Tổng tiền giảm dầm"
+          new: "New"
+          title: "Detail revenue"
+          id: "#"
+          pitch_name: "Pitch name"
+          subpitch_type: "Subpitch type"
+          name: "Name"
+          description: "Description"
+          price: "Price"
+          currency: "Currency"
+          picture: "Picture"
+          size: "Size"
+          option: "Option"
+          total: "Total"
       subpitches:
         danger_load: "Load failure"
         show:

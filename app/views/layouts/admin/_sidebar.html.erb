@@ -16,6 +16,7 @@
         <svg class="c-sidebar-nav-icon">
         </svg> <%= t ".pitch" %>
       <% end %>
+    </li>
     <li class="c-sidebar-nav-item">
       <%= link_to "#", class: "c-sidebar-nav-link" do %>
         <svg class="c-sidebar-nav-icon">
@@ -36,4 +37,11 @@
         <% end %>
       </li>
     <% end %>
+    <li class="c-sidebar-nav-item">
+      <%= link_to revenue_admin_pitches_path, class: "c-sidebar-nav-link" do %>
+        <svg class="c-sidebar-nav-icon">
+        </svg> <%= t ".revenue" %>
+      <% end %>
+    </li>
+  </ul>
 </div>
