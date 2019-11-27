@@ -23,12 +23,25 @@ vi:
       error_process: Xảy ra lỗi khi xử lý!
       success_payment: Thanh toán thành công
   activerecord:
+    attributes:
+      user:
+        full_name: Tên
+        email: Email
+        password: Mật khẩu
+        password_confirmation: Xác nhận mật khẩu
+        phone: Số điện thoại
     errors:
       models:
         pitch:
           attributes:
             end_time:
               after: "phải lớn hơn start_time"
+        user:
+          attributes:
+            name:
+              blank: không thể để trắng
+            phone:
+              invalid: chỉ bao gồm số và phải từ 10 kí tự trở lên
   helpers:
     label:
       user:
@@ -308,6 +321,8 @@ vi:
         home: "Trang chủ"
         new: "MỚI"
         manage: "Quản lý"
+        link1: "Link1"
+        link2: "Link2"
         pitch: "Sân bóng"
         review: "Review"
         subpitch_type: "Loại sân"
@@ -449,22 +464,6 @@ vi:
       p2_password_reset: Link này hết hạn trong 2 giờ.
       p3_password_reset: Nếu bạn không yêu cầu đặt lại mật khẩu hãy bỏ qua
         email này, mật khẩu của bạn không thay đổi.
-  activerecord:
-    attributes:
-      user:
-        full_name: Tên
-        email: Email
-        password: Mật khẩu
-        password_confirmation: Xác nhận mật khẩu
-        phone: Số điện thoại
-    errors:
-      models:
-        user:
-          attributes:
-            name:
-              blank: không thể để trắng
-            phone:
-              invalid: chỉ bao gồm số và phải từ 10 kí tự trở lên
   oversize_upload_picture: nên nhỏ hơn 5MB
   oversize_upload: Dung lượng tệp tải lên tối đa 5MB. Vui lòng chọn tệp nhỏ hơn
   not_allow: Bạn không được phép

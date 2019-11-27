@@ -81,6 +81,18 @@ en:
           attribute:
             end_time:
               after: "bigger start time"
+    attributes:
+      user:
+        full_name: Name
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+    errors:
+      models:
+        user:
+          attributes:
+            phone:
+              invalid: include only numbers and must be 10 characters or more
   helpers:
     label:
       user:
@@ -171,6 +183,8 @@ en:
         update: Update
       session:
         submit: Login
+        email: Email
+        password: Password
       password_reset:
         submit: Continue
       pitch:

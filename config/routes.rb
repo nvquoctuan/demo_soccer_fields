@@ -16,6 +16,9 @@ Rails.application.routes.draw do
       get "/revenue", to: "pitches/revenues#index", on: :collection
       get "/revenue", to: "pitches/revenues#show", on: :member
     end
+    resources :users
+    get "/logout", to: "sessions#destroy"
+    resources :bookings
   end
 
   post "/login", to: "sessions#create"
