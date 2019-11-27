@@ -14,6 +14,7 @@ class AdminController < ApplicationController
     current_user.owner?
   end
 
+
   def check_admin
     return if current_user.admin?
 

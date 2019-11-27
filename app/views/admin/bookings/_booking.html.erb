@@ -1,0 +1,16 @@
+<tr>
+  <td><%= booking.id %></td>
+  <td><%= booking.user.full_name %></td>
+  <td><%= booking.subpitch.name %></td>
+  <td><%= booking.start_time %></td>
+  <td><%= booking.end_time %></td>
+  <td><%= booking.message %></td>
+  <td><%= booking.status %></td>
+  <td><%= booking.total_price %></td>
+  <td>
+    <% status = [{id: 0, name: ".verified_paid"}, {id: 1, name: ".verifield_unpaid"}, {id: 2, name: ".notverifield"}] %>
+    <%= form_with url: admin_booking_path(booking), method: :patch do |f| %>
+    <%= select_tag "booking[status]", options_for_select(status.collect{|u| [t(u[:name]), u[:id]]}, selected: Booking.statuses[booking.status]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle" %>
+    <% end %>
+  </td>
+</tr>

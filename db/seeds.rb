@@ -1,25 +1,14 @@
-User.create(full_name: "Example User", phone: "0964991298", email: "admin@soccer.vn",
-  password: "admin123", password_confirmation: "admin123", role: 0, activated: true, activated_at: Time.zone.now)
+User.create(full_name: "Example User", phone: "0964991298", email: "user@soccer.vn",
+  password: "admin123", password_confirmation: "admin123", role: 2, activated: true, activated_at: Time.zone.now)
+User.create!({full_name: "Example User", email: "admin@soccer.vn",
+ password: "admin123", password_confirmation: "admin123", phone: "0964991298", role: 0,
+              activated: true, activated_at: Time.zone.now})
+User.create!({full_name: "Owner User", email: "owner@soccer.vn",
+ password: "admin123", password_confirmation: "admin123", phone: "0962991298", role: 1,
+              activated: true, activated_at: Time.zone.now})
 
-30.times do |x|
-  activated= true
-  email=Faker::Internet.email
-  full_name=Faker::Name.name
-  gender="nam"
-  phone=  Faker::PhoneNumber.phone_number
-  role=Faker::Number.between(from: 1, to: 3)
-  User.create!(
-    activated:activated,
-    email: email,
-    full_name: full_name,
-    gender: gender,
-    role: Faker::Number.between(from: 1, to: 3),
-    password: "admin123", password_confirmation: "admin123"
-  )
-end
-
-30.times do |n|
-  name = Faker::Name.name
+99.times do |n|
+  name  = Faker::Name.name
   user_id = 1
   description = Faker::Lorem.sentence
   address = Faker::Address.street_address
@@ -101,27 +90,21 @@ subpitches.each{|subpitch|
 }
 
 50.times do |n|
-  name = "Subpitch_#{n}"
-  desc = "Day la mot ta #{n}"
-  size = "5 người"
-
-  Subpitch.create!({
-           name: name,
-           description: desc,
-           pitch_id: 1,
-           price_per_hour: 1000000.0,
-           size: size,
-           subpitch_type_id: 1})
+  name = "Subpitch _ #{n}"
+  Subpitch.create!({name: name, description: "mo ta 1",status: 0,pitch_id: 1,price_per_hour: 30000, currency: "Dong", size: "5 nguoi", subpitch_type_id: 1, created_at: Time.now, updated_at: Time.now})
 end
 
-30.times do |n|
-  Booking.create!({user_id: 1, subpitch_id: 2, start_time: Time.now, end_time: Time.now, message: "123", status: 2, total_price: 50000})
-end
-subpitches = Subpitch.all
 
 10.times do |n|
-  subpitches.each{|subpitch|
-    Booking.create!({user_id: 1, subpitch_id: 1, start_time: DateTime.strptime("09/14/2019 8:00", "%m/%d/%Y %H:%M"), end_time: DateTime.strptime("09/14/2019 10:00", "%m/%d/%Y %H:%M"), message: "hello every body", status: 1,
-      total_price: 500000})
-  }
+  name = "Subpitch _ #{n}"
+  Subpitch.create!({name: name, description: "mo ta 1",status: 0,pitch_id: 100,price_per_hour: 30000, currency: "Dong", size: "5 nguoi", subpitch_type_id: 1, created_at: Time.now, updated_at: Time.now})
+end
+
+
+50.times do |n|
+  Booking.create!({user_id: 1, subpitch_id: 2, start_time: Time.now, end_time: Time.now, message: "hello moi nguoi", status: 0, total_price: 50000})
+end
+
+10.times do |n|
+  Booking.create!({user_id: 2, subpitch_id: 51, start_time: Time.now, end_time: Time.now, message: "hello moi nguoi", status: 0, total_price: 50000})
 end

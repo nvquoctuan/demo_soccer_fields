@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       end
     end
     resources :users
+    resources :bookings
   end
   post "/login", to: "sessions#create"
   get "/signup", to: "users#new"

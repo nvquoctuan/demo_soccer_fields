@@ -1,0 +1,39 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+<div>
+  <%= form_with url: admin_bookings_path, local: true, class: "input-group", method: "get" do |f| %>
+    <span class="input-group-prepend left">
+      <%= f.button "", class: "btn btn-primary" do %>
+        <svg class="c-icon" class="h14 w20">
+          <use xlink:href="/assets/admin/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
+        </svg> <%= t "general.search" %>
+      <% end %>
+    </span>
+    <%= f.text_field :search, class: "form-control wid30 left", id: "input1-group2", value: params[:search] %>
+    <% status = [{id: 0, name: ".verified_paid"}, {id: 1, name: ".verifield_unpaid"}, {id: 2, name: ".notverifield"}, {id: 3, name: ".all"}] %>
+    <%= form_with url: admin_bookings_path, method: :get do |f| %>
+    <%= select_tag "status", options_for_select(status.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:status]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle left wid15" %>
+    <% end %>
+  <% end %>
+</div>
+<hr class="mt-0">
+<table class = "table table-responsive-sm table-hover table-outline mb-0">
+  <thead class="thead-light">
+    <tr>
+      <th class = "text-center"><%= t ".id" %></th>
+      <th class = "text-center"><%= t ".user" %></th>
+      <th class = "text-center"><%= t ".subpitch" %></th>
+      <th class = "text-center"><%= t ".start_time" %></th>
+      <th class = "text-center"><%= t ".end_time" %></th>
+      <th class = "text-center"><%= t ".message" %></th>
+      <th class = "text-center"><%= t ".status" %></th>
+      <th class = "text-center"><%= t ".total_price" %></th>
+      <th class = "text-center"><%= t ".option" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "booking", collection: @bookings %>
+  </tbody>
+</table>
+<hr class="mt-0">
+<%= will_paginate @bookings %>

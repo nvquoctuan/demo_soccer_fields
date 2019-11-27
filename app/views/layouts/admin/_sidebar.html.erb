@@ -16,11 +16,16 @@
         <svg class="c-sidebar-nav-icon">
         </svg> <%= t ".pitch" %>
       <% end %>
-
     <li class="c-sidebar-nav-item">
       <%= link_to "#", class: "c-sidebar-nav-link" do %>
         <svg class="c-sidebar-nav-icon">
         </svg> <%= t ".review" %>
+      <% end %>
+    </li>
+     <li class="c-sidebar-nav-item">
+      <%= link_to admin_bookings_path, class: "c-sidebar-nav-link" do %>
+        <svg class="c-sidebar-nav-icon">
+        </svg> <%= t ".booking" %>
       <% end %>
     </li>
     <% if current_user.admin? %>
