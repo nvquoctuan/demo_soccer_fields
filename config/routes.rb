@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root "pages#home"
   end
-
   post "/login", to: "sessions#create"
   get "/signup", to: "users#new"
   get "/login", to: "sessions#new"
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
   end
   resources :bookings do
     resources :pays, only: :new
+    resources :ratings, except: :show, controller: "bookings/ratings"
   end
   patch "pays/update"
   patch "bookings/update", to: "bookings#update"

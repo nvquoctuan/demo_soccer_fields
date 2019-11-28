@@ -1,0 +1,18 @@
+<div id="show_rating">
+  <p>
+    <%= t ".content" %>
+    <%= link_to t(".del"), booking_rating_path(@rating.booking_id, @rating), method: :delete, "data-confirm": t("msg.confirm"), class: "btn btn-danger right" %>
+    <%= link_to t(".edit"), edit_booking_rating_path(@rating.booking_id, @rating), class: "btn btn-warning right", remote: true %>
+  </p>
+  <p><%= @rating.content %></p>
+  <p> <%= t ".star" %> </p>
+  <% star = @rating.star %>
+  <% 5.times do |n| %>
+    <% if star > 0 %>
+      <%= render partial: "button_evaluated", locals: {attribute: nil} %>
+      <% star -= 1 %>
+    <% else %>
+      <%= render partial: "button_evaluate", locals: {attribute: nil} %>
+    <% end %>
+  <% end %>
+</div>

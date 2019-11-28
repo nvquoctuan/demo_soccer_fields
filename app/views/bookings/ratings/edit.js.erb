@@ -1,0 +1,3 @@
+$('#show_rating').empty();
+$('#show_rating').append('<%= j render "rating", collection: @rating, locals: {path: edit_booking_path(@rating.booking_id, @rating)} %>')
+console.log("hello")

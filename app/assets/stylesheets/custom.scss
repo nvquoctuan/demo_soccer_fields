@@ -12,8 +12,20 @@
 .cl-white{
   color: $white;
 }
+.text-center{
+  text-align: center;
+}
+.pad0{
+  padding: 0px;
+}
+.auto{
+  margin: 0 auto;
+}
 .wid30{
   width: 30% !important;
+}
+.wid500p{
+  width: 500px;
 }
 .left{
   float: left;
@@ -25,7 +37,14 @@
   padding-top: 150px;
 }
 .bg-white{
-  background-color: white;
+  background-color: $white;
+}
+.bg-green{
+  background-color: $green-bg;
+}
+.container2{
+  padding: 15px;
+  border-radius: 10px;
 }
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -33,6 +52,12 @@
   box-sizing: border-box;
 }
 
+/* subpitch */
+
+.image_subpitch{
+  max-height: 500px;
+  max-width: 500px;
+}
 /* universal */
 
 textarea {
