@@ -9,7 +9,7 @@ class CreateSubpitches < ActiveRecord::Migration[6.0]
       t.string :currency
       t.text :picture
       t.string :size
-      t.references :subpitch, null: false, foreign_key: true
+      t.references :subpitch_type, null: false, foreign_key: true
 
       t.timestamps
     end

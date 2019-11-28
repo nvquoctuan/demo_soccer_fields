@@ -519,3 +519,20 @@ en:
   oversize_upload: Maximum file upload capacity of 5MB. Please select a
     smaller file
   not_allow: You are not allowed
+  bookings:
+    index:
+      title: "Booking List pitch "
+      user_name: "User name"
+      subpitch_name: "Subpitch"
+      start_time: "Start time"
+      end_time: "End time"
+      message: "Message"
+      status: "Status"
+      total_price: "Total price"
+      option: "Option"
+      search: "Search"
+    booking:
+      unverfile: "Unverfile"
+      verifiled_unpay: "Verifiled and not pay"
+      verifiled_paid: "Verifiled and paid"
+      rating: "Rating"

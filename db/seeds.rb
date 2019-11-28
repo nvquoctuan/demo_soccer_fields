@@ -41,7 +41,22 @@ end
   )
 end
 
-SubpitchType.create!({name: "loai vip"})
+5.times do |n|
+  name  = Faker::Name.name
+  description = Faker::Name.name
+  address = Faker::Address.street_address
+  Pitch.create!({user_id: 2,
+           name: name,
+           description: description,
+           country: "vn",
+           city: "Da nang",
+           phone: "5555555555",
+           district: "Hai chau",
+           address: address,
+           limit: 2})
+end
+SubpitchType.create!({name:  "SubpitchType 1",
+           description: "Day la mot ta 1"})
 
 pitches = Pitch.order(created_at: :desc).take(3)
 pitches.each{|pitch|

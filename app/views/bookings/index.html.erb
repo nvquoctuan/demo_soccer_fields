@@ -1,0 +1,42 @@
+<section class="banner-area relative">
+  <div class="container pad-top150">
+    <% provide :title, t(".title") %>
+    <h1 class="cl-white"><%= t ".title" %></h1>
+    <div>
+      <div>
+        <%= form_with url: bookings_path, local: true, class: "input-group", method: "get" do |f| %>
+          <span class="input-group-prepend" style = "float:left">
+            <%= f.button "", class: "btn btn-primary" do %>
+              <svg class="c-icon" style="height: 14px; width: 20px;">
+                <use xlink:href="/assets/admin/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
+              </svg> <%= t ".search" %>
+            <% end %>
+          </span>
+          <%= f.text_field :search, class: "form-control left wid30", id: "input1-group2", value: params[:search] %>
+        <% end %>
+      </div>
+    </div>
+    <hr class="mt-0">
+    <table class = "table table-responsive-sm table-hover table-outline mb-0 bg-white">
+      <thead class="thead-light">
+        <tr>
+          <th class = "text-center"><%= t ".user_name" %></th>
+          <th class = "text-center"><%= t ".supitch_name" %></th>
+          <th class = "text-center"><%= t ".start_time" %></th>
+          <th class = "text-center"><%= t ".end_time" %></th>
+          <th class = "text-center"><%= t ".message" %></th>
+          <th class = "text-center"><%= t ".status" %></th>
+          <th class = "text-center"><%= t ".total_price" %></th>
+          <th class = "text-center"><%= t ".option" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "booking", collection: @bookings %>
+      </tbody>
+    </table>
+    <hr class="mt-0">
+
+  </div>
+
+</section>
+<%= will_paginate @bookings %>

@@ -36,6 +36,13 @@
             <li class="menu-has-children"><%= link_to t(".blog"), blog_path %>
             </li>
             <li><%= link_to t(".contact"), contact_path %></li>
+             <% if current_user %>
+              <li>
+                <%= link_to bookings_path, class: "btn btn-info btn-lg" do %>
+                  <span class="glyphicon glyphicon-shopping-cart"></span> <%= t ".booking" %>
+                <% end%>
+              </li>
+            <% end %>
           </ul>
         </nav>
     </div>

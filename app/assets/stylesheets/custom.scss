@@ -1,3 +1,32 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'linearicons';
+@import 'magnific-popup';
+@import 'main';
+@import 'nice-select';
+@import 'owl.carousel';
+@import 'animate.min';
+@import 'font-awesome.min';
+@import 'variables.scss';
+
+.cl-white{
+  color: $white;
+}
+.wid30{
+  width: 30% !important;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.pad-top150{
+  padding-top: 150px;
+}
+.bg-white{
+  background-color: white;
+}
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

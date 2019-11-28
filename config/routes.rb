@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   root "static_pages#home"
 
-  patch "pays/update"
-  patch "bookings/update", to: "bookings#update"
-  post "bookings/create"
   namespace :admin do
     root "pages#home"
   end
@@ -29,4 +26,7 @@ Rails.application.routes.draw do
   resources :bookings do
     resources :pays, only: :new
   end
+  patch "pays/update"
+  patch "bookings/update", to: "bookings#update"
+  post "bookings/create"
 end

@@ -48,3 +48,4 @@ default_status_booking: 2
 paid_status_booking: 0
 size:
   s_12: 12
+  s10: 10

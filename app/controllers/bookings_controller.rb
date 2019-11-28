@@ -7,6 +7,13 @@ class BookingsController < ApplicationController
   before_action :load_user_in_booking, only: :update
   before_action :correct_user, only: :update
 
+  def index
+    @bookings = Booking.booking_user(current_user.id)
+                       .search_booking(params[:search])
+                       .paginate page: params[:page],
+                        per_page: Settings.size.s10
+  end
+
   def new
     create_schedule_detail
     @bookings = current_user.bookings.desc if current_user

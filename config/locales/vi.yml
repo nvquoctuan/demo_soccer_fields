@@ -355,3 +355,19 @@ vi:
   oversize_upload: Dung lượng tệp tải lên tối đa 5MB. Vui lòng chọn tệp nhỏ hơn
   not_allow: Bạn không được phép
   cant_repay: Bạn đã thanh toán trước đó rồi!
+  bookings:
+    index:
+      title: "Danh sách đặt sân"
+      user_name: "Họ tên"
+      subpitch_name: "Sân nhỏ"
+      start_time: "Thời gian bắt đầu"
+      end_time: "Thời gian kết thúc"
+      message: "Tin nhắn"
+      status: "Trạng thái"
+      total_price: "Tổng tiền"
+      option: "Lựa chọn"
+    booking:
+      unverfile: "Chưa xác thực"
+      verifiled_unpay: "Đã xác thực và chưa thanh toán"
+      verifiled_paid: "Đã thanh toán và đã xác thực"
+      rating: "Đánh giá"
