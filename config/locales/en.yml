@@ -71,6 +71,13 @@ en:
         email: "Email address"
         password: "Password"
         password_confirmation: "Confirmation password"
+        name: Name
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        phone: Phone
+        male: Male
+        female: Female
       session:
         email: "Email"
         password: "Password"
@@ -81,12 +88,20 @@ en:
         end_time: "End time"
         city: "City"
         district: "District"
+      rating:
+        content: "Content"
+        star: "Star"
     submit:
       user:
         create: "Create account"
         update: "Update"
       pitch:
         search_pitch: "Search pitch"
+      session:
+        submit: Login
+      rating:
+        create: "Create rating"
+        update: "Update rating"
   bookings:
     new:
       booking: Booking
@@ -168,6 +183,7 @@ en:
     application:
       title: "Quick schedule of football field"
     header:
+      ratings: "Ratings"
       login: "Login"
       register: "Register"
       lang_vi: "Vietnamese"
@@ -401,6 +417,8 @@ en:
   users:
     show:
       title: "Quick schedule of football field"
+    show:
+      title: "Quick schedule of football field"
     new:
       update: "Update"
       text1: "Sign in"
@@ -465,27 +483,6 @@ en:
     new:
       forgot_password: Forgot password
     email_address_not_found: Email address is not registered!
-  helpers:
-    label:
-      user:
-        name: Name
-        email: Email
-        password: Password
-        password_confirmation: Password confirmation
-        phone: Phone
-        male: Male
-        female: Female
-      session:
-        email: Email
-        password: Password
-    submit:
-      user:
-        create: Create
-        update: Update
-      session:
-        submit: Login
-      password_reset:
-        submit: Continue
   user_mailer:
     account_activation_subject: Activate account
     account_activation:
@@ -560,6 +557,22 @@ en:
       rating:
         del: "Delete"
         edit: "Edit"
+  ratings:
+    index:
+      title: "My rating"
+      subptich_name: "Subpitch name"
+      booking_start_time: "Booking start time"
+      booking_end_time: "Booking end_time"
+      content: "Content"
+      star: "Star"
+      status: "Status"
+      option: "Option"
+    rating:
+      unverifile: "Unverfile"
+      verifiled_unpay: "Verifiled and not pay"
+      verifiled_paid: "Verifiled and paid"
+      del: "Delete"
+      edit: "Edit"
   msg:
     create_success: "Create success"
     create_danger: "Create danger"

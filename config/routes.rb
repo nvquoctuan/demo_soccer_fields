@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :pays, only: :new
     resources :ratings, except: :show, controller: "bookings/ratings"
   end
+  resources :ratings, only: :index
   patch "pays/update"
   patch "bookings/update", to: "bookings#update"
   post "bookings/create"

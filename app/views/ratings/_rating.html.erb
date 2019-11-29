@@ -1,0 +1,24 @@
+<tr>
+  <td><%= rating.booking.subpitch_name %></td>
+  <td><%= rating.booking.start_time %></td>
+  <td><%= rating.booking.end_time %></td>
+  <td><%= rating.content %></td>
+  <td>
+    <% star = rating.star %>
+    <% 5.times do |n| %>
+      <% if star && star > 0 %>
+        <%= render partial: "bookings/ratings/button_evaluated", locals: {attribute: nil} %>
+        <% star -= 1 %>
+      <% else %>
+        <%= render partial: "bookings/ratings/button_evaluate", locals: {attribute: nil} %>
+      <% end %>
+    <% end %>
+  </td>
+  <% status = [t(".verifiled_paid"), t(".verifiled_unpay"), t(".unverifile")] %>
+  <td><%= status[Booking.statuses[rating.booking_status]] %></td>
+  <td><%= rating.booking_total_price %></td>
+  <td>
+    <%= link_to t(".edit"), edit_booking_rating_path(rating.booking.id, rating.id, request: "rating"), class: "btn btn-info mar5" %>
+    <%= link_to t(".del"), booking_rating_path(rating.booking_id, rating, request: "rating"), method: :delete, "data-confirm": t("msg.confirm"), class: "btn btn-danger right" %>
+  </td>
+</tr>

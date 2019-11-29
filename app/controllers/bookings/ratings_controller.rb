@@ -28,10 +28,15 @@ class Bookings::RatingsController < ApplicationController
   def update
     if @rating.update rating_params
       flash[:success] = t "msg.update_success"
-      redirect_to bookings_path
+      redirect_to check_request ? ratings_path : bookings_path
     else
       flash[:danger] = t "msg.update_danger"
-      redirect_to edit_booking_rating(@booking, @rating)
+      if check_request
+        redirect_to edit_booking_rating_path(@booking, @rating,
+                                             request: "rating")
+      else
+        redirect_to edit_booking_rating_path(@booking, @rating)
+      end
     end
   end
 
@@ -41,7 +46,7 @@ class Bookings::RatingsController < ApplicationController
     else
       flash[:danger] = t "msg.destroy_danger"
     end
-    redirect_to bookings_path
+    redirect_to params[:request] ? ratings_path : bookings_path
   end
 
   private
@@ -76,6 +81,10 @@ class Bookings::RatingsController < ApplicationController
 
     flash[:danger] = t "msg.danger_load_rating"
     redirect_to bookings_path
+  end
+
+  def check_request
+    request.referer.include? "request"
   end
 
   def rating_params

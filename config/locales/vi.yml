@@ -29,6 +29,13 @@ vi:
         email: "Địa chỉ email"
         password: "Mật khẩu"
         password_confirmation: "Nhập lại mật khẩu"
+        name: Tên
+        email: Email
+        password: Mật khẩu
+        password_confirmation: Xác nhận mật khẩu
+        phone: Số điện thoại
+        male: Nam
+        female: Nữ
       session:
         email: "Email"
         password: "Mật khẩu"
@@ -39,12 +46,22 @@ vi:
         end_time: "Giờ kết thúc"
         city: "Tỉnh/Thành phố"
         district: "Quận/Huyện"
+      rating:
+        content: "Nội dung"
+        star: "Sao"
     submit:
       user:
         create: "Tạo tài khoản"
         update: "Cập nhật"
       pitch:
         search_pitch: "Tìm kiếm sân"
+      password_reset:
+        submit: Tiếp tục
+      ession:
+        submit: Đăng nhập
+      rating:
+        create: "Tạo đánh giá"
+        update: "Cập nhật đánh giá"
       booking:
         submit: Đặt sân
   bookings:
@@ -125,6 +142,7 @@ vi:
     application:
       title: "Đặt lịch sân bóng đá nhanh chóng"
     header:
+      ratings: "Đánh giá"
       login: "Đăng nhập"
       register: "Đăng ký"
       lang_vi: "Việt Nam"
@@ -391,6 +409,22 @@ vi:
       rating:
         del: "Xóa"
         edit: "Sửa"
+  ratings:
+    index:
+      title: "Đánh giá của tôi"
+      subptich_name: "Tên sân nhỏ"
+      booking_start_time: "Thời gian đặt"
+      booking_end_time: "Thời gian kết thúc"
+      content: "Nội dung"
+      star: "Sao"
+      status: "Trạng thái"
+      option: "Tùy chọn"
+    rating:
+      unverifile: "Chưa xác thực"
+      verifiled_unpay: "Đã xác thực và chưa thanh toán"
+      verifiled_paid: "Đã thanh toán và đã trả"
+      del: "Xóa"
+      edit: "Sửa"
   msg:
     create_success: "Tạo thành công"
     create_danger: "Tạo thất bại"
