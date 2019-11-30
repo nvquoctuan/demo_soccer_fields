@@ -1,7 +1,6 @@
 class AdminController < ApplicationController
-  before_action :logged_in?
+  before_action :check_login
   before_action :check_user
-
   layout "admin/application"
 
   private
@@ -52,6 +51,13 @@ class AdminController < ApplicationController
 
     flash[:danger] = t "msg.danger_permission"
     redirect_to admin_pitches_path
+  end
+
+  def check_login
+    return if logged_in?
+
+    redirect_to root_path
+    flash[:danger] = t "msg.login"
   end
 
   def check_user

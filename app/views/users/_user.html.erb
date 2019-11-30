@@ -7,10 +7,16 @@
   <td><%= user.phone %></td>
   <td><%= user.activated %></td>
   <td>
-    <%= link_to t(".edit"), edit_admin_user_path(user), class: "btn btn-primary" %>
+    <% if current_user? user %>
+      <%= link_to t(".edit"), edit_admin_user_path(user), class: "btn btn-primary" %>
+    <% end %>
     <% if current_user.admin? && !current_user?(user) %>
+      <% role = [{id: 0, name: ".admin"}, {id: 1, name: ".owner"}, {id: 2, name: ".user"}] %>
+      <%= form_with url: admin_user_roles_path(user) do |f| %>
+      <%= select_tag "user[role]", options_for_select(role.collect{|u| [t(u[:name]), u[:id]]}, selected: User.roles[user.role]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle", data: {confirm: t("msg.confirm")} %>
+      <% end %>
       <%= link_to t(".delete"), user, class: "btn btn-danger", method: :delete,
-                                  data: {confirm: t(".you_sure?")} %>
+                                  data: {confirm: t("msg.confirm")} %>
     <% end %>
   </td>
 </tr>

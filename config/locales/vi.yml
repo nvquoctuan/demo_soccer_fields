@@ -1008,3 +1008,5 @@ vi:
     create_success: "Tạo thành công"
     create_danger: "Tạo thất bại"
     danger_permision: "Người dùng không có quyền"
+    confirm: "Bạn chắc chứ?"
+    login: "Hãy đăng nhập"

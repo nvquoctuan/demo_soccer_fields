@@ -1181,3 +1181,5 @@ en:
     create_success: "Create success"
     create_danger: "Destroy danger"
     danger_permision: "Danger permission"
+    confirm: "You sure?"
+    login: "Please login"
