@@ -62,25 +62,25 @@ pitches.each{|pitch|
   end
 }
 
-# subpitches = Subpitch.all
-# subpitches.each{|subpitch|
+subpitches = Subpitch.all
+subpitches.each{|subpitch|
 
-#   5.times do |x|
-#     user_id= Faker::Number.between(from: 1, to: 30)
-#     start_time = Faker::Time.between(from: "06:00:00", to: "18:00:00")
-#     end_time = start_time + 1.hour
-#     message= Faker::Lorem.sentence
-#     status= Faker::Number.between(from: 0, to: 2)
-#     total_price= 30000
+  5.times do |x|
+    user_id= Faker::Number.between(from: 1, to: 30)
+    start_time = Faker::Time.between(from: "06:00:00", to: "18:00:00")
+    end_time = start_time + 1.hour
+    message= Faker::Lorem.sentence
+    status= Faker::Number.between(from: 0, to: 2)
+    total_price= 30000
 
-#     subpitch.bookings.create!({
-#       user_id: user_id,
-#       start_time: start_time,
-#       end_time: end_time,
-#       message: message,
-#       status: status,
-#       total_price: total_price
-#     })
-#   end
+    subpitch.bookings.create!({
+      user_id: user_id,
+      start_time: start_time,
+      end_time: end_time,
+      message: message,
+      status: status,
+      total_price: total_price
+    })
+  end
 
-# }
+}

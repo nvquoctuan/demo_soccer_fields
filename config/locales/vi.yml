@@ -22,6 +22,29 @@ vi:
       not_found: Booking không tồn tại!
       error_process: Xảy ra lỗi khi xử lý!
       success_payment: Thanh toán thành công
+  helpers:
+    label:
+      user:
+        full_name: "Tên đầy đủ"
+        email: "Địa chỉ email"
+        password: "Mật khẩu"
+        password_confirmation: "Nhập lại mật khẩu"
+      session:
+        email: "Email"
+        password: "Mật khẩu"
+        danger: "Tạo tài khoản thất bại!"
+      pitch:
+        address: "Địa chỉ"
+        start_time: "Giờ bắt đầu"
+        end_time: "Giờ kết thúc"
+        city: "Tỉnh/Thành phố"
+        district: "Quận/Huyện"
+    submit:
+      user:
+        create: "Tạo tài khoản"
+        update: "Cập nhật"
+      pitch:
+        search_pitch: "Tìm kiếm sân"
   bookings:
     new:
       booking: Đặt sân bóng

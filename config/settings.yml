@@ -20,8 +20,6 @@ accept_file_upload: image/jpeg,image/gif,image/png
 size_avatar: [150, 150] # here is limit-top, limit-under is class
 per_page: 10
 avatar_default_path: app/assets/images/users/icon-user-default.png
-size:
-  s_12: 12
 name_in_users_max: 50
 email_in_users_max: 50
 password_min: 6
@@ -48,3 +46,5 @@ canceled: -1
 past_time: pasttime
 default_status_booking: 2
 paid_status_booking: 0
+size:
+  s_12: 12

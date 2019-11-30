@@ -6,13 +6,8 @@ class PasswordResetsController < ApplicationController
   def new; end
 
   def create
-<<<<<<< HEAD
     @user = User.find_by email: params[:password_reset][:email].downcase,
       provider: nil
-=======
-    @user = User.find_by(email: params[:password_reset][:email].downcase,
-      provider: nil)
->>>>>>> signup, login, logout, manager profile
     if @user&.activated
       send_password_reset_mail
     elsif @user
@@ -28,15 +23,9 @@ class PasswordResetsController < ApplicationController
 
   def update
     @user.assign_attributes user_params
-<<<<<<< HEAD
     if @user.save context: :reset_password
       log_in @user
       @user.update reset_digest: nil
-=======
-    if @user.save context: :update_info
-      log_in @user
-      @user.update_attribute :reset_digest, nil
->>>>>>> signup, login, logout, manager profile
       flash[:success] = t ".password_has_been_reset"
       redirect_to @user
     else

@@ -7,6 +7,7 @@ class Booking < ApplicationRecord
   validates :subpitch_id, presence: true
   validates :total_price, presence: true
   validate :check_status, on: :payment
+
   scope :inschedule, lambda{|start_time_schedule|
     where "date_format(start_time, \"%H%i\") >= ?",
           start_time_schedule.strftime("%H%M")

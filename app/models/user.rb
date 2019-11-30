@@ -10,6 +10,7 @@ class User < ApplicationRecord
   DATA_TYPE_RESETS_PASSWORD = %i(password password_confirmation).freeze
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
   VALID_PHONE_REGEX = /\A[\d]{10,}\z/i.freeze
+
   has_many :bookings, dependent: :destroy
   has_one_attached :avatar
   validates :full_name, presence: true,
