@@ -26,6 +26,8 @@ class User < ApplicationRecord
     {minimum: Settings.password_min}, allow_nil: true
   validates :password, presence: true, length:
     {minimum: Settings.password_min}, on: :reset_password
+  validates :wallet, numericality: {greater_than_or_equal_to: 0},
+    allow_nil: true
 
   class << self
     # Returns the hash digest of the given string.

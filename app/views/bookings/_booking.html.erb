@@ -8,11 +8,17 @@
     <% if booking.status == Settings.canceled %>
       <%= t ".canceled" %>
     <% elsif booking.start_time > Time.now %>
-      <%= link_to t(".cancel"), bookings_update_path(id: booking),
-        method: :patch, data: {confirm: t(".confirm")} %>
-    <% else %>
+      <% if booking.status == Settings.paid_status_booking %>
+        <%= link_to t(".cancel"), bookings_update_path(id: booking),
+          method: :patch, data: {confirm: t(".confirm")} %>
+      <% else %>
+        <%= link_to t(".payment"), new_booking_pay_path(booking) %>
+      <% end %>
+    <% elsif booking.status == Settings.paid_status_booking %>
       <%= link_to t(".review"), pitch_subpitch_path(booking.subpitch.pitch,
         booking.subpitch) %>
+    <% else %>
+      <%= t ".canceled" %>
     <% end %>
   </td>
 </tr>

@@ -25,3 +25,4 @@ avatar_default_path: app/assets/images/users/icon-user-default.png
 canceled: -1
 past_time: pasttime
 default_status_booking: 2
+paid_status_booking: 0

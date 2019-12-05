@@ -1,4 +1,27 @@
 vi:
+  pays:
+    new:
+      payment: Thanh toán
+      info: Thông tin đặt sân
+      billing_info: Thông tin thanh toán
+      pitch: Sân
+      subpitch: Sân con
+      address: Địa chỉ
+      start_time: Giờ bắt đầu
+      end_time: Giờ kết thúc
+      wallet: Số dư hiện tại
+      price_hour: Giá mỗi giờ
+      number_of_hours: Số giờ
+      total: Tổng
+      cancel: Trở lại
+      pay_now: Thanh toán
+      please_log_in: Vui lòng đăng nhập để tiếp tục
+      not_found: Booking không tồn tại!
+      paid: Đã thanh toán
+    update:
+      not_found: Booking không tồn tại!
+      error_process: Xảy ra lỗi khi xử lý!
+      success_payment: Thanh toán thành công
   bookings:
     new:
       booking: Đặt sân bóng
@@ -35,6 +58,7 @@ vi:
       confirm: Bạn chắc chắn?
       cancel: Hủy
       canceled: Đã hủy
+      payment: Chờ thanh toán
   layouts:
     application:
       title: "Đặt lịch sân bóng đá nhanh chóng"
@@ -213,6 +237,7 @@ vi:
         phone: Số điện thoại
         male: Nam
         female: Nữ
+        wallet: Số dư (Liên hệ quản trị viên để nộp tiền vào tài khoản)
       session:
         email: Email
         password: Mật khẩu
@@ -252,10 +277,13 @@ vi:
         password: Mật khẩu
         password_confirmation: Xác nhận mật khẩu
         phone: Số điện thoại
+        wallet: Số tiền
     errors:
       models:
         user:
           attributes:
+            wallet:
+              greater_than_or_equal_to: không đủ(hoặc phải lớn hơn hoặc bằng 0)
             name:
               blank: không thể để trắng
             phone:
@@ -263,3 +291,4 @@ vi:
   oversize_upload_picture: nên nhỏ hơn 5MB
   oversize_upload: Dung lượng tệp tải lên tối đa 5MB. Vui lòng chọn tệp nhỏ hơn
   not_allow: Bạn không được phép
+  cant_repay: Bạn đã thanh toán trước đó rồi!

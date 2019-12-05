@@ -1,0 +1,15 @@
+@import '_variables';
+
+.pays{
+  h1{
+    color: $white;
+  }
+  .tick{
+    font-size: 15px;
+  }
+  .paid-verified{
+    line-height: 27px;
+    font-size: 18px;
+    color: $blue;
+  }
+}

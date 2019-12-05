@@ -19,10 +19,12 @@ class BookingsController < ApplicationController
           @new_booking = current_user.bookings.build hash_params(p)
           @new_booking.save!
           flash[:success] = t ".success_booking"
-        rescue ActiveRecord::RecordInvalid
-          flash[:danger] = t ".error_insert_booking"
+        rescue ActiveRecord::RecordInvalid => e
+          flash[:danger] = e
+          raise ActiveRecord::Rollback
         rescue StandardError => e
           flash[:danger] = e
+          raise ActiveRecord::Rollback
         end
       end
     end
@@ -31,19 +33,26 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.start_time > Time.zone.now
-      @booking.attributes = {status: Settings.canceled}
-      if @booking.save
+      ActiveRecord::Base.transaction do
+        update_booking_and_user
         flash[:success] = t ".cancel_success"
-      else
+      rescue ActiveRecord::RecordInvalid
         flash[:danger] = t ".failed"
+        raise ActiveRecord::Rollback
+      rescue StandardError
+        flash[:danger] = t ".failed"
+        raise ActiveRecord::Rollback
       end
-    else
-      flash[:danger] = t ".failed"
     end
-    redirect_to request.referer
+    redirect_to request.referer || root_path
   end
 
   private
+
+  def update_booking_and_user
+    @booking.update! status: Settings.canceled
+    @user.update! wallet: (@user.wallet + @booking.total_price)
+  end
 
   def load_user_in_booking
     @booking = Booking.find_by id: params[:id]
@@ -51,7 +60,7 @@ class BookingsController < ApplicationController
       @user = @booking.user
     else
       flash[:danger] = t "not_found"
-      redirect_to request.referer
+      redirect_to request.referer || root_path
     end
   end
 
@@ -105,7 +114,7 @@ class BookingsController < ApplicationController
         @limit.hour,
       subpitch_id: @subpitch.id,
       status: Settings.default_status_booking,
-      total_price: @subpitch.price_per_hour
+      total_price: @subpitch.price_per_hour * @limit
     }
   end
 

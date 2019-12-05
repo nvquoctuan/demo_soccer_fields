@@ -1,4 +1,27 @@
 en:
+  pays:
+    new:
+      payment: Payment
+      info: Information booking
+      billing_info: Billing Information
+      pitch: Pitch
+      subpitch: Subpitch
+      address: Address
+      start_time: Start time
+      end_time: End time
+      wallet: Your wallet
+      price_hour: Price perhour
+      number_of_hours: Number of hours
+      total: Total
+      cancel: Go Back
+      pay_now: Pay now
+      please_log_in: Please login to continue!
+      not_found: Not found booking!
+      paid: Paid
+    update:
+      not_found: Not found booking!
+      error_process: An error occurred while processing!
+      success_payment: Payment success
   bookings:
     new:
       booking: Booking
@@ -35,6 +58,7 @@ en:
       confirm: Are you sure?
       cancel: Cancel
       canceled: Canceled
+      payment: Wait for pay
   subpitches:
     index:
       subpitches:
@@ -211,6 +235,7 @@ en:
         phone: Phone
         male: Male
         female: Female
+        wallet: Balance (Contact administrator to make a deposit)
       session:
         email: Email
         password: Password
@@ -253,13 +278,18 @@ en:
         email: Email
         password: Password
         password_confirmation: Password confirmation
+        wallet: Balance
     errors:
       models:
         user:
           attributes:
+            wallet:
+              greater_than_or_equal_to: not enough(or must be greater or
+                equal to 0)
             phone:
               invalid: include only numbers and must be 10 characters or more
   oversize_upload_picture: should be less than 5MB
   oversize_upload: Maximum file upload capacity of 5MB. Please select a
     smaller file
   not_allow: You are not allowed
+  cant_repay: You have already paid before!

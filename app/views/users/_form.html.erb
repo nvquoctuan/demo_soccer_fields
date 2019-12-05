@@ -8,6 +8,8 @@
   <% else %>
     <%= f.label :email %>
     <%= f.email_field :email, class: "form-control", disabled: true %>
+    <%= f.label :wallet %>
+    <%= f.number_field :wallet, class: "form-control", disabled: true %>
     <div class="form-check-inline">
       <%= f.label :gender, class: "form-check-label" do %>
         <%= f.label :male %>
