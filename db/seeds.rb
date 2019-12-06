@@ -1,23 +1,21 @@
 User.create(full_name: "Example User", phone: "0964991298", email: "user@soccer.vn",
   password: "admin123", password_confirmation: "admin123", role: 2, activated: true, activated_at: Time.zone.now)
-User.create!({full_name: "Example User", email: "admin@soccer.vn",
- password: "admin123", password_confirmation: "admin123", phone: "0964991298", role: 0,
-              activated: true, activated_at: Time.zone.now})
+User.create!({full_name: "Admin User", email: "admin@soccer.vn",
+ password: "admin123", password_confirmation: "admin123", phone: "0964991298", role: 0, wallet: 10000000, activated: true, activated_at: Time.zone.now})
 User.create!({full_name: "Owner User", email: "owner@soccer.vn",
  password: "admin123", password_confirmation: "admin123", phone: "0962991298", role: 1,
               activated: true, activated_at: Time.zone.now})
 
 99.times do |n|
   name  = Faker::Name.name
-  user_id = 1
   description = Faker::Lorem.sentence
   address = Faker::Address.street_address
   start_time = DateTime.strptime("05:30 +07:00", "%H:%M %z")
-  end_time = DateTime.strptime("23:59 +07:00", "%H:%M %z")
+  end_time = DateTime.strptime("23:30 +07:00", "%H:%M %z")
 
   Pitch.create!(
     name: name,
-    user_id: user_id,
+    user_id: 2,
     description: description,
     country: "vn",
     address: address,
@@ -39,7 +37,7 @@ end
 
   Pitch.create!(
     name: name,
-    user_id: 2,
+    user_id: 3,
     description: description,
     country: "vn",
     address: address,
@@ -79,7 +77,7 @@ subpitches = Subpitch.all
 subpitches.each{|subpitch|
 
   5.times do |x|
-    user_id= Faker::Number.between(from: 1, to: 30)
+    user_id= Faker::Number.between(from: 1, to: 3)
     start_time = Faker::Time.between(from: "06:00:00", to: "18:00:00")
     end_time = start_time + 1.hour
     message= Faker::Lorem.sentence
@@ -139,5 +137,5 @@ end
 end
 
 10.times do |n|
-  Booking.create!({user_id: 2, subpitch_id: 51, start_time: Time.now, end_time: Time.now, message: "hello moi nguoi", status: 0, total_price: 50000})
+  Booking.create!({user_id: 1, subpitch_id: 71, start_time: Time.now, end_time: Time.now, message: "hello moi nguoi", status: 0, total_price: 50000})
 end

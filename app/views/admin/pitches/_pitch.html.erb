@@ -13,11 +13,10 @@
   <td><%= pitch.end_time.strftime("%H:%M") if pitch.end_time %></td>
   <td><%= pitch.limit %></td>
   <td>
-    <%= link_to t(".edit"), edit_admin_pitch_path(pitch) %>
-    <%= link_to t(".revenue"), revenue_admin_pitch_path(pitch) %>
+    <%= link_to t(".edit"), edit_admin_pitch_path(pitch), class: "glyphicon glyphicon-edit" %>
+    <%= link_to t(".revenue"), revenue_admin_pitch_path(pitch), class: "glyphicon glyphicon-eye-open" %>
     <% current_user.admin? %>
-    <%= link_to t(".subpitch"), admin_pitch_subpitches_path(pitch) %>
+    <%= link_to t(".subpitch"), admin_pitch_subpitches_path(pitch), class: "glyphicon glyphicon-eye-open" %>
     <% current_user.admin? %>
-    <%= link_to t(".delete"), admin_pitch_path(pitch), method: :delete,
-                                  data: {confirm: t(".confirm")} %></td>
+    <%= link_to t(".delete"), admin_pitch_path(pitch), method: :delete, data: {confirm: t(".confirm")}, class: "glyphicon glyphicon-trash" %></td>
 </tr>

@@ -5,8 +5,7 @@
     <span class="c-header-toggler-icon"></span>
   <% end %>
   <%= link_to "#", class: "c-header-brand d-sm-none" do %>
-    <% link_image = (current_user.avatar.attached?) ? current_user.avatar : "admin/coreui-base.svg" %>
-    <%= image_tag link_image, width: Settings.size.s97, height: Settings.size.s46, class: "c-header-brand d-sm-none" %>
+    <%= image_tag "admin/coreui-base.svg", width: Settings.size.s97, height: Settings.size.s46, class: "c-header-brand d-sm-none" %>
   <% end %>
   <%= button_tag type: "button", "data-target" => "#sidebar",
       "data-class" => "c-sidebar-lg-show",
@@ -23,22 +22,20 @@
         <%= link_to t(".users"), admin_users_path, class: "c-header-nav-link" %>
       </li>
     <% end %>
-    <li class="c-header-nav-item px-3">
-      <%= link_to t(".settings"), edit_admin_user_path(current_user), class: "c-header-nav-link" %>
-    </li>
   </ul>
   <ul class="c-header-nav ml-auto mr-4">
     <li class="c-header-nav-item d-md-down-none mx-2">
-      <%= link_to t(".vn"), "?locale=vi" %>
+      <%= link_to t(".vn"), "?locale=vi" %> |
       <%= link_to t(".en"), "?locale=en" %>
     </li>
     <li class="c-header-nav-item dropdown">
+      <% link_image = (current_user.avatar.attached?) ? current_user.avatar : "admin/avatars/6.jpg" %>
       <%= link_to "#", class: "c-header-nav-link", "data-toggle" => "dropdown",
           role: "button", "aria-haspopup" => "true",
           "aria-expanded" => "false",
           onclick: "dropdown()" do %>
         <div class="c-avatar">
-          <%= image_tag "admin/avatars/6.jpg", class: "c-avatar-img" %>
+          <%= image_tag link_image, class: "c-avatar-img" %>
         </div>
       <% end %>
       <div class="dropdown-menu dropdown-menu-right pt-0">
@@ -52,11 +49,6 @@
           <svg class="c-icon mr-2">
             <use xlink:href="/asset/images/admin/sprites/free.svg#cil-settings"></use>
           </svg> <%= t ".settings" %>
-        <% end %>
-        <%= link_to "#", class: "dropdown-item" do %>
-          <svg class="c-icon mr-2">
-            <use xlink:href="/asset/images/admin/sprites/free.svg#cil-lock-locked"></use>
-          </svg> <%= t ".lock" %>
         <% end %>
         <div class="dropdown-divider"></div>
         <%= link_to logout_path, class: "dropdown-item" do %>

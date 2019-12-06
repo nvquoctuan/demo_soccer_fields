@@ -1,7 +1,7 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".title" %></h1>
 <div>
-  <%= form_with url: "#", local: true, class: "input-group", method: "get" do |f| %>
+  <%= form_with url: "#", local: true, class: "input-group left wid60", method: "get" do |f| %>
     <span class="input-group-prepend left">
       <%= f.button "", class: "btn btn-primary" do %>
         <svg class="c-icon" class="h14 w20">
@@ -13,13 +13,23 @@
         value: params[:search] %>
     <% order = [{id: t(".asc"), name: t(".asc_total")}, {id: t(".desc"), name: t(".desc_total")}] %>
     <%= select_tag "order", options_for_select(order.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:order]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle" %>
+    <% @year = Date.today if @year.blank? %>
+    <% @month = Date.today if @month.blank? %>
+    <%= select_year(@year, {field_name: "year", start_year: 2010, end_year: Time.current.year}, {class: "btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
+    <%= select_month(@month, {field_name: "month"}, {class: "btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
+  <% end %>
+  <% if @revenue_details.present? %>
+    <p class="right">
+      <span class = " glyphicon glyphicon-download"></span>
+      <%= link_to t("generate.csv"), revenue_admin_pitch_path(@pitch, format: "csv") %> |
+      <%= link_to t("generate.excel"), revenue_admin_pitch_path(@pitch, format: "xls") %>
+    </p>
   <% end %>
 </div>
 <hr class="mt-0">
 <table class = "table table-responsive-sm table-hover table-outline mb-0">
   <thead class="thead-light">
     <tr>
-      <th class = "text-center"><%= t ".id" %></th>
       <th class = "text-center"><%= t ".pitch_name" %></th>
       <th class = "text-center"><%= t ".subpitch_type" %></th>
       <th class = "text-center"><%= t ".name" %></th>
@@ -32,6 +42,11 @@
   </thead>
   <tbody>
     <%= render partial: "revenue_detail", collection: @revenue_details %>
+    <% if @revenue_details.present? %>
+      <tr>
+        <td colspan="14"><h4 class="right cl-blue"><%= t "generate.total",add: @sum %></h4></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 <hr class="mt-0">

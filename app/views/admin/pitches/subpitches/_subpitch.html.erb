@@ -9,6 +9,7 @@
   <td><%= image_tag subpitch.picture, style: "max-width: 200px; max-height: 200px;" if subpitch.picture.attached? %></td>
   <td><%= subpitch.size %></td>
   <td>
-    <%= link_to t(".edit"), edit_admin_pitch_subpitch_path(subpitch.pitch.id, subpitch) %>
-    <%= link_to t(".delete"), admin_pitch_subpitch_path(subpitch.pitch.id, subpitch), method: :delete, data: {confirm: t(".confirm")} %></td>
+    <%= link_to t(".rating"), admin_pitch_subpitch_rating_path(subpitch.pitch.id, subpitch, subpitch), class: "glyphicon glyphicon-eye-open" %> |
+    <%= link_to t(".edit"), edit_admin_pitch_subpitch_path(subpitch.pitch.id, subpitch), class: "glyphicon glyphicon-edit" %> |
+    <%= link_to t(".delete"), admin_pitch_subpitch_path(subpitch.pitch.id, subpitch), method: :delete, data: {confirm: t(".confirm")}, class: "glyphicon glyphicon-trash" %></td>
 </tr>

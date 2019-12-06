@@ -1,4 +1,118 @@
 en:
+  helpers:
+    label:
+      user:
+        full_name: "Full name"
+        email: "Email address"
+        password: "Password"
+        password_confirmation: "Confirmation password"
+        name: Name
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        phone: Phone
+        male: Male
+        female: Female
+        full_name: "Full name"
+        email: "Email address"
+        password: "Password"
+        password_confirmation: "Confirmation password"
+        name: Name
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        phone: Phone
+        male: Male
+        female: Female
+      session:
+        email: "Email"
+        password: "Password"
+        danger: "Account creation failed!"
+      rating:
+        content: "Content"
+      subpitch_type:
+        name: "Name"
+        Description: "Desciption"
+      pitch:
+        address: "ADDRESS"
+        name: "Name"
+        description: "Description"
+        country: "Country"
+        city: "City"
+        district: "District"
+        address: "Address"
+        picture: "Picture"
+        start_time: "Start_time"
+        end_time: "End_time"
+        limit: "Limit"
+      session:
+        email: "Email"
+        password: "Password"
+        danger: "Account creation failed!"
+      subpitch:
+        name: "Name"
+        desription: "Description"
+        status: "Status"
+        pitch: "Pitch"
+        pitch_id: "Pitch"
+        price_per_hour: "Price per hour"
+        currency: "Currency"
+        picture: "Picture"
+        size: "Size"
+        subpitch_type: "Subpitch type"
+        subpitch_type_id: "Subpitch type"
+      transfer:
+        content: "Content"
+        money: "Money"
+        receiver: "Receiver"
+    submit:
+      user:
+        create: "Create account"
+        update: "Update"
+      subpitch:
+        create: "Create Subpitch"
+        update: "Update Subpitch"
+        create: Create
+        update: Update
+      session:
+        submit: Login
+        email: Email
+        password: Password
+      password_reset:
+        submit: Continue
+      pitch:
+        search_pitch: "Search pitch"
+      session:
+        submit: Login
+      rating:
+        create: "Create rating"
+        update: "Update rating"
+      subpitch_type:
+        create: "Create Subpitch Type"
+        update: "Update Subpitch Type"
+      transfer:
+        create: "Transfer"
+  activerecord:
+    attributes:
+      user:
+        full_name: Name
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        wallet: Balance
+    errors:
+      models:
+        user:
+          attributes:
+            phone:
+              invalid: include only numbers and must be 10 characters or more
+            wallet:
+              greater_than_or_equal_to: not enough(or must be greater or
+                equal to 0)
+        pitch:
+          attribute:
+            end_time:
+              after: "bigger start time"
   pays:
     new:
       payment: Payment
@@ -22,7 +136,283 @@ en:
       not_found: Not found booking!
       error_process: An error occurred while processing!
       success_payment: Payment success
+  users:
+    id_unexist: ID not exist!
+    please_log_in: You has not been logged in
+    not_allow: you are not allowed
+    new:
+      sign_up: Sign up
+      title: Quick schedule of football field
+    create:
+      please_check_mail: Please check your email to activate your account.
+    update:
+      profile_updated: Profile has been updated
+    edit:
+      edit_user: Edit user profile
+      update_your_profile: Update user profile
+    show:
+      name: Name
+      gender: Gender
+      email: Email
+      phone: Phone
+      your_profile: Your profile
+      male: Male
+      female: Female
+      title: Quick schedule of football field
+    index:
+      title: "List users"
+      id: "#"
+      avatar: "Avatar"
+      email: "Email"
+      full_name: "Full name"
+      gender: "Gender"
+      phone: "Phone"
+      activated: "Activated"
+      option: "Option"
+      search: "Search"
+  sessions:
+    new:
+      sign_up: "Sign up"
+      log_in: "Log in"
+      new_user: New user
+      remember_text: Rememmber me
+      forgot_password: Forgot password?
+    create:
+      invalid_credentials: Invalid credentials!
+      check_your_email: Your account has not been activated. Please check your
+        email to activate it!
+  pitches:
+    search_soccer:
+      address: "Address: "
+    view_soccer:
+      address: "Address: "
+    index:
+      address: "Address: "
+      notification: "There are no valid football fields!"
+  shared:
+    error_messages:
+      count:
+        one: "1 error"
+        other: "%{count} errors"
+  layouts:
+    admin:
+      sidebar:
+        home: "Home"
+        new: "NEW"
+        manage: "Manage"
+        pitch: "Pitch"
+        review: "Review"
+        subpitch_type: "Subpitch type"
+        booking: "Booking"
+        link1: "Link1"
+        link2: "Link2"
+        pitch: "Pitch"
+        review: "Review"
+        subpitch_type: "Subpitch type"
+        user_rating: "User rating"
+        transfer: "Transfer"
+      header:
+        admin: "Admin"
+        home: "Home"
+        users: "Users"
+        settings: "Settings"
+        vn: "Vietnamese"
+        en: "English"
+        profile: "Profile"
+        lock: "Lock Account"
+        logout: "Logout"
+        hello: "Hello: "
+        english: "English"
+        profile: "Profile"
+        lock: "Lock Account"
+        logout: "Logout"
+      footer:
+        link: "CoreUI"
+        content1_html: "&copy; 2019 creativeLabs."
+        content2_html: "Powered by&nbsp;"
+    application:
+      title: "Quick schedule of football field"
+    header:
+      ratings: "Ratings"
+      login: "Login"
+      register: "Register"
+      lang_vi: "Vietnamese"
+      lang_en: "English"
+      home: "Home"
+      about: "About"
+      blog: "Blog"
+      contact: "Contact"
+      language: "Language"
+      connect_facebook: Connect With Facebook
+      log_out: Logout
+      setting: Setting
+      language: "Language"
+      logout: "Logout"
+      profile: "Profile"
+      setting: "Setting"
+      manage: "Manage"
+    right_sidebar:
+      pitch: "Pitch"
+      search_pitch: "Search pitch"
+      connect_facebook: Connect With Facebook
+      log_out: Logout
+      setting: Setting
+    left_sidebar:
+      passion: "Passion for football"
+      get_started: "Get Started"
+      content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
+      connect_facebook: Connect With Facebook
+      log_out: Logout
+      settings: Settings
+    right:
+      pitch: "Pitch"
+      search_pitch: "Search pitch"
+    left:
+      language: "Language"
+    right_sidebar:
+      pitch: "Pitch"
+      search_pitch: "Search pitch"
+    left_sidebar:
+      passion: "Passion for football"
+      get_started: "Get Started"
+      content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
+      book_soccer: "Book soccer field"
+      connect_facebook: Connect With Facebook
+      log_out: Logout
+      setting: Setting
+    footer:
+      about: "About agency"
+      content1: "Football is a team sport played between two teams, each team has 11 players on the field. This game uses a ball and is usually played on a rectangular grass field with two goal frames on either end."
+      news: "News"
+      content2: "Millions of people come to the stadium to watch their favorite team matches, and millions more to watch via television if they can't get to the stadium"
+  static_pages:
+    home:
+      home: "Home"
+      soccer_update: "Soccer field is new updated"
+      address: "Address: "
+      pitch: "Pitch"
+      soccer_update: "Soccer field is new updated"
+      rss_feed: "rss feed"
+      name: "Soccer"
+      description: "The yard has a large, 3 mini yards, each yard for 5-7 people."
+    about:
+      about: "About"
+      text_html: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
+    blog:
+      blog: "Bloger"
+      text1: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
+    contact:
+      contact: "Contact"
+      text1: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
+  oversize_upload_picture: should be less than 5MB
+  oversize_upload: Maximum file upload capacity of 5MB. Please select a
+    smaller file
+  not_allow: You are not allowed
+  user_mailer:
+    account_activation_subject: Activate account
+    account_activation:
+      h1: Book Soccer
+      greeting: Hi
+      content_mail: "Welcome to Soccer Book! Click on the link below to
+        activate your account: "
+      activate: Activate
+    password_reset_subject: Set a password
+    password_reset:
+      h1: Set a password
+      p1_password_reset: "To reset your password click on the link below: "
+      reset_password: Reset a password
+      p2_password_reset: This link expires in 2 hours.
+      p3_password_reset: If you did not request a password reset,
+        please disregard this email, your password will not change.
+  oversize_upload_picture: should be less than 5MB
+  oversize_upload: Maximum file upload capacity of 5MB. Please select a
+    smaller file
+  not_allow: You are not allowed
+  cant_repay: You have already paid before!
+  subpitches:
+    danger_load: "Load failure"
+    danger_load_subpitch: "Load failure Subpitch"
+    show:
+      name: "Name: %{add}"
+      price_per_hour: "Price per hour: %{add}"
+      currency: "Currency: %{add}"
+      size: "Size: %{add}"
+      subpitch_type: "Subpitch type: %{add}"
+      desc: "Description: %{add}"
+      content: "Comment here"
+      comment: "Comment"
+    subpitch:
+      name: "Name: %{add}"
+      price_per_hour: "Price per hour: %{add}"
+      currency: "Currency: %{add}"
+      size: "Size: %{add}"
+      subpitch_type: "Subpitch type: %{add}"
+      desc: "Description: %{add}"
+      show_schedule: Show schedule
+    likes:
+      count:
+        like: "Like(%{add})"
+  account_activations:
+    edit:
+      account_activated: Account activated!
+      invalid_activation_link: Invalid activation link!
+  password_resets:
+    create:
+      notice_sent_reset_password_instructions: An email has been sent to your
+        email address, containing instructions for resetting your password
+      email_address_not_found: Email address is not registered!
+      cant_reset_password: This account has not been activated so it cannot be
+        reset!
+    update:
+      cant_be_empty: Cannot be empty!
+      password_has_been_reset: Password has been reset.
+    edit:
+      password_reset_has_expired: Password reset time has expired.
+      reset_password: Reset password
+      email_address_not_found: Email not found
+    new:
+      forgot_password: Forgot password
+    email_address_not_found: Email address is not registered!
+  oversize_upload_picture: should be less than 5MB
+  oversize_upload: Maximum file upload capacity of 5MB. Please select a
+    smaller file
+  not_allow: You are not allowed
   bookings:
+    index:
+      title: "Booking List pitch "
+      user_name: "User name"
+      subpitch_name: "Subpitch"
+      start_time: "Start time"
+      end_time: "End time"
+      message: "Message"
+      status: "Status"
+      total_price: "Total price"
+      option: "Option"
+      search: "Search"
+    ratings:
+      index:
+        title: "Rating for booking"
+        pitch_name_html: "Pitch name: <strong>%{add}</strong>"
+        name_html: "Subpitch Name: <strong>%{add}</strong>"
+        price_per_hour_html: "Price per hour: <strong>%{add}</strong>"
+        currency_html: "Currency: <strong>%{add}</strong>"
+        desc_html: "Description: <strong>%{add}</strong>"
+        subpitch_type_html: "Subpitch typ: <strong>%{add}</strong>"
+        size_html: "Size: <strong>%{add}</strong>"
+        price_per_hour: "Price per hour: %{add}"
+        total_price_html: "Total price: %{add}"
+        name_pitch: "Name pitch: %{add}"
+        name_subpitch: "Name subpitch: %{add}"
+        currency: "Currency: %{add}"
+        subpitch_type: "Subpitch type: %{add}"
+      show_rating:
+        del: "Delete"
+        edit: "Edit"
+        content: "Content"
+        star: "star"
+      rating:
+        del: "Delete"
+        edit: "Edit"
     new:
       booking: Booking
       schedule: Schedule for this pitch
@@ -58,825 +448,8 @@ en:
       confirm: Are you sure?
       cancel: Cancel
       canceled: Canceled
-      payment: Wait for pay
-  subpitches:
-    index:
-      subpitches:
-        danger_load: "Load failure"
-        danger_load_subpitch: "Load failure Subpitch"
-  activerecord:
-    attributes:
-      user:
-        full_name: Name
-        email: Email
-        password: Password
-        password_confirmation: Password confirmation
-    errors:
-      models:
-        user:
-          attributes:
-            phone:
-              invalid: include only numbers and must be 10 characters or more
-        pitch:
-          attribute:
-            end_time:
-              after: "bigger start time"
-    attributes:
-      user:
-        full_name: Name
-        email: Email
-        password: Password
-        password_confirmation: Password confirmation
-    errors:
-      models:
-        user:
-          attributes:
-            phone:
-              invalid: include only numbers and must be 10 characters or more
-  helpers:
-    label:
-      user:
-        full_name: "Full name"
-        email: "Email address"
-        password: "Password"
-        password_confirmation: "Confirmation password"
-        name: Name
-        email: Email
-        password: Password
-        password_confirmation: Password confirmation
-        phone: Phone
-        male: Male
-        female: Female
-      session:
-        email: "Email"
-        password: "Password"
-        danger: "Account creation failed!"
-      pitch:
-        address: "ADDRESS"
-        start_time: "Start time"
-        end_time: "End time"
-        city: "City"
-        district: "District"
-      rating:
-        content: "Content"
-      subpitch_type:
-        name: "Name"
-        Description: "Desciption"
-      pitch:
-        name: "Name"
-        description: "Description"
-        country: "Country"
-        city: "City"
-        district: "District"
-        address: "Address"
-        picture: "Picture"
-        start_time: "Start_time"
-        end_time: "End_time"
-        limit: "Limit"
-      user:
-        full_name: "Full name"
-        email: "Email address"
-        password: "Password"
-        password_confirmation: "Confirmation password"
-        name: Name
-        email: Email
-        password: Password
-        password_confirmation: Password confirmation
-        phone: Phone
-        male: Male
-        female: Female
-      session:
-        email: "Email"
-        password: "Password"
-        danger: "Account creation failed!"
-      pitch:
-        name: "Name"
-        description: "Description"
-        country: "Country"
-        city: "City"
-        district: "District"
-        address: "Address"
-        picture: "Picture"
-        start_time: "Start_time"
-        end_time: "End_time"
-        limit: "Limit"
-      subpitch:
-        name: "Name"
-        desription: "Description"
-        status: "Status"
-        pitch: "Pitch"
-        pitch_id: "Pitch"
-        price_per_hour: "Price per hour"
-        currency: "Currency"
-        picture: "Picture"
-        size: "Size"
-        subpitch_type: "Subpitch type"
-        subpitch_type_id: "Subpitch type"
-    submit:
-      user:
-        create: "Create account"
-        update: "Update"
-      subpitch:
-        create: "Create Subpitch"
-        update: "Update Subpitch"
-        create: Create
-        update: Update
-      session:
-        submit: Login
-        email: Email
-        password: Password
-      password_reset:
-        submit: Continue
-      pitch:
-        search_pitch: "Search pitch"
-      session:
-        submit: Login
-      rating:
-        create: "Create rating"
-        update: "Update rating"
-      subpitch_type:
-        create: "Create Subpitch Type"
-        update: "Update Subpitch Type"
-  bookings:
-    new:
-      booking: Booking
-      schedule: Schedule for this pitch
-      not_found_subpitch_id: Subpitch is not found!
-      choose_suitable: Let choose suitable time
-      history_booking: History booking
-      pitch: Pitch
-      subpitch: Subpitch
-      address: Address
-      start: Start
-      end: End
-      to: to
-    create:
-      please_log_in: Please log in to continue!
-      not_choose_or_invalid_time: The Period is not valid.
-        Please select at least one period!
-      time_has_passed: This period has passed!
-      time off schedule: Period off schedule!
-      time has been taken: Period has been taken!
-      error_insert_booking: An error occurred while processing!
-      success_booking: You book pitch successfully
-      not_found_subpitch_id: Subpitch is not found!
-      wrong_cycle_time: wrong cycle time!
-    update:
-      not_allow: You are not allowed!
-      please_log_in: Please log in to continue!
-      failed: Can't cancel!
-      not_found: Booking not found!
-    booking:
-      review: Review
-      confirm: Are you sure?
-      cancel: Cancel
-      canceled: Canceled
-  subpitches:
-    index:
-      subpitches:
-        danger_load: "Load failure"
-        danger_load_subpitch: "Load failure Subpitch"
-    show:
-      name: "Name: %{add}"
-      price_per_hour: "Price per hour: %{add}"
-      currency: "Currency: %{add}"
-      size: "Size: %{add}"
-      subpitch_type: "Subpitch type: %{add}"
-      desc: "Description: %{add}"
-      content: "Comment here"
-      comment: "Comment"
-    subpitch:
-      name: "Name: %{add}"
-      price_per_hour: "Price per hour: %{add}"
-      currency: "Currency: %{add}"
-      size: "Size: %{add}"
-      subpitch_type: "Subpitch type: %{add}"
-      desc: "Description: %{add}"
-      show_schedule: Show schedule
-  layouts:
-    admin:
-      sidebar:
-        home: "Home"
-        new: "NEW"
-        manage: "Manage"
-        link1: "Link1"
-        link2: "Link2"
-        pitch: "Pitch"
-        revenue: "Renvenue"
-        booking: "Booking"
-        subpitch_type: "Subpitch"
-      header:
-        admin: "Admin"
-        home: "Home"
-        users: "Users"
-        settings: "Settings"
-        vn: "Vietnamese"
-        en: "English"
-        profile: "Profile"
-        lock: "Lock Account"
-        logout: "Logout"
-      footer:
-        link: "CoreUI"
-        content1_html: "&copy; 2019 creativeLabs."
-        content2_html: "Powered by&nbsp;"
-    application:
-      title: "Quick schedule of football field"
-    header:
-      ratings: "Ratings"
-      login: "Login"
-      register: "Register"
-      lang_vi: "Vietnamese"
-      lang_en: "English"
-      home: "Home"
-      about: "About"
-      blog: "Blog"
-      contact: "Contact"
-      connect_facebook: Connect With Facebook
-      log_out: Logout
-      setting: Setting
-      language: "Language"
-    right_sidebar:
-      connect_facebook: Connect With Facebook
-      log_out: Logout
-      setting: Setting
-    right:
-      pitch: "Pitch"
-      search_pitch: "Search pitch"
-    left_sidebar:
-      passion: "Passion for football"
-      book_soccer: "Book soccer field"
-      get_started: "Get Started"
-      content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
-      connect_facebook: Connect With Facebook
-      log_out: Logout
-      setting: Setting
-    right:
-      pitch: "Pitch"
-      search_pitch: "Search pitch"
-    left:
-      language: "Language"
-    right_sidebar:
-      pitch: "Pitch"
-      search_pitch: "Search pitch"
-    left_sidebar:
-      get_started: "Get Started"
-      passion: "Passion for football"
-      book_soccer: "Book soccer field"
-      content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
-      get_started: "Get Started"
-    footer:
-      about: "About agency"
-      content1: "Football is a team sport played between two teams, each team has 11 players on the field. This game uses a ball and is usually played on a rectangular grass field with two goal frames on either end."
-      news: "News"
-      content2: "Millions of people come to the stadium to watch their favorite team matches, and millions more to watch via television if they can't get to the stadium"
-  static_pages:
-    home:
-      address: "Address: "
-      pitch: "Pitch"
-      soccer_update: "Soccer field is new updated"
-      rss_feed: "rss feed"
-      name: "Soccer"
-      description: "The yard has a large, 3 mini yards, each yard for 5-7 people."
-      home: Home
-    about:
-      about: "About"
-      text_html: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
-    blog:
-      blog: "Bloger"
-      text1: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
-    contact:
-      contact: "Contact"
-      text1: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
-    home:
-      home: Home
-      soccer_update: Soccer field is new updated
-      address: "Address: "
-  users:
-    id_unexist: ID not exist!
-    please_log_in: You has not been logged in
-    not_allow: you are not allowed
-    new:
-      sign_up: Sign up
-      title: Quick schedule of football field
-    create:
-      please_check_mail: Please check your email to activate your account.
-    update:
-      profile_updated: Profile has been updated
-    edit:
-      edit_user: Edit user profile
-      update_your_profile: Update user profile
-    show:
-      name: Name
-      gender: Gender
-      email: Email
-      phone: Phone
-      your_profile: Your profile
-      male: Male
-      female: Female
-      title: Quick schedule of football field
-  account_activations:
-    edit:
-      account_activated: Account activated!
-      invalid_activation_link: Invalid activation link!
-  shared:
-    error_messages:
-      error:
-        one: "Form has %{count} error"
-        other: "Form has %{count} errors"
-  sessions:
-    new:
-      sign_up: "Sign up"
-      log_in: "Log in"
-  user:
-    success: "Success!"
-    danger: "Failed!"
-  pitches:
-    search_soccer:
-      address: "Address: "
-    view_soccer:
-      address: "Address: "
-    index:
-      address: "Address: "
-      notification: "There are no valid football fields!"
-  shared:
-    error_messages:
-      count:
-        one: "1 error"
-        other: "%{count} errors"
-  layouts:
-    admin:
-      sidebar:
-        home: "Home"
-        new: "NEW"
-        manage: "Manage"
-        pitch: "Pitch"
-        review: "Review"
-        subpitch_type: "Subpitch type"
-        booking: "Booking"
-        link1: "Link1"
-        link2: "Link2"
-        pitch: "Pitch"
-        review: "Review"
-        subpitch_type: "Subpitch type"
-      header:
-        admin: "Admin"
-        home: "Home"
-        users: "Users"
-        settings: "Settings"
-        vn: "Vietnamese"
-        en: "English"
-        profile: "Profile"
-        lock: "Lock Account"
-        logout: "Logout"
-        hello: "Hello: "
-        english: "English"
-      footer:
-        link: "CoreUI"
-        content1_html: "&copy; 2019 creativeLabs."
-        content2_html: "Powered by&nbsp;"
-    application:
-      title: "Quick schedule of football field"
-    header:
-      login: "Login"
-      register: "Register"
-      lang_vi: "Vietnamese"
-      lang_en: "English"
-      home: "Home"
-      about: "About"
-      blog: "Blog"
-      contact: "Contact"
-      language: "Language"
-    right_sidebar:
-      pitch: "Pitch"
-      search_pitch: "Search pitch"
-    left_sidebar:
-      passion: "Passion for football"
-      get_started: "Get Started"
-      content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
-      connect_facebook: Connect With Facebook
-      log_out: Logout
-      settings: Settings
-    right:
-      pitch: "Pitch"
-      search_pitch: "Search pitch"
-    left:
-      language: "Language"
-    right_sidebar:
-      pitch: "Pitch"
-      search_pitch: "Search pitch"
-    left_sidebar:
-      passion: "Passion for football"
-      get_started: "Get Started"
-      content1: "If you do not really know the right pitch for you and your teammates, please come to us!"
-    footer:
-      about: "About agency"
-      content1: "Football is a team sport played between two teams, each team has 11 players on the field. This game uses a ball and is usually played on a rectangular grass field with two goal frames on either end."
-      news: "News"
-      content2: "Millions of people come to the stadium to watch their favorite team matches, and millions more to watch via television if they can't get to the stadium"
-  users:
-    show:
-      title: "Quick schedule of football field"
-  static_pages:
-    home:
-      home: "Home"
-      soccer_update: "Soccer field is new updated"
-      address: "Address: "
-      pitch: "Pitch"
-      soccer_update: "Soccer field is new updated"
-      rss_feed: "rss feed"
-      name: "Soccer"
-      description: "The yard has a large, 3 mini yards, each yard for 5-7 people."
-    about:
-      about: "About"
-      text_html: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
-    blog:
-      blog: "Bloger"
-      text1: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
-    contact:
-      contact: "Contact"
-      text1: "Football or Soccer (English-English: Football, American-English: Soccer) is a team sport played between two teams."
-  users:
-    show:
-      title: "Quick schedule of football field"
-    new:
-      update: "Update"
-      text1: "Sign in"
-    create:
-     welcome_user: "Register account successfly!"
-    home:
-      home: Home
-    id_unexist: ID not exist!
-    please_log_in: You has not been logged in
-    not_allow: you are not allowed
-    new:
-      sign_up: Sign up
-      title: Quick schedule of football field
-    create:
-      please_check_mail: Please check your email to activate your account.
-    update:
-      profile_updated: Profile has been updated
-    edit:
-      edit_user: Edit user profile
-      update_your_profile: Update user profile
-    show:
-      name: Name
-      gender: Gender
-      email: Email
-      phone: Phone
-      your_profile: Your profile
-      male: Male
-      female: Femalel
-      title: Quick schedule of football field
-    index:
-      title: "List users"
-      id: "#"
-      avatar: "Avatar"
-      email: "Email"
-      full_name: "Full name"
-      gender: "Gender"
-      phone: "Phone"
-      activated: "Activated"
-      option: "Option"
-      search: "Search"
-    user:
-      edit: "Edit"
-      delete: "Delete"
-  account_activations:
-    edit:
-      account_activated: Account activated!
-      invalid_activation_link: Invalid activation link!
-  shared:
-    error_messages:
-      error:
-        one: "Form has %{count} error"
-        other: "Form has %{count} errors"
-  sessions:
-    new:
-      sign_up: Sign up
-      log_in: Log in
-      new_user: New user
-      remember_text: Rememmber me
-      forgot_password: Forgot password?
-    create:
-      invalid_credentials: Invalid credentials!
-      check_your_email: Your account has not been activated. Please check your
-        email to activate it!
-  password_resets:
-    create:
-      notice_sent_reset_password_instructions: An email has been sent to your
-        email address, containing instructions for resetting your password
-      email_address_not_found: Email address is not registered!
-      cant_reset_password: This account has not been activated so it cannot be
-        reset!
-    update:
-      cant_be_empty: Cannot be empty!
-      password_has_been_reset: Password has been reset.
-    edit:
-      password_reset_has_expired: Password reset time has expired.
-      reset_password: Reset password
-      email_address_not_found: Email not found
-    new:
-      forgot_password: Forgot password
-      log_in: Login
-    email_address_not_found: Email address is not registered!
-  user_mailer:
-    account_activation_subject: Activate account
-    account_activation:
-      h1: Book Soccer
-      greeting: Hi
-      content_mail: "Welcome to Soccer Book! Click on the link below to
-        activate your account: "
-      activate: Activate
-    password_reset_subject: Set a password
-    password_reset:
-      h1: Set a password
-      p1_password_reset: "To reset your password click on the link below: "
-      reset_password: Reset a password
-      p2_password_reset: This link expires in 2 hours.
-      p3_password_reset: If you did not request a password reset,
-        please disregard this email, your password will not change.
-  oversize_upload_picture: should be less than 5MB
-  oversize_upload: Maximum file upload capacity of 5MB. Please select a
-    smaller file
-  not_allow: You are not allowed
-  msg:
-    destroy_success: "Destroy success"
-    destroy_danger: "Destroy danger"
-    create_success: "Create success"
-    create_danger: "Destroy danger"
-  user:
-    success: "Success!"
-    danger: "Failed!"
-  pitches:
-    search_soccer:
-      address: "Address: "
-    index:
-      address: "Address: "
-      notification: "There are no valid football fields!"
-  generate:
-    page_title: "soccer fields"
-  shared:
-    error_messages:
-      error:
-        one: "Form has %{count} error"
-        other: "Form has %{count} errors"
-  sessions:
-    new:
-      sign_up: Sign up
-      log_in: Log in
-      new_user: "New user? "
-      remember_text: Rememmber me
-      forgot_password: Forgot password?
-    create:
-      invalid_credentials: Invalid credentials!
-      check_your_email: Your account has not been activated. Please check your
-        email to activate it!
-  password_resets:
-    create:
-      notice_sent_reset_password_instructions: An email has been sent to your
-        email address, containing instructions for resetting your password
-      email_address_not_found: Email address is not registered!
-      cant_reset_password: This account has not been activated so it cannot be
-        reset!
-    update:
-      cant_be_empty: Cannot be empty!
-      password_has_been_reset: Password has been reset.
-    edit:
-      password_reset_has_expired: Password reset time has expired.
-      reset_password: Reset password
-      email_address_not_found: Email not found
-    new:
-      forgot_password: Forgot password
-    email_address_not_found: Email address is not registered!
-  helpers:
-    label:
-      user:
-        email: Email
-        password: Password
-        password_confirmation: Password confirmation
-        phone: Phone
-        male: Male
-        female: Female
-        wallet: Balance (Contact administrator to make a deposit)
-      session:
-        email: Email
-        password: Password
-      pitch:
-        address: ADDRESS
-        start_time: Start time
-        end_time: End time
-        city: City
-        district: District
-    submit:
-      pitch:
-        search_pitch: Search pitch
-      user:
-        create: Create
-        update: Update
-      session:
-        submit: Login
-      password_reset:
-        submit: Continue
-  user_mailer:
-    account_activation_subject: Activate account
-    account_activation:
-      h1: Book Soccer
-      greeting: Hi
-      content_mail: "Welcome to Soccer Book! Click on the link below to
-        activate your account: "
-      activate: Activate
-    password_reset_subject: Set a password
-    password_reset:
-      h1: Set a password
-      p1_password_reset: "To reset your password click on the link below: "
-      reset_password: Reset a password
-      p2_password_reset: This link expires in 2 hours.
-      p3_password_reset: If you did not request a password reset,
-        please disregard this email, your password will not change.
-  activerecord:
-    attributes:
-      user:
-        full_name: Name
-        email: Email
-        password: Password
-        password_confirmation: Password confirmation
-        wallet: Balance
-    errors:
-      models:
-        user:
-          attributes:
-            wallet:
-              greater_than_or_equal_to: not enough(or must be greater or
-                equal to 0)
-            phone:
-              invalid: include only numbers and must be 10 characters or more
-  oversize_upload_picture: should be less than 5MB
-  oversize_upload: Maximum file upload capacity of 5MB. Please select a
-    smaller file
-  not_allow: You are not allowed
-  cant_repay: You have already paid before!
-  subpitches:
-    danger_load: "Load failure"
-    danger_load_subpitch: "Load failure Subpitch"
-    show:
-      name: "Name: %{add}"
-      price_per_hour: "Price per hour: %{add}"
-      currency: "Currency: %{add}"
-      size: "Size: %{add}"
-      subpitch_type: "Subpitch type: %{add}"
-      desc: "Description: %{add}"
-      content: "Comment here"
-      comment: "Comment"
-    subpitch:
-      name: "Name: %{add}"
-      price_per_hour: "Price per hour: %{add}"
-      currency: "Currency: %{add}"
-      size: "Size: %{add}"
-      subpitch_type: "Subpitch type: %{add}"
-      desc: "Description: %{add}"
-  users:
-    show:
-      title: "Quick schedule of football field"
-    show:
-      title: "Quick schedule of football field"
-    new:
-      update: "Update"
-      text1: "Sign in"
-    create:
-     welcome_user: "Register account successfly!"
-    id_unexist: ID not exist!
-    please_log_in: You has not been logged in
-    not_allow: you are not allowed
-    new:
-      sign_up: Sign up
-      title: Quick schedule of football field
-    create:
-      please_check_mail: Please check your email to activate your account.
-    update:
-      profile_updated: Profile has been updated
-    edit:
-      edit_user: Edit user profile
-      update_your_profile: Update user profile
-    show:
-      name: Name
-      gender: Gender
-      email: Email
-      phone: Phone
-      your_profile: Your profile
-      male: Male
-      female: Femalel
-      title: Quick schedule of football field
-  account_activations:
-    edit:
-      account_activated: Account activated!
-      invalid_activation_link: Invalid activation link!
-  shared:
-    error_messages:
-      error:
-        one: "Form has %{count} error"
-        other: "Form has %{count} errors"
-  sessions:
-    new:
-      sign_up: Sign up
-      log_in: Log in
-      new_user: New user
-      remember_text: Rememmber me
-      forgot_password: Forgot password?
-    create:
-      invalid_credentials: Invalid credentials!
-      check_your_email: Your account has not been activated. Please check your
-        email to activate it!
-  password_resets:
-    create:
-      notice_sent_reset_password_instructions: An email has been sent to your
-        email address, containing instructions for resetting your password
-      email_address_not_found: Email address is not registered!
-      cant_reset_password: This account has not been activated so it cannot be
-        reset!
-    update:
-      cant_be_empty: Cannot be empty!
-      password_has_been_reset: Password has been reset.
-    edit:
-      password_reset_has_expired: Password reset time has expired.
-      reset_password: Reset password
-      email_address_not_found: Email not found
-    new:
-      forgot_password: Forgot password
-    email_address_not_found: Email address is not registered!
-  user_mailer:
-    account_activation_subject: Activate account
-    account_activation:
-      h1: Book Soccer
-      greeting: Hi
-      content_mail: "Welcome to Soccer Book! Click on the link below to
-        activate your account: "
-      activate: Activate
-    password_reset_subject: Set a password
-    password_reset:
-      h1: Set a password
-      p1_password_reset: "To reset your password click on the link below: "
-      reset_password: Reset a password
-      p2_password_reset: This link expires in 2 hours.
-      p3_password_reset: If you did not request a password reset,
-        please disregard this email, your password will not change.
-  activerecord:
-    attributes:
-      user:
-        full_name: Name
-        email: Email
-        password: Password
-        password_confirmation: Password confirmation
-    errors:
-      models:
-        user:
-          attributes:
-            phone:
-              invalid: include only numbers and must be 10 characters or more
-  oversize_upload_picture: should be less than 5MB
-  oversize_upload: Maximum file upload capacity of 5MB. Please select a
-    smaller file
-  not_allow: You are not allowed
-  bookings:
-    index:
-      title: "Booking List pitch "
-      user_name: "User name"
-      subpitch_name: "Subpitch"
-      start_time: "Start time"
-      end_time: "End time"
-      message: "Message"
-      status: "Status"
-      total_price: "Total price"
-      option: "Option"
-      search: "Search"
-    booking:
-      unverfile: "Unverfile"
-      verifiled_unpay: "Verifiled and not pay"
-      verifiled_paid: "Verifiled and paid"
+    booking_index:
       rating: "Rating"
-    ratings:
-      index:
-        title: "Rating for booking"
-        pitch_name_html: "Pitch name: <strong>%{add}</strong>"
-        name_html: "Subpitch Name: <strong>%{add}</strong>"
-        price_per_hour_html: "Price per hour: <strong>%{add}</strong>"
-        currency_html: "Currency: <strong>%{add}</strong>"
-        desc_html: "Description: <strong>%{add}</strong>"
-        subpitch_type_html: "Subpitch typ: <strong>%{add}</strong>"
-        size_html: "Size: <strong>%{add}</strong>"
-        price_per_hour: "Price per hour: %{add}"
-        total_price_html: "Total price: %{add}"
-        name_pitch: "Name pitch: %{add}"
-        name_subpitch: "Name subpitch: %{add}"
-        currency: "Currency: %{add}"
-        subpitch_type: "Subpitch type: %{add}"
-      show_rating:
-        del: "Delete"
-        edit: "Edit"
-        content: "Content"
-        star: "star"
-      rating:
-        del: "Delete"
-        edit: "Edit"
   ratings:
     index:
       title: "My rating"
@@ -887,28 +460,73 @@ en:
       star: "Star"
       status: "Status"
       option: "Option"
+      total_price: "Total price"
     rating:
       unverifile: "Unverfile"
       verifiled_unpay: "Verifiled and not pay"
       verifiled_paid: "Verifiled and paid"
       del: "Delete"
       edit: "Edit"
-  msg:
-    create_success: "Create success"
-    create_danger: "Create danger"
-    destroy_success: "Destroy success"
-    destroy_danger: "Destroy danger"
-    update_success: "Update success"
-    update_danger: "Update danger"
-    danger_load_subpitch: "Can't load subpitch"
-    danger_load_booking: "Can't load booking"
-    danger_permission: "Can't permission"
-    danger_load_rating: "Can't load rating"
-    confirm: "You sure?"
   admin:
+    transfers:
+      new:
+        title: "Transfers"
+        info_sender: "Info sender"
+        user_sender: "User sender: %{add}"
+        my_wallet: "My wallet: %{add}"
+        transaction_info: "Transaction infomation"
+        receiver: "Receiver"
+        content: "Content"
+        money: "Money"
+      index:
+        title: "History transfer"
+        id: "#"
+        new: "Transfer"
+        sender: "Sender"
+        receiver: "Receiver"
+        content: "Content"
+        money: "Money"
+      transfer:
+        del: "Delete"
+    subpitches:
+      ratings:
+        index:
+          title: "List rating"
+          id: "#"
+          user: "User"
+          star: "Star"
+          content: "Content"
+          option: "Option"
+          subpitch: "Subpitch"
+        show:
+          title: "Rating for subpitch"
+          content: "Content"
+          star: "Star"
+          id: "#"
+          user: "User"
+          subpitch: "Subpitch"
+          option: "Option"
     pages:
       home:
         title: "Admin"
+        my_wallet: "My wallet"
+        email: "Email: %{add}"
+        gender: "Gender: %{add}"
+        phone: "Phone: %{add}"
+        wallet: "Wallet: %{add}"
+        revenue: "Revenue"
+        pitch_name: "Pitch name"
+        country: "Country"
+        phone: "Phone"
+        total: "Total"
+        booking: "Booking"
+        user: "User"
+        subpitch: "Subpitch"
+        start_time: "Start time"
+        end_time: "End time"
+        rating: "Rating"
+        star: "Star"
+        content: "Content"
     bookings:
       index:
         title: "List booking"
@@ -950,6 +568,13 @@ en:
         delete: "Delete"
         confirm: "You sure?"
     pitches:
+      edit:
+        title: "Edit pitch"
+      new:
+        title: "New pitch"
+      form:
+        vi: "Vietnam"
+        en: "England"
       danger_load: "Load failure"
       create:
         success: "Create success"
@@ -986,6 +611,8 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "You sure?"
+        revenue: "Revenue"
+        subpitch: "Subpitch"
       revenues:
         index:
           asc: "asc"
@@ -1008,7 +635,7 @@ en:
           total: "Total"
           option: "Option"
         revenue:
-          subpitch: "Subpitch"
+          detail: "Detail"
         show:
           asc: "asc"
           desc: "desc"
@@ -1027,110 +654,91 @@ en:
           size: "Size"
           option: "Option"
           total: "Total"
-    subpitches:
-      danger_load: "Load failure"
-      show:
-        pitch_name: "Pitch name: %{add}"
-        name: "Subpitch name: %{add}"
-        price: "Price per hour: %{add}"
-        currency: "Currency: %{add}"
-        desc: "Description: %{add}"
-        subpitch_type: "Subpitch type: %{add}"
-        size: "Size: %{add}"
-      create:
-        success: "Create success"
-        danger: "Create danger"
-      update:
-        success: "Update success"
-        danger: "Update danger"
-      destroy:
-        success: "Destroy success"
-        danger: "Destroy danger"
-      new:
-        title: "New subpitch"
-      edit:
-        title: "Edit subpitch"
-      index:
-        title: "List Subpitch"
-        id: "#"
-        pitch_name: "Pitch name"
-        subpitch_type: "Subpitch type"
-        name: "Name"
-        description: "Description"
-        price: "Price"
-        currency: "Currency"
-        picture: "Picture"
-        size: "Size"
-        option: "Option"
-      subpitch:
-        edit: "Edit"
-        delete: "Delete"
-        confirm: "You sure?"
-        rating: "Rating"
-      ratings:
+      subpitches:
+        danger_load: "Load failure"
+        show:
+          pitch_name_html: "Pitch name: <b>%{add}</b>"
+          name_html: "Subpitch name: <b>%{add}</b>"
+          price_html: "Price per hour: <b>%{add}</b>"
+          currency_html: "Currency: <b>%{add}</b>"
+          desc_html: "Description: <b>%{add}</b>"
+          subpitch_type_html: "Subpitch type: <b>%{add}</b>"
+          size_html: "Size: <b>%{add}</b>"
+          size: "Size: %{add}"
+        create:
+          success: "Create success"
+          danger: "Create danger"
+        update:
+          success: "Update success"
+          danger: "Update danger"
+        destroy:
+          success: "Destroy success"
+          danger: "Destroy danger"
+        new:
+          title: "New subpitch"
+        edit:
+          title: "Edit subpitch"
         index:
+          new: "New"
+          title: "List Subpitch"
           id: "#"
-          user: "user"
-          star: "star"
-          content: "content"
-          option: "option"
-  general:
-    search: "Search"
-    delete: "Delete"
-    confirm: "You sure?"
-  subpitches:
-    danger_load: "Load failure"
-    danger_load_subpitch: "Load failure Subpitch"
-    show:
-      name: "Name: %{add}"
-      price_per_hour: "Price per hour: %{add}"
-      currency: "Currency: %{add}"
-      size: "Size: %{add}"
-      subpitch_type: "Subpitch type: %{add}"
-      desc: "Description: %{add}"
-      content: "Comment here"
-      comment: "Comment"
-    subpitch:
-      name: "Name: %{add}"
-      price_per_hour: "Price per hour: %{add}"
-      currency: "Currency: %{add}"
-      size: "Size: %{add}"
-      subpitch_type: "Subpitch type: %{add}"
-      desc: "Description: %{add}"
-    likes:
-      count:
-        like: "Like(%{add})"
-  msg:
-    danger_permission: "Người dùng không có quyền"
-  generate:
-    page_title: "soccer fields"
-    title: "soccer fields"
+          pitch_name: "Pitch name"
+          subpitch_type: "Subpitch type"
+          name: "Name"
+          description: "Description"
+          price: "Price"
+          currency: "Currency"
+          picture: "Picture"
+          size: "Size"
+          option: "Option"
+        subpitch:
+          edit: "Edit"
+          delete: "Delete"
+          confirm: "You sure?"
+          rating: "Rating"
+        ratings:
+          index:
+            id: "#"
+            user: "user"
+            star: "star"
+            content: "content"
+            option: "option"
   msg:
     destroy_success: "Destroy success"
     destroy_danger: "Destroy danger"
     create_success: "Create success"
     create_danger: "Destroy danger"
+    update_success: "Update success"
+    update_danger: "Update danger"
     danger_permision: "Danger permission"
     confirm: "You sure?"
     login: "Please login"
-  users:
-    new:
-      update: "Update"
-      text1: "Sign in"
-    create:
-     welcome_user: "Register account successfly!"
-  sessions:
-    new:
-      sign_up: "Sign up"
-      log_in: "Log in"
+    danger_load_subpitch: "Can't load subpitch"
+    danger_load_booking: "Can't load booking"
+    danger_permission: "Can't permission"
+    danger_load_rating: "Can't load rating"
+    value_invalid: "Value invalid"
+    user_notfound: "User not found"
   user:
     success: "Success!"
     danger: "Failed!"
-  pitches:
-    search_soccer:
-      address: "Address: "
-    index:
-      address: "Address: "
-      notification: "There are no valid football fields!"
   generate:
     page_title: "soccer fields"
+    title: "soccer fields"
+    back: "Back"
+    search: "Search"
+    delete: "Delete"
+    confirm: "You sure?"
+    edit: "Edit"
+    not_data: "Not data"
+    csv: "CSV"
+    excel: "EXCEL"
+    download: "Download"
+    total: "Total: %{add}"
+    female: "Female"
+    male: "Male"
+  general:
+    search: "Search"
+    delete: "Delete"
+    confirm: "You sure?"
+    back: "Back"

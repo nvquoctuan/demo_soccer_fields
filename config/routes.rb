@@ -7,10 +7,13 @@ Rails.application.routes.draw do
     get "/revenue", to: "pitches/revenues#index"
     resources :pitches do
       resources :subpitches, controller: "pitches/subpitches" do
-        resources :ratings, only: %i(index destroy), controller: "subpitches/ratings"
+        resources :ratings, only: :show, controller: "subpitches/ratings"
       end
       get "/revenue", to: "pitches/revenues#show", on: :member
     end
+    resources :transfers, except: %i(show update edit)
+    resources :ratings, only: %i(index destroy), controller: "subpitches/ratings"
+    resources :bookings
     resources :users do
       resources :roles, only: :create, controller: "users/roles"
     end
@@ -22,7 +25,6 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
   match "/auth/failure", to: "sessions#failure", via: [:get, :post]
-
   get "/blog", to: "static_pages#blog"
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"

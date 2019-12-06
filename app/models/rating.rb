@@ -6,7 +6,7 @@ class Rating < ApplicationRecord
   belongs_to :booking
 
   validates :content, presence: true, length: {minimum: Settings.size.s10}
-  validates :star, presence: true, format: {with: NUMBER}
+  validates :star, presence: true, numericality: true
 
   delegate :start_time, :end_time, to: :subpitch, prefix: true
   delegate :status, :total_price, to: :booking, prefix: true
@@ -27,4 +27,10 @@ class Rating < ApplicationRecord
   scope(:search_owner, lambda do |user_id|
     joins(:booking).where("bookings.user_id = ?", user_id)
   end)
+
+  scope :by_owner, (lambda do |user_id|
+    joins(booking: :subpitch).joins("INNER JOIN pitches ON pitches.id = subpitches.pitch_id").where(pitches: {user_id: user_id})
+  end)
+
+  scope :desc, ->{order id: :desc}
 end

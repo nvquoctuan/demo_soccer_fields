@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String"><%= t ".user" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".name" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".country" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".city" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".district" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".phone" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".start_time" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".end_time" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".limit" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t ".total_pitch" %></Data></Cell>
+      </Row>
+    <% @revenues.each do |revenue| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= revenue.user.full_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= revenue.name if revenue.name %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= revenue.country if revenue.country %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= revenue.city if revenue.city %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= revenue.district if revenue.district %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= revenue.phone if revenue.phone %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= revenue.start_time.strftime("%H:%M")  if revenue.start_time %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= revenue.end_time.strftime("%H:%M") if revenue.end_time %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= revenue.limit %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= revenue.total_pitch %></Data></Cell>\
+      </Row>
+    <% end %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= t "generate.total", add: @sum %></Data></Cell>
+      </Row>
+    </Table>
+  </Worksheet>
+</Workbook>

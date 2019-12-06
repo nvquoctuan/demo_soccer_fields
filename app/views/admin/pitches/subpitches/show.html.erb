@@ -19,3 +19,7 @@
     </div>
   </div>
 </div>
+<div>
+  <%= link_to t("generate.back"), admin_pitch_subpitches_path(@subpitch.pitch.id) %> |
+  <%= link_to t("generate.edit"), edit_admin_pitch_subpitch_path(@subpitch.pitch.id, @subpitch) %>
+</div>

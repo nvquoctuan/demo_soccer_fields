@@ -4,12 +4,12 @@
   <div class="overlay overlay-bg"></div>
     <div class="row fullscreen align-items-center justify-content-between
       p-top-150px edit_profile">
-      <div class="col-md-4">
-          <div class="avatar_edit">
-            <%= image_tag @user.avatar.variant(resize_to_limit:
-              Settings.size_avatar),
-              class: "size_avatar gravatar" if @user.avatar.attached? %>
-          </div>
+      <div class="col-md-1">
+        <div class="avatar_edit">
+          <%= image_tag @user.avatar.variant(resize_to_limit:
+            Settings.size_avatar),
+            class: "size_avatar gravatar" if @user.avatar.attached? %>
+        </div>
       </div>
       <div class="col-md-6">
         <div class="tab-content profile-tab" id="myTabContent">
@@ -28,7 +28,7 @@
                   <label><%= t ".gender" %>: </label>
                 </div>
                 <div class="col-md-6">
-                  <p><b><%= @user.gender ? t(".male") : t(".female") %></b></p>
+                  <p><b><%= gender @user.gender %></b></p>
                 </div>
               </div>
               <div class="row">
@@ -61,5 +61,4 @@
       </div>
     <div class="col-md-2"></div>
   </div>
-  <div calss="col-md-3"></div>
 </section>

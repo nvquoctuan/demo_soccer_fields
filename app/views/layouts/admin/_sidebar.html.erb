@@ -26,15 +26,26 @@
     <li class="c-sidebar-nav-item">
       <%= link_to admin_bookings_path, class: "c-sidebar-nav-link" do %>
         <svg class="c-sidebar-nav-icon">
-        </svg> <%= t ".revenue" %>
+        </svg> <%= t ".booking" %>
       <% end %>
     </li>
-
+    <li class="c-sidebar-nav-item">
+      <%= link_to admin_ratings_path, class: "c-sidebar-nav-link" do %>
+        <svg class="c-sidebar-nav-icon">
+        </svg> <%= t ".user_rating" %>
+      <% end %>
+    </li>
     <% if current_user.admin? %>
       <li class="c-sidebar-nav-item">
         <%= link_to admin_subpitch_types_path, class: "c-sidebar-nav-link" do %>
           <svg class="c-sidebar-nav-icon">
           </svg> <%= t ".subpitch_type" %>
+        <% end %>
+      </li>
+       <li class="c-sidebar-nav-item">
+        <%= link_to admin_transfers_path, class: "c-sidebar-nav-link" do %>
+          <svg class="c-sidebar-nav-icon">
+          </svg> <%= t ".transfer" %>
         <% end %>
       </li>
     <% end %>

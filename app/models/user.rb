@@ -1,8 +1,14 @@
 class User < ApplicationRecord
-
+  has_many :bookings, dependent: :destroy
   has_many :pitches, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :bookings, dependent: :destroy
+  has_many :active_transfer, class_name: Transfer.name,
+                             foreign_key: :sender_id, dependent: :destroy
+  has_many :passive_transfer, class_name: Transfer.name,
+                              foreign_key: :receiver_id, dependent: :destroy
+
+  has_many :receiver, through: :active_transfer
+  has_many :sender, through: :passive_transfer
 
   before_save{email.downcase!}
   before_create :create_activation_digest
@@ -44,6 +50,8 @@ class User < ApplicationRecord
       all
     end
   end)
+
+  scope :not_user, ->(user_id){where "id NOT IN (?)", user_id}
 
   class << self
     # Returns the hash digest of the given string.

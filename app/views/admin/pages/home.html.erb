@@ -1,2 +1,85 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".title" %></h1>
+<div>
+  <div class="col-md-5 left box1">
+    <h3><%= t ".my_wallet" %></h3>
+    <br/>
+    <div style="display: flex; align-items: center">
+      <% link_image = (current_user.avatar.attached?) ? current_user.avatar : "admin/avatars/6.jpg" %>
+      <%= link_to "#", class: "c-header-nav-link", "data-toggle" => "dropdown",
+          role: "button", "aria-haspopup" => "true",
+          "aria-expanded" => "false" do %>
+        <div class="c-avatar">
+          <%= image_tag link_image, class: "c-avatar-img" %>
+        </div>
+      <% end %>
+      <b style="margin-left: 10px"><%= @user.full_name %></b>
+    </div>
+    <% gender = @user.gender ? t("generate.male") : t("generate.female") %>
+    <p><%= t ".email", add: @user.email %></p>
+    <p><%= t ".gender", add: gender %></p>
+    <p><%= t ".phone", add: @user.email %></p>
+    <p><%= t ".wallet", add: @user.wallet %></p>
+  </div>
+  <div class="col-md-5 left box1" style="float:right">
+    <h3><%= t ".revenue" %></h3>
+    <br/>
+    <table class="table table-responsive-sm table-hover table-outline mb-0">
+      <thead class="thead-light">
+        <tr>
+          <th class = "text-center"><%= t ".pitch_name" %></th>
+          <th class = "text-center"><%= t ".country" %></th>
+          <th class = "text-center"><%= t ".phone" %></th>
+          <th class = "text-center"><%= t ".total" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "admin/pages/revenue", collection: @revenues %>
+        <% if @revenues.blank? %>
+        <tr><td colspan="4" class= "text-center cl-red"><%= t "generate.not_data" %></tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-5 box1" >
+    <h3><%= t ".booking" %></h3>
+    <br/>
+    <table class="table table-responsive-sm table-hover table-outline mb-0">
+      <thead class="thead-light">
+        <tr>
+          <th class = "text-center"><%= t ".user" %></th>
+          <th class = "text-center"><%= t ".subpitch" %></th>
+          <th class = "text-center"><%= t ".start_time" %></th>
+          <th class = "text-center"><%= t ".end_time" %></th>
+          <th class = "text-center"><%= t ".total" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "admin/pages/booking", collection: @bookings %>
+        <% if @bookings.blank? %>
+        <tr><td colspan="4" class= "text-center cl-red"><%= t "generate.not_data" %></tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-5 box1" style="float:right">
+    <h3><%= t ".rating" %></h3>
+    <br/>
+    <table class="table table-responsive-sm table-hover table-outline mb-0">
+      <thead class="thead-light">
+        <tr>
+          <th class = "text-center"><%= t ".user" %></th>
+          <th class = "text-center"><%= t ".subpitch" %></th>
+          <th class = "text-center"><%= t ".star" %></th>
+          <th class = "text-center"><%= t ".content" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "admin/pages/rating", collection: @ratings %>
+        <% if @ratings.blank? %>
+        <tr><td colspan="4" class= "text-center cl-red"><%= t "generate.not_data" %></tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

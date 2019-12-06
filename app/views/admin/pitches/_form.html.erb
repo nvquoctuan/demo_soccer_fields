@@ -9,7 +9,8 @@
 
   <%= f.label :country %>
   <% country = [{id: t(".vi"), name: t(".vi")}, {id: t(".en"), name: t(".en")}] %>
-  <%= f.select :country, options_for_select(country.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:locale]), class: "browser-default custom-select" %>
+
+  <%= f.select :country, options_for_select(country.collect{|u| [t(u[:name]), {class: "dropdown-menu show"}, u[:id]]}, selected: params[:locale]), {}, {class: "btn btn-info dropdown-toggle"} %>
 
   <%= f.label :city %>
   <%= f.text_field :city, class: "form-control" %>
@@ -27,10 +28,10 @@
   <div><%= f.text_field :phone, class: "form-control" %></div>
 
   <%= f.label :start_time %>
-  <div><%= f.time_select :start_time, class: "form-control" %></div>
+  <div id="start_time"><%= f.time_select :start_time, class: "form-control" %></div>
 
   <%= f.label :end_time %>
-  <div><%= f.time_select :end_time, class: "form-control" %></div>
+  <div id="end_time"><%= f.time_select :end_time, class: "form-control" %></div>
 
   <%= f.label :limit %>
   <%= f.number_field :limit, class: "form-control" %>

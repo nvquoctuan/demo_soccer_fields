@@ -11,8 +11,6 @@ class Booking < ApplicationRecord
 
   delegate :full_name, to: :user, prefix: true
   delegate :name, to: :subpitch, prefix: true
-  enum status: {"Verifiled and paid": 0,
-                "Verifiled and not pay": 1, "Unverifile": 2 }
 
   scope :inschedule, lambda{|start_time_schedule|
     where "date_format(start_time, \"%H%i\") >= ?",
@@ -30,9 +28,6 @@ class Booking < ApplicationRecord
     joins(:user).joins(:subpitch).where(bookings: {user_id: user_id})
   end)
 
-  enum status: {"Verified and paid": 0, "Verified and unpaid": 1,
-                "Not verified": 2}
-
   scope(:booking_owner, lambda do |id_user|
     includes(subpitch: :pitch).includes(:user)
                               .where(pitches: {user_id: id_user})
@@ -46,6 +41,27 @@ class Booking < ApplicationRecord
 
   scope(:search_booking, lambda do |search|
     joins(:subpitch).where("subpitches.name LIKE ?", "%#{search}%") if search
+  end)
+
+  scope :by_year, (lambda do |year|
+    if year
+      where("(YEAR(bookings.start_time) = ?)
+             AND (YEAR(bookings.end_time) = ?)", year, year)
+    end
+  end)
+
+  scope :by_month, (lambda do |month|
+    if month
+      where("(MONTH(bookings.start_time) = ?)
+             AND (MONTH(bookings.end_time) = ?)", month, month)
+    end
+  end)
+
+  scope :by_day, (lambda do |day|
+    if day
+      where("(DAY(bookings.start_time) = ?)
+             AND (DAY(bookings.end_time) = ?)", day, day)
+    end
   end)
 
   private

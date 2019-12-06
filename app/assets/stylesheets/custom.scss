@@ -33,6 +33,9 @@
 .wid30{
   width: 30% !important;
 }
+.wid60{
+  width: 60% !important;
+}
 .wid500p{
   width: 500px;
 }
@@ -51,6 +54,13 @@
 .bg-green{
   background-color: $green-bg;
 }
+.cl-red{
+  color: $red;
+}
+.bg-green2{
+  background: green;
+}
+
 .container2{
   padding: 15px;
   border-radius: 10px;
@@ -96,9 +106,10 @@ textarea {
 
 body>.alert{
   position: absolute;
-    top: 105px;
-    z-index: 100000;
-    width: 100%;
+  top: 122px;
+  z-index: 100000;
+  width: 20%;
+  right: 14%;
 }
 .edit_profile{
   h1{
@@ -339,13 +350,6 @@ textarea {
   min-height: 150px;
   min-width: 150px;
 }
-
-body>.alert{
-  position: absolute;
-    top: 105px;
-    z-index: 100000;
-    width: 100%;
-}
 .edit_profile{
   h1{
     color: $white
@@ -548,6 +552,9 @@ input {
 #pitch_start_time_4i, #pitch_end_time_4i {
   float: left;
 }
+#pitch_start_time_4i{
+  margin-left: 16px;
+}
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -587,12 +594,6 @@ textarea {
   min-width: 150px;
 }
 
-body>.alert{
-  position: absolute;
-    top: 105px;
-    z-index: 100000;
-    width: 100%;
-}
 .edit_profile{
   h1{
     color: $white
