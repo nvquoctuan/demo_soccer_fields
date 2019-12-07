@@ -234,6 +234,7 @@ vi:
       language: "Ngôn ngữ"
       english: "Tiếng Anh"
       home: "Trang chủ"
+      booking: Đặt sân
       about: "Giới thiệu"
       blog: "Blog"
       contact: "Liên hệ"
@@ -552,7 +553,7 @@ vi:
         success: "Xóa thành công"
         danger: "Xóa thất bại."
       show:
-        title: "Sân bóng %{name}"
+        title: "Sân bóng %{add}"
         owner: "Chủ sở hữu: %{add}"
         name: "Tên: %{add}"
         description: "Mô tả: %{add}"
@@ -682,6 +683,7 @@ vi:
     confirm: "Bạn chắc chứ?"
     value_invalid: "Giá tị không hợp lệ"
     user_notfound: "Người dùng không tìm thấy"
+    transfer_success: "Chuyển tiền thành công"
   generate:
     page_title: "Sân bóng đá"
     search: "Tìm kiếm"

@@ -8,6 +8,7 @@ class PaysController < ApplicationController
 
   def update
     ActiveRecord::Base.transaction do
+      byebug
       @booking.status = Settings.paid_status_booking
       @booking.save!(context: :payment)
       @user.update! wallet: (@user.wallet - @booking.total_price)

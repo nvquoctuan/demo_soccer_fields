@@ -9,6 +9,9 @@ class Booking < ApplicationRecord
   validates :total_price, presence: true
   validate :check_status, on: :payment
 
+  enum status: {"Verifiled and paid": 0,
+                "Verifiled and not pay": 1, "Unverifile": 2}
+
   delegate :full_name, to: :user, prefix: true
   delegate :name, to: :subpitch, prefix: true
 
@@ -67,7 +70,7 @@ class Booking < ApplicationRecord
   private
 
   def check_status
-    return unless (Booking.find_by id: id).status.zero?
+    return unless Booking.statuses[(Booking.find_by id: id).status].zero?
 
     errors.add :cant_repay, I18n.t("cant_repay")
   end

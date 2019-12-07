@@ -1,6 +1,6 @@
 <tr>
   <td><%= user.id %></td>
-  <td><%= image_tag user.avatar, class: "max-w100 max-h100" if user.avatar.attached? %></td>
+  <td><%= image_tag user.avatar, style: "max-width: 100px; max-height: 100px;" if user.avatar.attached? %></td>
   <td><%= user.email %></td>
   <td><%= user.full_name %></td>
   <td><%= user.gender %></td>

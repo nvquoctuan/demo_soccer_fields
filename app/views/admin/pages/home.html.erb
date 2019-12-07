@@ -2,7 +2,7 @@
 <h1><%= t ".title" %></h1>
 <div>
   <div class="col-md-5 left box1">
-    <h3><%= t ".my_wallet" %></h3>
+    <h3><%= t ".my_info" %></h3>
     <br/>
     <div style="display: flex; align-items: center">
       <% link_image = (current_user.avatar.attached?) ? current_user.avatar : "admin/avatars/6.jpg" %>
@@ -19,7 +19,9 @@
     <p><%= t ".email", add: @user.email %></p>
     <p><%= t ".gender", add: gender %></p>
     <p><%= t ".phone", add: @user.email %></p>
-    <p><%= t ".wallet", add: @user.wallet %></p>
+    <% unless current_user.admin? %>
+      <p><%= t ".wallet", add: @user.wallet %></p>
+    <% end %>
   </div>
   <div class="col-md-5 left box1" style="float:right">
     <h3><%= t ".revenue" %></h3>

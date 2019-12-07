@@ -205,6 +205,7 @@ en:
         subpitch_type: "Subpitch type"
         booking: "Booking"
         link1: "Link1"
+        revenue: "Revenue"
         link2: "Link2"
         pitch: "Pitch"
         review: "Review"
@@ -251,6 +252,7 @@ en:
       profile: "Profile"
       setting: "Setting"
       manage: "Manage"
+      booking: Booking
     right_sidebar:
       pitch: "Pitch"
       search_pitch: "Search pitch"
@@ -448,6 +450,7 @@ en:
       confirm: Are you sure?
       cancel: Cancel
       canceled: Canceled
+      payment: "Payment"
     booking_index:
       rating: "Rating"
   ratings:
@@ -586,7 +589,7 @@ en:
         success: "Destroy success"
         danger: "Destroy danger"
       show:
-        title: "%{name} Pitch"
+        title: "%{add} pitch"
         owner: "Owner: %{add}"
         name: "Name pitch: %{add}"
         description: "description: %{add}"
@@ -719,6 +722,7 @@ en:
     danger_load_rating: "Can't load rating"
     value_invalid: "Value invalid"
     user_notfound: "User not found"
+    transfer_success: "Transfer success"
   user:
     success: "Success!"
     danger: "Failed!"

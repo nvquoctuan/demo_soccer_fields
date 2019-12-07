@@ -2,7 +2,17 @@
   <td><%= rating.id %></td>
   <td><%= rating.user.full_name %></td>
   <td><%= rating.booking.subpitch.name %></td>
-  <td><%= rating.star %></td>
+  <td>
+  <% star = rating.star %>
+  <% 5.times do |n| %>
+    <% if star > 0 %>
+      <%= render partial: "bookings/ratings/button_evaluated", locals: {attribute: nil} %>
+      <% star -= 1 %>
+    <% else %>
+      <%= render partial: "bookings/ratings/button_evaluate", locals: {attribute: nil} %>
+    <% end %>
+  <% end %>
+  </td>
   <td><%= rating.content %></td>
   <td><%= link_to t("general.delete"), admin_rating_path(rating), method: :delete, data: {confirm: t("general.confirm")}, class: "glyphicon glyphicon-trash" %></td>
 </tr>

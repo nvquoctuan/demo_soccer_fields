@@ -84,13 +84,13 @@
                   <label><%= t ".total" %>: </label>
                 </div>
                 <div class="col-md-6">
-                  <p>$ <%= @booking.total_price%></p>
+                  <p>$ <%= @booking.total_price %></p>
                 </div>
               </div>
             </div>
             <div class="d-flex justify-content-center">
               <%= link_to t(".cancel"), new_subpitch_booking_path(@booking.subpitch), class: "btn btn-primary m-2 bd-highlight" %>
-              <% if @booking.status == Settings.paid_status_booking %>
+              <% if Booking.statuses[@booking.status] == Settings.paid_status_booking %>
                 <p class="label label-success m-2 paid-verified"><%= t ".paid" %> <span class="tick">&#9989;</span></p>
               <% else %>
                 <%= link_to t(".pay_now"), pays_update_path(booking_id: @booking), method: :patch, class: "btn btn-primary m-2 bd-highlight" %>
