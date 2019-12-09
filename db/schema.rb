@@ -104,6 +104,17 @@ ActiveRecord::Schema.define(version: 2019_12_08_190144) do
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
+  create_table "recharges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "sender_id"
+    t.bigint "receiver_id"
+    t.string "content"
+    t.decimal "money", precision: 10
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["receiver_id"], name: "index_recharges_on_receiver_id"
+    t.index ["sender_id"], name: "index_recharges_on_sender_id"
+  end
+
   create_table "subpitch_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -125,17 +136,6 @@ ActiveRecord::Schema.define(version: 2019_12_08_190144) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pitch_id"], name: "index_subpitches_on_pitch_id"
     t.index ["subpitch_type_id"], name: "index_subpitches_on_subpitch_type_id"
-  end
-
-  create_table "transfers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "sender_id"
-    t.bigint "receiver_id"
-    t.string "content"
-    t.decimal "money", precision: 10
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["receiver_id"], name: "index_transfers_on_receiver_id"
-    t.index ["sender_id"], name: "index_transfers_on_sender_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|

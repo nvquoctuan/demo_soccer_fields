@@ -61,7 +61,7 @@ en:
         size: "Size"
         subpitch_type: "Subpitch type"
         subpitch_type_id: "Subpitch type"
-      transfer:
+      recharge:
         content: "Content"
         money: "Money"
         receiver: "Receiver"
@@ -90,8 +90,8 @@ en:
       subpitch_type:
         create: "Create Subpitch Type"
         update: "Update Subpitch Type"
-      transfer:
-        create: "Transfer"
+      recharge:
+        create: "Recharge"
   activerecord:
     attributes:
       user:
@@ -216,7 +216,7 @@ en:
         review: "Review"
         subpitch_type: "Subpitch type"
         user_rating: "User rating"
-        transfer: "Transfer"
+        recharge: "Recharge"
       header:
         admin: "Admin"
         home: "Home"
@@ -486,9 +486,9 @@ en:
       del: "Delete"
       edit: "Edit"
   admin:
-    transfers:
+    recharges:
       new:
-        title: "Transfers"
+        title: "Recharges"
         info_sender: "Info sender"
         user_sender: "User sender: %{add}"
         my_wallet: "My wallet: %{add}"
@@ -497,15 +497,15 @@ en:
         content: "Content"
         money: "Money"
       index:
-        title: "History transfer"
+        title: "History recharge"
         id: "#"
-        new: "Transfer"
+        new: "Recharge"
         sender: "Sender"
         receiver: "Receiver"
         content: "Content"
         money: "Money"
         option: "Option"
-      transfer:
+      recharge:
         del: "Delete"
     subpitches:
       ratings:
@@ -743,6 +743,8 @@ en:
     update_success: "Update success"
     update_danger: "Update danger"
     danger_permision: "Danger permission"
+    danger_load_like: "Danger load like"
+    play_time_invalid: "Time open pitch must bigger than limit"
     confirm: "You sure?"
     login: "Please login"
     danger_load_subpitch: "Can't load subpitch"
@@ -752,7 +754,7 @@ en:
     danger_load: "Không thể thực hiện"
     value_invalid: "Value invalid"
     user_notfound: "User not found"
-    transfer_success: "Transfer success"
+    recharge_success: "Recharge success"
     star_invalid: "Star invalid"
     money_invalid: "Money invalid"
   user:
@@ -773,6 +775,7 @@ en:
     total: "Total: %{add}"
     female: "Female"
     male: "Male"
+    like: "Like (%{add})"
   general:
     search: "Search"
     delete: "Delete"

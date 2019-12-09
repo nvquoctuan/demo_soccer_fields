@@ -8,8 +8,6 @@ class Subpitches::LikesController < SubpitchesController
     respond_to do |format|
       if @like.save
         format.js
-      else
-        format.js{flash[:danger] = t "msg.create_danger"}
       end
     end
   end
@@ -18,8 +16,6 @@ class Subpitches::LikesController < SubpitchesController
     respond_to do |format|
       if @liked.destroy
         format.js
-      else
-        format.js{flash[:danger] = t "msg.destroy_danger"}
       end
     end
   end
@@ -30,7 +26,6 @@ class Subpitches::LikesController < SubpitchesController
     @liked = current_user.likes.find_by id: params[:id]
     return if @liked
 
-    flash[:danger] = t "msg.action_fail"
     redirect_to pitch_subpitches_path(@pitch)
   end
 

@@ -4,13 +4,13 @@ class User < ApplicationRecord
   has_many :pitches, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_ratings, dependent: :destroy
-  has_many :active_transfer, class_name: Transfer.name,
+  has_many :active_recharge, class_name: Recharge.name,
                              foreign_key: :sender_id, dependent: :destroy
-  has_many :passive_transfer, class_name: Transfer.name,
+  has_many :passive_recharge, class_name: Recharge.name,
                               foreign_key: :receiver_id, dependent: :destroy
 
-  has_many :receiver, through: :active_transfer
-  has_many :sender, through: :passive_transfer
+  has_many :receiver, through: :active_recharge
+  has_many :sender, through: :passive_recharge
 
   before_save{email.downcase!}
   before_create :create_activation_digest

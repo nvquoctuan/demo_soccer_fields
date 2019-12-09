@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       end
       get "/revenue", to: "pitches/revenues#show", on: :member
     end
-    resources :transfers, except: %i(show update edit)
+    resources :recharges, except: %i(show update edit)
     resources :ratings, only: %i(index destroy), controller: "subpitches/ratings"
     resources :bookings
     resources :users do

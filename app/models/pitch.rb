@@ -16,6 +16,7 @@ class Pitch < ApplicationRecord
   validates :end_time, date: {after: :start_time}
   validates :limit, presence: true, numericality: true,
             length: {in: Settings.size.s1..Settings.size.s2}
+  validate :play_time_bigger_limit
 
   has_one_attached :picture
 
@@ -74,5 +75,14 @@ class Pitch < ApplicationRecord
         csv << [sum]
       end
     end
+  end
+
+  private
+
+  def play_time_bigger_limit
+    return if self.limit.nil?
+    return if (self.end_time - self.start_time) / 3600 >= self.limit
+
+    errors.add :play_time_invalid, I18n.t("msg.play_time_invalid")
   end
 end

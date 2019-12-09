@@ -61,3 +61,9 @@ function create_button_star_chose(n){
 
   return button;
 }
+$(document).ready(function() {
+  $("body").on("click", ".like_subpitch", function(e){
+    e.preventDefault();
+  });
+});
+

@@ -1,5 +1,6 @@
 <%= form_for :likerating, url: like_rating_path(@likerating.id),:html => { method: :delete, :remote => true } do |f| %>
   <div style = "position:relative">
-    <a href = "#" class="glyphicon glyphicon-thumbs-down" style=" position: absolute; left: 27px; font-size: 30px;" onclick="$(this).submit();"></a>
+    <%= render partial: "like_ratings/count_like", locals: {rating_id: @likerating.rating_id} %>
+    <span class="glyphicon glyphicon-thumbs-down" style=" position: absolute; cursor:pointer; left: 55px; font-size: 30px;" onclick="$(this).submit();"></a>
   </div>
 <% end %>

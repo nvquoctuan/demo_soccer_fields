@@ -51,7 +51,7 @@ vi:
         size: "Kích cỡ"
         subpitch_type: "Loại sân"
         subpitch_type_id: "Loại sân"
-      transfer:
+      recharge:
         content: "Nội dung"
         money: "Số tiền"
         receiver_id: "Người nhận"
@@ -74,8 +74,8 @@ vi:
         update: "Cập nhật đánh giá"
       booking:
         submit: Đặt sân
-      transfer:
-        create: "Chuyển khoảng"
+      recharge:
+        create: "Nạp tiền"
   activerecord:
     attributes:
       user:
@@ -209,7 +209,7 @@ vi:
         booking: "Sân đã đặt"
         subpitch_type: "Loại Sân"
         user_rating: "Người dùng đánh giá"
-        transfer: "Chuyển khoảng"
+        recharge: "nạp tiền"
       header:
         Admin: "Admin"
         home: "Trang chủ"
@@ -453,26 +453,26 @@ vi:
       count:
         like: "Like(%{add})"
   admin:
-    transfers:
+    recharges:
       new:
-        title: "Chuyển khoản"
+        title: "Nạp tiền"
         info_sender: "Thông tin người gửi"
         user_sender: "Người gửi: %{add}"
         my_wallet: "Ví: %{add}"
-        transaction_info: "Thông tin chuyển khoảng"
+        transaction_info: "Thông tin nạp tiền"
         receiver: "Người nhận"
         content: "Nội dung"
         money: "Số tiền"
       index:
-        title: "Lịch sử chuyển khoảng"
-        new: "Chuyển khoảng"
+        title: "Lịch sử nạp tiền"
+        new: "nạp tiền"
         id: "#"
         sender: "Người gửi"
         receiver: "Người nhận"
         content: "Tin nhắn"
         money: "Số tiền"
         option: "Tùy chọn"
-      transfer:
+      recharge:
         del: "Xóa"
     subpitches:
       ratings:
@@ -700,13 +700,15 @@ vi:
     update_success: "Cập nhật thành công"
     update_danger: "Cập nhật thất bại"
     danger_load_subpitch: "Không thể tải sân nhỏ"
+    danger_load_like: "Không thể tải like"
+    play_time_invalid: "Số giờ mở cửa phải lớn hơn giờ giới hạn"
     danger_load_booking: "Không thể tải booking"
     danger_permission: "Không có quyền"
     danger_load_rating: "Không thể đánh giá"
     confirm: "Bạn chắc chứ?"
     value_invalid: "Giá tị không hợp lệ"
     user_notfound: "Người dùng không tìm thấy"
-    transfer_success: "Chuyển tiền thành công"
+    recharge_success: "Nạp tiền thành công"
     star_invalid: "Sao không hợp lệ"
     money_invalid: "Tiền không hợp lệ"
   generate:
@@ -723,6 +725,7 @@ vi:
     total: "Tổng tiền: %{add}"
     female: "Nữ"
     male: "Nam"
+    like: "Thích (%{add})"
   comments:
     create:
       comment_success: Thành công

@@ -7,8 +7,7 @@ class Rating < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :content, presence: true, length: {minimum: Settings.size.s10}
-  validates :star, presence: true, numericality: true
-  validate :check_star
+  validates :star, presence: true, numericality: true, format: {with: NUMBER}
 
   delegate :subpitch, to: :booking
   delegate :start_time, :end_time, to: :subpitch, prefix: true

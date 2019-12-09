@@ -1,0 +1,11 @@
+<tr>
+  <td><%= recharge.sender.full_name %></td>
+  <td><%= recharge.receiver.full_name %></td>
+  <td><%= recharge.content %></td>
+  <td><%= recharge.money %></td>
+  <td>
+    <% unless check_recharge? recharge %>
+      <%= link_to t(".del"), admin_recharge_path(recharge), method: :delete, "data-confirm": t("msg.confirm"), class: "glyphicon glyphicon-trash" %>
+    <% end %>
+  </td>
+</tr>

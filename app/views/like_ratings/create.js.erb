@@ -1,2 +1,3 @@
 $('#like_rating_<%= @likerating.rating_id %>').empty();
-$('#like_rating_<%= @likerating.rating_id %>').append('<%= j render "unlike_rating", collection: @likerating, locals: {path: like_rating_path(@likerating.id)} %>')
+$('#like_rating_<%= @likerating.rating_id %>').append('<%= j render "unlike_rating", collection: @likerating, locals: {path: like_rating_path(@likerating.id)} %>');
+$('.alert').remove();

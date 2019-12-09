@@ -1,2 +1,3 @@
 $('#like_rating_<%= @likerating.rating_id %>').empty();
 $('#like_rating_<%= @likerating.rating_id %>').append('<%= j render partial: "like_rating", locals: {rating_id: @likerating.rating_id} %>')
+$('.alert').remove();

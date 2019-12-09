@@ -36,7 +36,7 @@
     margin: 20px 0px;
   }
 
-  #new_transfer select{
+  #new_recharge select{
     display: table;
   }
   /* select time */
@@ -49,5 +49,13 @@
   #pitch_start_time_5i, #pitch_end_time_5i{
     margin: 0;
     float: right;
+  }
+
+  input[type="submit"]{
+    text-align: center;
+    float: none;
+  }
+  span{
+    font-size: 20px;
   }
 }
