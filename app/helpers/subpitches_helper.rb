@@ -10,4 +10,8 @@ module SubpitchesHelper
   def count_like subpitch
     Like.like_subpitch(subpitch.id).count(:id)
   end
+
+  def check_like_rating rating
+    LikeRating.find_by rating_id: rating.id, user_id: current_user.id
+  end
 end

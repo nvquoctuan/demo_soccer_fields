@@ -1,0 +1,6 @@
+<%= form_for :likerating, url: like_ratings_path, remote: true do |f| %>
+  <%= f.hidden_field :rating_id, value: rating_id %>
+  <div style = "position:relative">
+    <a href = "#" class="glyphicon glyphicon-thumbs-up" style=" position: absolute; left: 27px; font-size: 30px;" onclick="$(this).submit();"></a>
+  </div>
+<% end %>

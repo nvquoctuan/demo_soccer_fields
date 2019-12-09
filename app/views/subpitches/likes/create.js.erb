@@ -1,4 +1,4 @@
 $('<%= "#new_like_#{@subpitch.id}" %>').remove();
-$('<%= "#subpitch_#{@subpitch.id}" %>').find('.card').children('div').children('span').remove()
-$('<%= "#subpitch_#{@subpitch.id}" %>').find('.card').children('div').append('<%= j render(partial: "subpitches/likes/unlike", locals: {subpitch: @subpitch, liked: liked(check_like(@subpitch))}) %>')
-$('<%= "#subpitch_#{@subpitch.id}" %>').find('.card').children('div').prepend('<%= j render(partial: "subpitches/likes/count", locals: {subpitch: @subpitch}) %>')
+$('<%= "#count_like_#{@subpitch.id}" %>').remove()
+$('<%= ".subpitch_#{@subpitch.id}" %>').append('<%= j render(partial: "subpitches/likes/unlike", locals: {subpitch: @subpitch, liked: liked(check_like(@subpitch))}) %>')
+$('<%= ".subpitch_#{@subpitch.id}" %>').children('a').append('<%= j render(partial: "subpitches/likes/count", locals: {subpitch: @subpitch}) %>')

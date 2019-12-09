@@ -1,4 +1,4 @@
-User.create(full_name: "Example User", phone: "0964991298", email: "user@soccer.vn",
+User.create(full_name: "Example User", phone: "0964991298", email: "user@soccer.vn", wallet: 100000000,
   password: "admin123", password_confirmation: "admin123", role: 2, activated: true, activated_at: Time.zone.now)
 User.create!({full_name: "Admin User", email: "admin@soccer.vn",
  password: "admin123", password_confirmation: "admin123", phone: "0964991298", role: 0, wallet: 10000000, activated: true, activated_at: Time.zone.now})

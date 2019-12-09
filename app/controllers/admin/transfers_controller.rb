@@ -1,7 +1,7 @@
 class Admin::TransfersController < AdminController
 
   def index
-    @transfers = Transfer.by_receiver(params[:receiver_id])
+    @transfers = Transfer.by_user(params[:receiver_id])
                          .search(params[:search])
                          .paginate page: params[:page],
                           per_page: Settings.size.s10

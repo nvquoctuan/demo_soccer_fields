@@ -14,7 +14,7 @@ class Admin::Users::RolesController < UsersController
 
   def load_user
     @user = User.find_by id: params[:user_id]
-    return if @user
+    return if @user && !current_user?(@user)
 
     flash[:danger] = t "msg.danger_load"
     redirect_to admin_users_path

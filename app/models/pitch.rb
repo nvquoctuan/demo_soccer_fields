@@ -4,7 +4,7 @@ class Pitch < ApplicationRecord
               start_time(4i) start_time(5i)
               end_time(4i) end_time(5i) limit).freeze
   belongs_to :user
-  has_many :subpitches
+  has_many :subpitches, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: Settings.size.s50}
   validates :description, length: {maximum: Settings.size.s255}

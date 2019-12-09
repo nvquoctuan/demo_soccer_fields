@@ -8,6 +8,8 @@
   <td><%= status[Booking.statuses[booking_index.status]] %></td>
   <td><%= booking_index.total_price %></td>
   <td>
-    <%= link_to t(".rating"), get_path(booking_index) %>
+    <% if check_rating(booking_index).present? %>
+      <%= link_to t(".rating"), get_path(booking_index) %>
+    <% end %>
   </td>
 </td>

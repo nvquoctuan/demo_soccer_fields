@@ -5,6 +5,7 @@ class Transfer < ApplicationRecord
   validates :sender_id, presence: true
   validates :receiver_id, presence: true
   validates :money, numericality: true
+  validate :check_money
 
   scope :search, (lambda do |search|
     if search
@@ -13,4 +14,16 @@ class Transfer < ApplicationRecord
   end)
 
   scope :by_receiver, ->(user_id){where receiver: user_id if user_id}
+
+  scope :by_user, (lambda do |user_id|
+    where("receiver_id = ? OR sender_id = ?", user_id, user_id) if user_id
+  end)
+
+  private
+
+  def check_money
+    return if self.money > 0
+
+    errors.add :money_invalid, I18n.t("msg.money_invalid")
+  end
 end

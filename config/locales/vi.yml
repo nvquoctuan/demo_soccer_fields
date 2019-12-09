@@ -85,7 +85,11 @@ vi:
         password_confirmation: Xác nhận mật khẩu
         phone: Số điện thoại
         wallet: Số tiền
+      comment:
+        content: Nội dung
     errors:
+      messages:
+        record_invalid: "%{errors}"
       models:
         pitch:
           attributes:
@@ -153,7 +157,8 @@ vi:
       time off schedule: Sân đã đóng cửa rồi!
       time has been taken: Thời gian này đã được ai đó đặt rồi!
       error_insert_booking: Xảy ra lỗi trong khi xử lý!
-      success_booking: Bạn đặt sân thành công
+      success_booking: Bạn đặt sân thành công, hãy tiến hành thanh toán ngay
+        và luôn!
       not_found_subpitch_id: Sân không tồn tại!
       wrong_cycle_time: Sai chu kì thơi gian!
       booking_success: Đặt sân thành công
@@ -279,6 +284,11 @@ vi:
       count:
         one: "1 error"
         other: "%{count} errors"
+  like_ratings:
+    unlike_rating:
+      dislike: "Dislike"
+    like_rating:
+      like: "Like"
   static_pages:
     home:
       soccer_update: "Sân bóng đá được cập nhật mới nhất"
@@ -364,6 +374,9 @@ vi:
       activated: "Trạng thái"
       option: "Tùy chọn"
       search: "Tìm kiếm"
+    user:
+      del: "Xóa"
+      edit: "Chỉnh sửa"
   sessions:
     new:
       sign_up: Đăng kí ngay!
@@ -423,8 +436,7 @@ vi:
       size: "Kích cỡ: %{add}"
       subpitch_type: "Loại sân: %{add}"
       desc: "Mô tả: %{add}"
-      content: "Bình luận ở đây"
-      comment: "Bình luận"
+      danger_load: "Không thể tải"
     subpitch:
       name: "Tên: %{add}"
       price_per_hour: "Giá mỗi giờ: %{add}"
@@ -433,6 +445,13 @@ vi:
       subpitch_type: "Loại sân: %{add}"
       desc: "Mô tả: %{add}"
       like: "Like(%{add})"
+    likes:
+      like:
+        like: "Like"
+      unlike:
+        unlike: "Unlike"
+      count:
+        like: "Like(%{add})"
   admin:
     transfers:
       new:
@@ -452,6 +471,7 @@ vi:
         receiver: "Người nhận"
         content: "Tin nhắn"
         money: "Số tiền"
+        option: "Tùy chọn"
       transfer:
         del: "Xóa"
     subpitches:
@@ -500,7 +520,7 @@ vi:
         id: "#"
         name: "Tên"
         description: "Mô tả"
-        Option: "Tùy chọn"
+        option: "Tùy chọn"
         title: "Danh sách loại sân bóng"
         add: "Thêm"
       edit:
@@ -538,6 +558,8 @@ vi:
         total_price: "Tổng giá"
         option: "Lựa chọn"
         search: "Tìm kiếm"
+      booking:
+        del: "Xóa"
     pitches:
       form:
         vi: "Việt nam"
@@ -672,6 +694,7 @@ vi:
     create_success: "Tạo thành công"
     create_danger: "Tạo thất bại"
     danger_permision: "Người dùng không có quyền"
+    danger_load: "Danger load"
     confirm: "Bạn chắc chứ?"
     login: "Hãy đăng nhập"
     update_success: "Cập nhật thành công"
@@ -684,6 +707,8 @@ vi:
     value_invalid: "Giá tị không hợp lệ"
     user_notfound: "Người dùng không tìm thấy"
     transfer_success: "Chuyển tiền thành công"
+    star_invalid: "Sao không hợp lệ"
+    money_invalid: "Tiền không hợp lệ"
   generate:
     page_title: "Sân bóng đá"
     search: "Tìm kiếm"
@@ -698,3 +723,14 @@ vi:
     total: "Tổng tiền: %{add}"
     female: "Nữ"
     male: "Nam"
+  comments:
+    create:
+      comment_success: Thành công
+      not_allow: Bạn không được phép
+      not_found_rating_id: Không tìm thấy review
+    comment:
+      not_found_comment: Không tìm thấy bình luận
+      content: "Bình luận ở đây"
+      comment: "Bình luận"
+      reply: Trả lời
+  exist_paid_booking: Có không giữ, mất đừng tìm. Cơ hội chỉ đến 1 lần!

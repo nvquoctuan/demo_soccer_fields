@@ -4,10 +4,13 @@ class Rating < ApplicationRecord
 
   belongs_to :user
   belongs_to :booking
+  has_many :comments, dependent: :destroy
 
   validates :content, presence: true, length: {minimum: Settings.size.s10}
   validates :star, presence: true, numericality: true
+  validate :check_star
 
+  delegate :subpitch, to: :booking
   delegate :start_time, :end_time, to: :subpitch, prefix: true
   delegate :status, :total_price, to: :booking, prefix: true
 
@@ -33,4 +36,12 @@ class Rating < ApplicationRecord
   end)
 
   scope :desc, ->{order id: :desc}
+
+  private
+
+  def check_star
+    return if self.star > 0 && self.star < 6
+
+    errors.add :star_invalid, I18n.t("msg.star_invalid")
+  end
 end

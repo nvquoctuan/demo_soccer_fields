@@ -1,7 +1,9 @@
 class User < ApplicationRecord
+  has_many :comments, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :pitches, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :like_ratings, dependent: :destroy
   has_many :active_transfer, class_name: Transfer.name,
                              foreign_key: :sender_id, dependent: :destroy
   has_many :passive_transfer, class_name: Transfer.name,
@@ -29,7 +31,7 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false, scope: :provider}
   validates :uid, uniqueness: {scope: :provider}, allow_nil: true
-  validates :phone, format: {with: VALID_PHONE_REGEX}, allow_blank: true
+  validates :phone, format: {with: VALID_PHONE_REGEX}, allow_nil: true
   validates :gender, inclusion: {in: [true, false],
                                  message: "Gender is valid"}, allow_nil: true
   has_secure_password

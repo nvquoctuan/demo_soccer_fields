@@ -7,7 +7,7 @@
         </div>
       <% end %>
       <div class="card-body row text-center">
-        <div class="col">
+        <div class="col <%= "subpitch_#{subpitch.id}" %>">
           <div class="text-uppercase text-muted small"><%= t ".name", add: subpitch.name %></div>
           <div class="text-uppercase text-muted small"><%= t ".price_per_hour", add: subpitch.price_per_hour %></div>
           <div class="text-uppercase text-muted small"><%= t ".size", add: subpitch.size %></div>

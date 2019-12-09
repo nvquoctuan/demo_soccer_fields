@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "static_pages#home"
-
+  post "comment/create", to: "comments#create"
   namespace :admin do
     root "pages#home"
     resources :subpitch_types
@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       resources :likes, only: %i(create destroy), controller: "subpitches/likes"
     end
   end
+  resources :like_ratings
   resources :subpitches do
     resources :bookings, only: :new
   end
@@ -44,9 +45,5 @@ Rails.application.routes.draw do
   end
   resources :ratings, only: :index
   patch "pays/update"
-  patch "bookings/update", to: "bookings#update"
-  post "bookings/create"
   resources :users
-  patch "bookings/update", to: "bookings#update"
-  post "bookings/create", to: "bookings#create"
 end

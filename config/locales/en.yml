@@ -101,6 +101,8 @@ en:
         password_confirmation: Password confirmation
         wallet: Balance
     errors:
+      messages:
+        record_invalid: "%{errors}"
       models:
         user:
           attributes:
@@ -110,7 +112,7 @@ en:
               greater_than_or_equal_to: not enough(or must be greater or
                 equal to 0)
         pitch:
-          attribute:
+          attributes:
             end_time:
               after: "bigger start time"
   pays:
@@ -170,6 +172,9 @@ en:
       activated: "Activated"
       option: "Option"
       search: "Search"
+    user:
+      del: "Delete"
+      edit: "Edit"
   sessions:
     new:
       sign_up: "Sign up"
@@ -343,6 +348,7 @@ en:
       desc: "Description: %{add}"
       content: "Comment here"
       comment: "Comment"
+      danger_load: "Danger load"
     subpitch:
       name: "Name: %{add}"
       price_per_hour: "Price per hour: %{add}"
@@ -352,12 +358,21 @@ en:
       desc: "Description: %{add}"
       show_schedule: Show schedule
     likes:
+      like:
+        like: "Like"
+      unlike:
+        unlike: "Unlike"
       count:
         like: "Like(%{add})"
   account_activations:
     edit:
       account_activated: Account activated!
       invalid_activation_link: Invalid activation link!
+  like_ratings:
+    unlike_rating:
+      dislike: "Dislike"
+    like_rating:
+      like: "Like"
   password_resets:
     create:
       notice_sent_reset_password_instructions: An email has been sent to your
@@ -435,7 +450,7 @@ en:
       time off schedule: Period off schedule!
       time has been taken: Period has been taken!
       error_insert_booking: An error occurred while processing!
-      success_booking: You book pitch successfully
+      success_booking: You book pitch successfully. Payment quickly!
       not_found_subpitch_id: Subpitch is not found!
       wrong_cycle_time: wrong cycle time!
       booking_success: Book pitch success
@@ -450,7 +465,7 @@ en:
       confirm: Are you sure?
       cancel: Cancel
       canceled: Canceled
-      payment: "Payment"
+      payment: Wait for pay
     booking_index:
       rating: "Rating"
   ratings:
@@ -489,6 +504,7 @@ en:
         receiver: "Receiver"
         content: "Content"
         money: "Money"
+        option: "Option"
       transfer:
         del: "Delete"
     subpitches:
@@ -543,6 +559,8 @@ en:
         total_price: "Total price"
         option: "Option"
         search: "Search"
+      booking:
+        del: "Delete"
     subpitch_types:
       show:
         title: "Info Subpitch Type"
@@ -551,7 +569,7 @@ en:
         id: "#"
         name: "Name"
         description: "Description"
-        Option: "Option"
+        option: "Option"
         add: "Add"
       edit:
         title: "Edit info Subpitch Type"
@@ -599,6 +617,7 @@ en:
         end_time: "End_time: %{add}"
       index:
         title: "List Pitch"
+        new: "New pitch"
         id: "#"
         user: "User"
         name: "Name"
@@ -642,8 +661,8 @@ en:
         show:
           asc: "asc"
           desc: "desc"
-          asc_total: "Tổng tiền tăng dần"
-          desc_total: "Tổng tiền giảm dầm"
+          asc_total: "Asc total"
+          desc_total: "Desc total"
           new: "New"
           title: "Detail revenue"
           id: "#"
@@ -706,6 +725,16 @@ en:
             star: "star"
             content: "content"
             option: "option"
+  comments:
+    create:
+      comment_success: Comment successfully
+      not_allow: You are not allowed!
+      not_found_rating_id: Rating's id not found!
+    comment:
+      not_found_comment: Not found comment!
+      content: "Comment here"
+      comment: "Comment"
+      reply: Reply
   msg:
     destroy_success: "Destroy success"
     destroy_danger: "Destroy danger"
@@ -720,9 +749,12 @@ en:
     danger_load_booking: "Can't load booking"
     danger_permission: "Can't permission"
     danger_load_rating: "Can't load rating"
+    danger_load: "Không thể thực hiện"
     value_invalid: "Value invalid"
     user_notfound: "User not found"
     transfer_success: "Transfer success"
+    star_invalid: "Star invalid"
+    money_invalid: "Money invalid"
   user:
     success: "Success!"
     danger: "Failed!"
@@ -746,3 +778,4 @@ en:
     delete: "Delete"
     confirm: "You sure?"
     back: "Back"
+  exist_paid_booking: Unfortunately, someone already paid before!
