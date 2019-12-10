@@ -1,0 +1,5 @@
+$('#content_search').empty();
+$('#content_search').html('<%= j render partial: "view_soccer", collection: @pitches %>');
+$('#paginate_home').empty();
+$('#paginate_home').html('<%= will_paginate @pitches, remote: true %>');
+$('#paginate_home a').attr('data-remote','true');

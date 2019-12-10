@@ -20,9 +20,11 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="content_search">
       <%= render partial: "pitches/view_soccer", collection: @pitches %>
     </div>
-    <%= will_paginate @pitches %>
+    <div id="paginate_home">
+      <%= will_paginate @pitches,:params => {controller: "pitches", action: "index"} %>
+    </div>
   </div>
 </section>

@@ -30,6 +30,30 @@ class Pitch < ApplicationRecord
     end
   end)
 
+  scope(:search_pitches, lambda do |address|
+    where("address LIKE ?", "%#{address}%")
+  end)
+  scope(:search_city, lambda do |city|
+    where("city LIKE ?", "%#{city}%")
+  end)
+  scope(:search_district, lambda do |district|
+    where("district LIKE ?","%#{district}%")
+  end)
+
+  # scope(:search_time, lambda do |time|
+  #   search = ""
+  #    time.each do |column, value, operator|
+  #     if column.keys[0] && column.keys[1]
+  #       (search += "OR") if search.present?
+  #       search += "(#{column.keys[0]} #{column.values[1]} TIME('#{column.values[0]}'))"
+  #     end
+  #   end
+  #   where(search) if search
+  # end)
+  scope(:search_time, lambda do |start_time, end_time|
+    where("(start_time >= ? and start_time <= ?) or (end_time >= ? and end_time <= ?) or (start_time <= ? and end_time >= ?)", start_time, end_time, start_time, end_time, start_time, end_time )
+  end)
+
   scope :pitch_owner, ->(id_user){where("user_id = ?", id_user)}
 
   scope(:revenue_pitch, lambda do

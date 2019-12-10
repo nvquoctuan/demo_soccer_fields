@@ -67,3 +67,7 @@ $(document).ready(function() {
   });
 });
 
+
+$(document).ready(function(){
+  $('#paginate_home a').attr('data-remote','true');
+});
