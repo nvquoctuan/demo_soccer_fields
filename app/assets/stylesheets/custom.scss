@@ -237,6 +237,12 @@ aside {
 }
 
 /* forms */
+.user{
+  .form{
+    background: $white;
+    border-radius: 5px;
+  }
+}
 .login_form{
   p, h1 {
     color: $white;

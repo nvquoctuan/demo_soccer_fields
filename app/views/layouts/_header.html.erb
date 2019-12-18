@@ -4,11 +4,10 @@
       <div class="row align-items-center">
         <div class="col-lg-6 col-sm-6 col-6 header-top-left">
           <ul>
-            <% byebug %>
           <% if user_signed_in? %>
             <li class="name"><%= current_user.full_name %></li>
             <li><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to t(".profile"), "#" %></li>
+            <li><%= link_to t(".profile"), user_path(current_user) %></li>
             <li><%= link_to t(".setting"), edit_user_registration_path %></li>
             <% unless current_user.user? %>
               <li><%= link_to t(".manage"), admin_root_path %></li>

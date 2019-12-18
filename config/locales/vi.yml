@@ -726,6 +726,15 @@ vi:
     female: "Nữ"
     male: "Nam"
     like: "Thích (%{add})"
+    minimum_pass: (%{add} Kí tự tối thiểu)
+    login: "Đăng nhập"
+    sign_up: "Đăng ký"
+    forgot_pass: "Quên mật khẩu?"
+    instruction: "Không nhận được email xác thực?"
+    submit: "Gửi"
+    unhappy: Unhappy
+    cancel_account: "Hủy bỏ tài khoản"
+    update: "Cập nhật"
   comments:
     create:
       comment_success: Thành công
@@ -737,3 +746,23 @@ vi:
       comment: "Bình luận"
       reply: Trả lời
   exist_paid_booking: Có không giữ, mất đừng tìm. Cơ hội chỉ đến 1 lần!
+  devise:
+    passwords:
+      edit:
+        reset_password: "Thiết lập lại mật khẩu"
+        change_pass: "Đổi mật khẩu"
+      new:
+        forgot_password: "Quên mật khẩu"
+    sessions:
+      new:
+        log_in: Đăng nhập
+    registrations:
+      edit:
+        sign_up: Chỉnh sửa thông tin
+        notify_pass: (bỏ trống nếu bạn không muốn thay đổi)
+        notify_current_pass: (chúng tôi cần mật khẩu hiện tại để xác thực thay đổi của bạn)
+        cancel_account: "HỦy bỏ tài khoản"
+    confirmations:
+      new:
+        sign_up: Đăng ký
+        resend_confirm: Gửi lại email xác thực

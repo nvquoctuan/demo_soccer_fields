@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "static_pages#home"
   post "comment/create", to: "comments#create"
+  devise_for :users, controllers: {registrations: "registrations"}
   namespace :admin do
     root "pages#home"
     resources :subpitch_types
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :recharges, except: %i(show update edit)
     resources :ratings, only: %i(index destroy), controller: "subpitches/ratings"
     resources :bookings
-    resources :users do
+    resources :users, controller: "/users" do
       resources :roles, only: :create, controller: "users/roles"
     end
   end
@@ -29,8 +29,7 @@ Rails.application.routes.draw do
   get "/blog", to: "static_pages#blog"
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
-  resources :password_resets, except: :index
-  resources :account_activations, only: :edit
+
   resources :pitches, only: :index do
     resources :subpitches, only: %i(index show) do
       resources :likes, only: %i(create destroy), controller: "subpitches/likes"
@@ -45,5 +44,7 @@ Rails.application.routes.draw do
     resources :ratings, except: %i(show), controller: "bookings/ratings"
   end
   patch "pays/update"
-  # resources :users
+  resources :users, only: %i(index show destroy)
+  # resources :password_resets, except: :index
+  # resources :account_activations, only: :edit
 end

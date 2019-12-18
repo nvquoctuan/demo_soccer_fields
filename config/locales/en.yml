@@ -777,9 +777,38 @@ en:
     female: "Female"
     male: "Male"
     like: "Like (%{add})"
+    minimum_pass: (%{add} characters minimum)
+    login: "Log in"
+    sign_up: "Sign up"
+    forgot_pass: "Forgot your password?"
+    instruction: "Didn't receive confirmation instructions?"
+    submit: "Submit"
+    unhappy: Unhappy
+    cancel_account: "Cancel account"
+    update: "Update"
   general:
     search: "Search"
     delete: "Delete"
     confirm: "You sure?"
     back: "Back"
   exist_paid_booking: Unfortunately, someone already paid before!
+  devise:
+    passwords:
+      edit:
+        reset_password: "Reset password"
+        change_pass: "Change my password"
+      new:
+        forgot_password: "Forgot password"
+    sessions:
+      new:
+        log_in: Login
+    registrations:
+      edit:
+        sign_up: Edit profile
+        notify_pass: (leave blank if you don't want to change it)
+        notify_current_pass: (we need your current password to confirm your changes)
+        cancel_account: "Cancel my account"
+    confirmations:
+      new:
+        sign_up: Signup
+        resend_confirm: Resend confirmation instructions
