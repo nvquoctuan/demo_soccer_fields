@@ -3,7 +3,7 @@ class Bookings::RatingsController < ApplicationController
   before_action :load_booking, :load_subpitch
   before_action :load_rating, only: %i(edit update destroy)
 
-  def index
+  def new
     @rating = @booking.build_rating
   end
 
@@ -20,7 +20,7 @@ class Bookings::RatingsController < ApplicationController
 
   def edit
     respond_to do |format|
-      format.html{render :index}
+      format.html{render :new}
       format.js
     end
   end

@@ -14,18 +14,18 @@ class Admin::RechargesController < AdminController
   end
 
   def create
-    ActiveRecord::Base.transaction do
-      @recharge = current_user.active_recharge.build wallet_params
-      @recharge.save!
-      @user = User.find params[:recharge][:receiver_id].to_i
-      if @user.update!(wallet: @user.wallet + params[:recharge][:money].to_i)
-        flash[:success] = t "msg.recharge_success"
+      ActiveRecord::Base.transaction do
+        @recharge = current_user.active_recharge.build wallet_params
+        @recharge.save!
+        @user = User.find params[:recharge][:receiver_id].to_i
+        if @user.update!(wallet: @user.wallet + params[:recharge][:money].to_i)
+          flash[:success] = t "msg.recharge_success"
+        end
+        rescue ActiveRecord::RecordInvalid, ActiveRecord::RangeError
+          flash[:danger] = t "msg.value_invalid"
+        rescue ActiveRecord::RecordNotFound
+          flash[:danger] = t "msg.user_notfound"
       end
-      rescue ActiveRecord::RecordInvalid, ActiveRecord::RangeError
-        flash[:danger] = t "msg.value_invalid"
-      rescue ActiveRecord::RecordNotFound
-        flash[:danger] = t "msg.user_notfound"
-    end
     redirect_to admin_recharges_path
   end
 

@@ -2,14 +2,10 @@
 <h1><%= t ".title" %></h1>
 <div>
   <%= form_with url: admin_ratings_path, local: true, class: "input-group", method: "get" do |f| %>
-    <span class="input-group-prepend left">
-      <%= f.button "", class: "btn btn-primary" do %>
-        <svg class="c-icon" class="h14 w20">
-          <use xlink:href="/assets/admin/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
-        </svg> <%= t "general.search" %>
-      <% end %>
-    </span>
     <%= f.text_field :search, class: "form-control wid30 left", id: "input1-group2",value: params[:search] %>
+    <span class="input-group-prepend left ">
+      <%= f.button "", class: "btn btn-primary glyphicon glyphicon-search" %>
+    </span>
   <% end %>
 </div>
 <hr class="mt-0">

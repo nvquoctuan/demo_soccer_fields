@@ -2,22 +2,18 @@
 <h1><%= t ".title" %></h1>
 <div>
   <%= form_with url: admin_bookings_path, local: true, class: "input-group", method: "get" do |f| %>
-    <span class="input-group-prepend left">
-      <%= f.button "", class: "btn btn-primary" do %>
-        <svg class="c-icon" class="h14 w20">
-          <use xlink:href="/assets/admin/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
-        </svg> <%= t "general.search" %>
-      <% end %>
-    </span>
     <%= f.text_field :search, class: "form-control wid30 left", id: "input1-group2", value: params[:search] %>
     <% status = [{id: 0, name: ".verified_paid"}, {id: 1, name: ".verifield_unpaid"}, {id: 2, name: ".notverifield"}, {id: 3, name: ".all"}] %>
     <%= select_tag "status", options_for_select(status.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:status]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle left wid15" %>
     <% @year = Date.today if @year.blank? %>
     <% @month = Date.today if @month.blank? %>
     <% @day = Date.today if @day.blank? %>
-    <%= select_year(@year, {field_name: "year", start_year: 2010, end_year: Time.current.year}, {class: "btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
-    <%= select_month(@month, {field_name: "month"}, {class: "btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
-    <%= select_day(@day, {field_name: "day"}, {class: "btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
+    <%= select_year(@year, {field_name: "year", start_year: 2010, end_year: Time.current.year}, {class: "left btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
+    <%= select_month(@month, {field_name: "month"}, {class: "btn btn-info dropdown-toggle left", onchange: "this.form.submit()"}) %>
+    <%= select_day(@day, {field_name: "day"}, {class: "btn btn-info dropdown-toggle left", onchange: "this.form.submit()"}) %>
+    <span class="input-group-prepend left ">
+      <%= f.button "", class: "btn btn-primary glyphicon glyphicon-search" %>
+    </span>
   <% end %>
 </div>
 <hr class="mt-0">
@@ -31,7 +27,6 @@
       <th class = "text-center"><%= t ".message" %></th>
       <th class = "text-center"><%= t ".status" %></th>
       <th class = "text-center"><%= t ".total_price" %></th>
-      <th class = "text-center"><%= t ".option" %></th>
     </tr>
   </thead>
   <tbody>

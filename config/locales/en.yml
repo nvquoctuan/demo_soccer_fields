@@ -396,18 +396,17 @@ en:
   not_allow: You are not allowed
   bookings:
     index:
-      title: "Booking List pitch "
-      user_name: "User name"
-      subpitch_name: "Subpitch"
-      start_time: "Start time"
-      end_time: "End time"
-      message: "Message"
+      title: "List booking"
+      pitch: "Pitch"
+      subpitch: "Subpitch"
+      address: "Address"
+      start: "Start time"
+      end: "End time"
       status: "Status"
-      total_price: "Total price"
       option: "Option"
       search: "Search"
     ratings:
-      index:
+      new:
         title: "Rating for booking"
         pitch_name_html: "Pitch name: <strong>%{add}</strong>"
         name_html: "Subpitch Name: <strong>%{add}</strong>"
@@ -461,11 +460,13 @@ en:
       not_found: Booking not found!
       cancel_success: Cancel successfully
     booking:
-      review: Review
+      list_review: List review
+      rating: "Rating"
       confirm: Are you sure?
       cancel: Cancel
       canceled: Canceled
       payment: Wait for pay
+
     booking_index:
       rating: "Rating"
   ratings:

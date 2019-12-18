@@ -22,6 +22,7 @@ class Recharge < ApplicationRecord
   private
 
   def check_money
+    return if self.money.nil?
     return if self.money > 0
 
     errors.add :money_invalid, I18n.t("msg.money_invalid")

@@ -2,20 +2,16 @@
 <h1><%= t ".title" %></h1>
 <div>
   <%= form_with url: "#", local: true, class: "input-group wid60 left", method: "get" do |f| %>
-    <span class="input-group-prepend left">
-      <%= f.button "", class: "btn btn-primary" do %>
-        <svg class="c-icon" class="h14 w20">
-          <use xlink:href="/assets/admin/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
-        </svg> <%= t ".search" %>
-      <% end %>
-    </span>
     <%= f.text_field :search, class: "form-control wid30 left", id: "input1-group2", value: params[:search] %>
     <% order = [{id: t(".asc"), name: t(".asc_total")}, {id: t(".desc"), name: t(".desc_total")}] %>
-    <%= select_tag "order", options_for_select(order.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:order]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle" %>
+    <%= select_tag "order", options_for_select(order.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:order]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle left" %>
     <% @year = Date.today if @year.blank? %>
     <% @month = Date.today if @month.blank? %>
-    <%= select_year(@year, {field_name: "year", start_year: 2010, end_year: Time.current.year}, {class: "btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
-    <%= select_month(@month, {field_name: "month"}, {class: "btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
+    <%= select_year(@year, {field_name: "year", start_year: 2010, end_year: Time.current.year}, {class: "left btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
+    <%= select_month(@month, {field_name: "month"}, {class: "left btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
+    <span class="input-group-prepend left ">
+      <%= f.button "", class: "btn btn-primary glyphicon glyphicon-search" %>
+    </span>
   <% end %>
   <% if @revenues.present? %>
     <p class="right">

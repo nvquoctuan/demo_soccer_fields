@@ -3,15 +3,14 @@
 <div>
   <div>
     <%= form_with url: admin_pitch_subpitches_path, local: true, html: {style: "float: left; width: 40%"}, class: "input-group", method: "get" do |f| %>
+      <%= f.text_field :search, class: "form-control", id: "input1-group2", style: "width: 30%; float: left", value: params[:search] %>
       <span class="input-group-prepend" style = "float:left">
         <%= f.button "", class: "btn btn-primary" do %>
           <svg class="c-icon" style="height: 14px; width: 20px;">
             <use xlink:href="/assets/admin/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
-          </svg> Search
+          </svg> <%= t "generate.search" %>
         <% end %>
       </span>
-      <%= f.text_field :search, class: "form-control", id: "input1-group2", style: "width: 30%; float: left",
-          value: params[:search] %>
     <% end %>
     <%= link_to t(".new"), new_admin_pitch_subpitch_path, style: "float:right" %>
   </div>

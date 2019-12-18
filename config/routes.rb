@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "static_pages#home"
   post "comment/create", to: "comments#create"
   namespace :admin do
@@ -41,9 +42,8 @@ Rails.application.routes.draw do
   end
   resources :bookings do
     resources :pays, only: :new
-    resources :ratings, except: :show, controller: "bookings/ratings"
+    resources :ratings, except: %i(show), controller: "bookings/ratings"
   end
-  resources :ratings, only: :index
   patch "pays/update"
-  resources :users
+  # resources :users
 end

@@ -129,14 +129,14 @@ vi:
   bookings:
     index:
       title: "Danh sách đặt sân"
-      user_name: "Họ tên"
-      subpitch_name: "Sân nhỏ"
-      start_time: "Thời gian bắt đầu"
-      end_time: "Thời gian kết thúc"
-      message: "Tin nhắn"
+      pitch: "Sân bóng"
+      subpitch: "Sân nhỏ"
+      address: "Địa chỉ"
+      start: "Thời gian bắt đầu"
+      end: "Thời gian kết thúc"
       status: "Trạng thái"
-      total_price: "Tổng tiền"
-      option: "Lựa chọn"
+      option: "Tùy chọn"
+      search: "Tìm kiếm"
     new:
       booking: Đặt sân bóng
       schedule: Lịch trình
@@ -177,7 +177,7 @@ vi:
     booking_index:
       rating: "Rating"
     ratings:
-      index:
+      new:
         title: "Đánh giá cho bookingRating for booking"
         pitch_name_html: "Tên sân bóng: <strong>%{add}</strong>"
         name_html: "Sân bóng nhỏ: <strong>%{add}</strong>"

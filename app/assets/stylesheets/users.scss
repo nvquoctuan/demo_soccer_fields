@@ -107,8 +107,18 @@ footer {
 
 /* forms */
 .login_form{
-  p, h1 {
+  background: $white;
+  border-radius: 5px;
+  p{
     color: $white;
+  }
+  h1{
+    color: $black;
+  }
+  input[type="checkbox"]{
+    display: inline-block;
+    float: left;
+    width: 4%;
   }
 }
 
@@ -124,7 +134,7 @@ footer {
     @include box_sizing;
   }
   label{
-    color: $white;
+    color: $black;
   }
 }
 

@@ -2,15 +2,11 @@
 <h1><%= t ".title" %></h1>
 <div>
   <%= form_with url: "#", local: true, class: "input-group wid60 left", method: "get" do |f| %>
-    <span class="input-group-prepend left">
-      <%= f.button "", class: "btn btn-primary" do %>
-        <svg class="c-icon" class="h14 w20">
-          <use xlink:href="/assets/admin/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
-        </svg> <%= t ".search" %>
-      <% end %>
-    </span>
     <%= f.text_field :search, class: "form-control wid30 left", id: "input1-group2", value: params[:search] %>
-    <%= select_tag :receiver_id, options_for_select(@users.collect{|u| [t(u[:full_name]), u[:id]]}, selected: params[:receiver_id]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle" %>
+    <%= select_tag :receiver_id, options_for_select(@users.collect{|u| [t(u[:full_name]), u[:id]]}, selected: params[:receiver_id]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle left" %>
+    <span class="input-group-prepend left ">
+      <%= f.button "", class: "btn btn-primary glyphicon glyphicon-search" %>
+    </span>
   <% end %>
   <%= link_to t(".new"), new_admin_recharge_path, style: "float:right" %>
 </div>

@@ -32,7 +32,7 @@ size_avatar_default: 80
 size_avatar: 100
 size_avatar_users_index: 50
 remember_value: "1"
-host: localhost:3000
+host: localhost
 default_avatar_name: default_avatar
 timeout_reset_password: 2
 max_content_post: 140

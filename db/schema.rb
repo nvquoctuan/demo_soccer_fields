@@ -139,26 +139,24 @@ ActiveRecord::Schema.define(version: 2019_12_08_190144) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "avatar"
-    t.boolean "activated", default: false
-    t.string "activation_digest"
-    t.datetime "activated_at"
-    t.string "email"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "full_name"
     t.boolean "gender"
     t.string "phone"
-    t.string "password_digest"
-    t.string "reset_digest"
     t.integer "role", default: 2
-    t.datetime "reset_sent_at"
-    t.string "remember_digest"
-    t.string "provider"
-    t.string "uid"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "avatar"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.decimal "wallet", precision: 10, default: "0"
-    t.index ["provider", "email"], name: "index_users_on_provider_and_email", unique: true
-    t.index ["uid"], name: "index_users_on_uid", unique: true
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
