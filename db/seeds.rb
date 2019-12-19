@@ -1,8 +1,8 @@
-User.create(full_name: "Example User", phone: "0964991298", email: "user@soccer.vn", wallet: 100000000, password: "admin123", password_confirmation: "admin123", role: 2)
+User.create(full_name: "Example User", phone: "0964991298", email: "user@soccer.vn", wallet: 100000000, password: "admin123", password_confirmation: "admin123", role: 2, confirmed_at: Time.now)
 User.create!({full_name: "Admin User", email: "admin@soccer.vn",
-  password: "admin123", password_confirmation: "admin123", phone: "0964991298", role: 0,
+  password: "admin123", password_confirmation: "admin123", phone: "0964991298", role: 0, confirmed_at: Time.now,
   wallet: 10000000})
-User.create!({full_name: "Owner User", email: "owner@soccer.vn",
+User.create!({full_name: "Owner User", email: "owner@soccer.vn", confirmed_at: Time.now,
   password: "admin123", password_confirmation: "admin123", phone: "0962991298", role: 1})
 
 99.times do |n|

@@ -20,5 +20,6 @@ module SoccerField
     config.autoload_paths += %W["#{config.root}/app/validators/"]
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.autoload_paths << Rails.root.join('assets')
+    config.factory_bot.definition_file_paths = ["custom/factories"]
   end
 end

@@ -35,7 +35,7 @@
         </svg> <%= t ".user_rating" %>
       <% end %>
     </li>
-    <% if current_user.admin? %>
+    <% if can?(:manage, SubpitchType) && can?(:manage, Recharge) %>
       <li class="c-sidebar-nav-item">
         <%= link_to admin_subpitch_types_path, class: "c-sidebar-nav-link" do %>
           <svg class="c-sidebar-nav-icon">

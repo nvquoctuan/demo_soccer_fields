@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   private
 
   def admin_user
-    redirect_to root_path unless current_user.admin?
+    authorize! :read, current_user
   end
 
   def load_layout
