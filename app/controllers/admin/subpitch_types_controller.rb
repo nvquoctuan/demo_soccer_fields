@@ -1,5 +1,6 @@
 class Admin::SubpitchTypesController < AdminController
-  before_action :check_admin
+  load_and_authorize_resource
+  before_action :check_authorize!
   before_action :load_subpitch_type, except: %i(index new create)
 
   def index
@@ -52,11 +53,8 @@ class Admin::SubpitchTypesController < AdminController
     params.require(:subpitch_type).permit SubpitchType::TYPE
   end
 
-  def load_subpitch_type
-    @subpitch_type = SubpitchType.find_by id: params[:id]
-    return if @subpitch_type
 
-    flash[:danger] = t "msg.danger_load"
-    redirect_to subpitch_types_path
+  def check_authorize!
+    authorize! :manage, SubpitchType
   end
 end

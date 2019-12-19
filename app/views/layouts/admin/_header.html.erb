@@ -17,7 +17,7 @@
     <li class="c-header-nav-item px-3">
       <%= link_to t(".home"), admin_root_path, class: "c-header-nav-link" %>
     </li>
-    <% if current_user.admin? %>
+    <% if can? :read, User %>
       <li class="c-header-nav-item px-3">
         <%= link_to t(".users"), admin_users_path, class: "c-header-nav-link" %>
       </li>
@@ -51,7 +51,7 @@
           </svg> <%= t ".settings" %>
         <% end %>
         <div class="dropdown-divider"></div>
-        <%= link_to logout_path, class: "dropdown-item" do %>
+        <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
           <svg class="c-icon mr-2">
             <use xlink:href="/asset/images/admin/sprites/free.svg#cil-account-logout"></use>
           </svg> <%= t ".logout" %>
