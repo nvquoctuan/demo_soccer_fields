@@ -1,22 +1,23 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".title" %></h1>
 <div>
-  <%= form_with url: "#", local: true, class: "input-group left wid60", method: "get" do |f| %>
-    <span class="input-group-prepend left">
-      <%= f.button "", class: "btn btn-primary" do %>
-        <svg class="c-icon" class="h14 w20">
-          <use xlink:href="/assets/admin/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
-        </svg> <%= t ".search" %>
-      <% end %>
+  <%= search_form_for @search, url: "#", class: "input-group left wid60", method: "get" do |f| %>
+    <%= f.text_field :name_or_description_cont, class: "form-control", id: "input1-group2", style: "width: 30%; float: left", placeholder: "Name or description" %>
+    <div class='input-group date w150 left' id='datetimepicker1'>
+      <%= f.text_field :bookings_start_time_gteq, class: "form-control" %>
+      <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+  <div class='input-group date w150 left' id='datetimepicker2'>
+    <%= f.text_field :bookings_end_time_lteq, class: "form-control" %>
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
     </span>
-    <%= f.text_field :search, class: "form-control", id: "input1-group2", style: "width: 30%; float: left",
-        value: params[:search] %>
-    <% order = [{id: t(".asc"), name: t(".asc_total")}, {id: t(".desc"), name: t(".desc_total")}] %>
-    <%= select_tag "order", options_for_select(order.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:order]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle" %>
-    <% @year = Date.today if @year.blank? %>
-    <% @month = Date.today if @month.blank? %>
-    <%= select_year(@year, {field_name: "year", start_year: 2010, end_year: Time.current.year}, {class: "btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
-    <%= select_month(@month, {field_name: "month"}, {class: "btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
+    </div>
+    <span class="input-group-prepend left ">
+      <%= f.button "", class: "btn btn-primary glyphicon glyphicon-search" %>
+    </span>
   <% end %>
   <% if @revenue_details.present? %>
     <p class="right">
@@ -31,8 +32,8 @@
   <thead class="thead-light">
     <tr>
       <th class = "text-center"><%= t ".pitch_name" %></th>
-      <th class = "text-center"><%= t ".subpitch_type" %></th>
-      <th class = "text-center"><%= t ".name" %></th>
+      <th class = "text-center"><%= sort_link @search, :subpitch_type, t(".subpitch_type") %></th>
+      <th class = "text-center"><%= sort_link @search, :name, t(".name") %></th>
       <th class = "text-center"><%= t ".description" %></th>
       <th class = "text-center"><%= t ".total" %></th>
       <th class = "text-center"><%= t ".currency" %></th>

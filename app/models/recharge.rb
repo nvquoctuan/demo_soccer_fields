@@ -7,12 +7,6 @@ class Recharge < ApplicationRecord
   validates :money, numericality: true
   validate :check_money
 
-  scope :search, (lambda do |search|
-    if search
-      where "money = ? OR content LIKE ?", search.to_i, "%#{search}%"
-    end
-  end)
-
   scope :by_receiver, ->(user_id){where receiver: user_id if user_id}
 
   scope :by_user, (lambda do |user_id|

@@ -27,9 +27,8 @@ class Admin::BookingsController < AdminController
   def load_booking_admin
     return unless check_admin?
 
-    @bookings = Booking.last_booking.booking_status(params[:status].to_i)
-                       .search_booking(params[:search])
-                       .by_year(@year).by_month(@month).by_day(@day)
+    @search = Booking.ransack params[:q]
+    @bookings = @search.result.last_booking
                        .paginate page: params[:page],
                         per_page: Settings.size.s10
   end
@@ -37,10 +36,9 @@ class Admin::BookingsController < AdminController
   def load_booking_owner
     return unless check_owner?
 
-    @bookings = Booking.last_booking.booking_status(params[:status].to_i)
+    @search = Booking.ransack params[:q]
+    @bookings = @search.result.last_booking
                        .booking_owner(current_user.id)
-                       .by_year(@year).by_month(@month).by_day(@day)
-                       .search_booking(params[:search])
                        .paginate page: params[:page],
                         per_page: Settings.size.s10
   end

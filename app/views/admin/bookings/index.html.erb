@@ -1,16 +1,23 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".title" %></h1>
 <div>
-  <%= form_with url: admin_bookings_path, local: true, class: "input-group", method: "get" do |f| %>
-    <%= f.text_field :search, class: "form-control wid30 left", id: "input1-group2", value: params[:search] %>
-    <% status = [{id: 0, name: ".verified_paid"}, {id: 1, name: ".verifield_unpaid"}, {id: 2, name: ".notverifield"}, {id: 3, name: ".all"}] %>
-    <%= select_tag "status", options_for_select(status.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:status]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle left wid15" %>
-    <% @year = Date.today if @year.blank? %>
-    <% @month = Date.today if @month.blank? %>
-    <% @day = Date.today if @day.blank? %>
-    <%= select_year(@year, {field_name: "year", start_year: 2010, end_year: Time.current.year}, {class: "left btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
-    <%= select_month(@month, {field_name: "month"}, {class: "btn btn-info dropdown-toggle left", onchange: "this.form.submit()"}) %>
-    <%= select_day(@day, {field_name: "day"}, {class: "btn btn-info dropdown-toggle left", onchange: "this.form.submit()"}) %>
+  <%= search_form_for @search, url: admin_bookings_path, local: true, class: "input-group left wid60" do |f| %>
+    <%= f.text_field :subpitch_name_or_user_full_name_cont, class: "form-control wid30 left", id: "input1-group2" %>
+    <% status = [{id: 0, name: ".verified_paid"}, {id: 1, name: ".verifield_unpaid"}, {id: 2, name: ".notverifield"}] %>
+    <% @status = params[:q][:status_eq] if params[:q] %>
+    <%= select_tag "q[status_eq]", options_for_select(status.collect{|u| [t(u[:name]), u[:id]]}, selected: @status), class: "btn btn-info dropdown-toggle left wid15", onchange: "this.form.submit()" %>
+    <div class='input-group date w150 left' id='datetimepicker1'>
+        <%= f.text_field :start_time_gteq, class: "form-control" %>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+    <div class='input-group date w150 left' id='datetimepicker2'>
+        <%= f.text_field :end_time_lteq, class: "form-control" %>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
     <span class="input-group-prepend left ">
       <%= f.button "", class: "btn btn-primary glyphicon glyphicon-search" %>
     </span>

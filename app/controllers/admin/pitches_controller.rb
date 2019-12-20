@@ -60,14 +60,16 @@ class Admin::PitchesController < AdminController
   def load_pitch_admin
     return unless check_admin?
 
-    @pitches = Pitch.search(params[:search]).latest_pitches
+    @search = Pitch.ransack params[:q]
+    @pitches = @search.result.latest_pitches
                     .paginate page: params[:page], per_page: Settings.size.s10
   end
 
   def load_pitch_owner
     return unless check_owner?
 
-    @pitches = Pitch.search(params[:search]).latest_pitches
+    @search = Pitch.ransack params[:q]
+    @pitches = @search.result.latest_pitches
                     .pitch_owner(current_user.id)
                     .paginate page: params[:page], per_page: Settings.size.s10
   end

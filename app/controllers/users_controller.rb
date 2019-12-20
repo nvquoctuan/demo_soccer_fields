@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   before_action :admin_user, only: %i(destroy index)
 
   def index
-    @users = User.order_confirm.search(params[:search])
+    @search = User.ransack params[:q]
+    @users = @search.result.order_confirm
                  .paginate page: params[:page], per_page: Settings.size.s10
   end
 

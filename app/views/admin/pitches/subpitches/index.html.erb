@@ -2,11 +2,11 @@
 <h1><%= t ".title" %></h1>
 <div>
   <div>
-    <%= form_with url: admin_pitch_subpitches_path, local: true, html: {style: "float: left; width: 40%"}, class: "input-group", method: "get" do |f| %>
-      <%= f.text_field :search, class: "form-control", id: "input1-group2", style: "width: 30%; float: left", value: params[:search] %>
-      <span class="input-group-prepend" style = "float:left">
+    <%= search_form_for @search, url: admin_pitch_subpitches_path, local: true, class: "input-group left wid40" do |f| %>
+      <%= f.text_field :name_or_description_cont, class: "form-control wid30 left", id: "input1-group2" %>
+      <span class="input-group-prepend left">
         <%= f.button "", class: "btn btn-primary" do %>
-          <svg class="c-icon" style="height: 14px; width: 20px;">
+          <svg class="c-icon h14 w20">
             <use xlink:href="/assets/admin/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
           </svg> <%= t "generate.search" %>
         <% end %>

@@ -5,10 +5,10 @@ class Admin::Pitches::SubpitchesController < AdminController
   before_action ->{check_pitch_owner(@pitch)}
 
   def index
-    @subpitches = Subpitch.pitch(params[:pitch_id].to_i)
-                          .search(params[:search])
-                          .paginate page: params[:page],
-                           per_page: Settings.size.s10
+    @search = Subpitch.ransack params[:q]
+    @subpitches = @search.result.pitch(params[:pitch_id].to_i)
+                         .paginate page: params[:page],
+                          per_page: Settings.size.s10
   end
 
   def show; end

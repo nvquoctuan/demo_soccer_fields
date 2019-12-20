@@ -4,9 +4,9 @@ class Admin::SubpitchTypesController < AdminController
   before_action :load_subpitch_type, except: %i(index new create)
 
   def index
-    @subpitch_types = SubpitchType.search(params[:search])
-                                  .paginate page: params[:page],
-                                   per_page: Settings.size.s10
+    @search = SubpitchType.ransack params[:q]
+    @subpitch_types = @search.result.paginate page: params[:page],
+                              per_page: Settings.size.s10
   end
 
   def show; end

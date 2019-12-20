@@ -1,8 +1,8 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".title" %> </h1>
 <div>
-  <%= form_with url: admin_subpitch_types_path, local: true, class: "input-group wid30", method: "get" do |f| %>
-    <%= f.text_field :search, class: "form-control wid30 left", id: "input1-group2", value: params[:search] %>
+  <%= search_form_for @search, url: admin_subpitch_types_path, class: "input-group wid30", method: "get" do |f| %>
+    <%= f.text_field :name_or_description_cont, class: "form-control wid30 left", id: "input1-group2" %>
     <span class="input-group-prepend left ">
       <%= f.button "", class: "btn btn-primary glyphicon glyphicon-search" %>
     </span>
@@ -13,7 +13,7 @@
 <table class = "table table-responsive-sm table-hover table-outline mb-0">
   <thead class="thead-light">
     <tr>
-      <th class = "text-center"><%= t ".name" %></th>
+      <th class = "text-center"><%= sort_link @search, :name, t(".name") %></th>
       <th class = "text-center"><%= t ".description" %></th>
       <th class = "text-center"><%= t ".option" %></th>
     </tr>

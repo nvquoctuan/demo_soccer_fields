@@ -16,6 +16,14 @@ class Booking < ApplicationRecord
   delegate :full_name, to: :user, prefix: true
   delegate :name, to: :subpitch, prefix: true
 
+  ransacker :start_time do
+    Arel.sql('date(bookings.start_time)')
+  end
+
+  ransacker :end_time do
+    Arel.sql('date(bookings.end_time)')
+  end
+
   scope :inschedule, (lambda do |start_time_schedule|
     where "date_format(start_time, \"%H%i\") >= ?",
           start_time_schedule.strftime("%H%M")

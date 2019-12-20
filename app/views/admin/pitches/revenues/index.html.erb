@@ -1,14 +1,20 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".title" %></h1>
 <div>
-  <%= form_with url: "#", local: true, class: "input-group wid60 left", method: "get" do |f| %>
-    <%= f.text_field :search, class: "form-control wid30 left", id: "input1-group2", value: params[:search] %>
-    <% order = [{id: t(".asc"), name: t(".asc_total")}, {id: t(".desc"), name: t(".desc_total")}] %>
-    <%= select_tag "order", options_for_select(order.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:order]), onchange: "this.form.submit()", class: "btn btn-info dropdown-toggle left" %>
-    <% @year = Date.today if @year.blank? %>
-    <% @month = Date.today if @month.blank? %>
-    <%= select_year(@year, {field_name: "year", start_year: 2010, end_year: Time.current.year}, {class: "left btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
-    <%= select_month(@month, {field_name: "month"}, {class: "left btn btn-info dropdown-toggle", onchange: "this.form.submit()"}) %>
+  <%= search_form_for @search, url: "#", class: "input-group left wid50" do |f| %>
+    <%= f.text_field :admin_revenue, class: "form-control wid30 left", id: "input1-group2", placeholder: "Name or descripition" %>
+    <div class='input-group date w150 left' id='datetimepicker1'>
+        <%= f.text_field :subpitches_bookings_start_time_gteq, class: "form-control" %>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+    <div class='input-group date w150 left' id='datetimepicker2'>
+        <%= f.text_field :subpitches_bookings_end_time_lteq, class: "form-control" %>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
     <span class="input-group-prepend left ">
       <%= f.button "", class: "btn btn-primary glyphicon glyphicon-search" %>
     </span>
@@ -35,7 +41,7 @@
       <th class = "text-center"><%= t ".phone" %></th>
       <th class = "text-center"><%= t ".start_time" %></th>
       <th class = "text-center"><%= t ".end_time" %></th>
-      <th class = "text-center"><%= t ".limit" %></th>
+      <th class = "text-center"><%= sort_link @search, :limit, t(".limit") %></th>
       <th class = "text-center"><%= t ".total" %></th>
       <th class = "text-center"><%= t ".option" %></th>
     </tr>

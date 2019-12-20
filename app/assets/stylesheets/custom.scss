@@ -1,5 +1,6 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'bootstrap-datetimepicker';
 @import 'linearicons';
 @import 'magnific-popup';
 @import 'main';
@@ -30,8 +31,14 @@
 .auto{
   margin: 0 auto;
 }
+.wid40{
+  width: 40% !important;
+}
 .wid30{
   width: 30% !important;
+}
+.wid50{
+  width: 50% !important;
 }
 .wid60{
   width: 60% !important;
@@ -39,11 +46,20 @@
 .wid500p{
   width: 500px;
 }
+.w150{
+  width: 150px !important;
+}
 .left{
   float: left;
 }
 .right{
   float: right;
+}
+.h14{
+  height: 14px;
+}
+.w20{
+  width: 20px;
 }
 .pad-top150{
   padding-top: 150px;
@@ -58,7 +74,7 @@
   color: $red;
 }
 .bg-green2{
-  background: green;
+  background: $green;
 }
 
 .container2{

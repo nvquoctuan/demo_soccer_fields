@@ -4,8 +4,8 @@
     <h1 class="cl-white"><%= t ".title" %></h1>
     <div>
       <div>
-        <%= form_with url: bookings_path, local: true, class: "input-group", method: "get" do |f| %>
-          <%= f.text_field :search, class: "form-control left wid30", id: "input1-group2", value: params[:search] %>
+        <%= search_form_for @search, url: bookings_path, class: "input-group", method: "get" do |f| %>
+          <%= f.text_field :subpitch_name_cont, class: "form-control left wid30", id: "input1-group2" %>
           <span class="input-group-prepend left ">
             <%= f.button "", class: "btn btn-primary glyphicon glyphicon-search" %>
           </span>

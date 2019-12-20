@@ -13,12 +13,10 @@ class Admin::Pitches::RevenuesController < AdminController
   end
 
   def show
-    @revenue_details = Subpitch.search(params[:search])
-                               .revenue_subpitch(@pitch)
-                               .by_booking_month(@month)
-                               .by_booking_year(@year)
-                               .paginate page: params[:page],
-                                per_page: Settings.size.s10
+    @search =  Subpitch.ransack params[:q]
+    @revenue_details = @search.result.revenue_subpitch(@pitch)
+                              .paginate page: params[:page],
+                               per_page: Settings.size.s10
     @sum = sum_revenue @revenue_details, :total_subpitch
     respond_to do |format|
       format.html
@@ -32,22 +30,20 @@ class Admin::Pitches::RevenuesController < AdminController
   def load_revenue_owner
     return unless check_owner?
 
-    @revenues = Pitch.revenue_pitch.revenue_owner(current_user.id)
-                     .search_pitch(params[:search])
-                     .order_pitch(params[:order]).active_booking
-                     .month_revenue(@month).year_revenue(@year)
-                     .paginate page: params[:page],
-                      per_page: Settings.size.s10
+    @search = Pitch.ransack params[:q]
+    @revenues = @search.result.revenue_pitch.revenue_owner(current_user.id)
+                       .active_booking
+                       .paginate page: params[:page],
+                        per_page: Settings.size.s10
   end
 
   def load_revenue_admin
     return unless check_admin?
 
-    @revenues = Pitch.revenue_pitch.search_pitch(params[:search])
-                     .order_pitch(params[:order]).active_booking
-                     .month_revenue(@month).year_revenue(@year)
-                     .paginate page: params[:page],
-                      per_page: Settings.size.s10
+    @search = Pitch.ransack params[:q]
+    @revenues = @search.result.revenue_pitch.active_booking
+                       .paginate page: params[:page],
+                        per_page: Settings.size.s10
   end
 
   def sum_revenue revenues, column

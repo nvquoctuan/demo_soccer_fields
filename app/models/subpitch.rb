@@ -17,15 +17,6 @@ class Subpitch < ApplicationRecord
   delegate :name, to: :subpitch_type, prefix: true
 
   has_one_attached :picture
-
-  scope :search, (lambda do |subpitch|
-    if subpitch
-      where("name LIKE ?", "%#{subpitch}%")
-    else
-      all
-    end
-  end)
-
   scope :pitch, ->(pitch_id){where("pitch_id = \"?\"", pitch_id)}
 
   scope(:revenue_subpitch, lambda do |pitch|

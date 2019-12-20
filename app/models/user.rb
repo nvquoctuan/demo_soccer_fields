@@ -30,20 +30,20 @@ class User < ApplicationRecord
   validates :email, presence: true,
     length: {maximum: Settings.email_in_users_max},
     uniqueness: {case_sensitive: false}
-  validates :phone, presence: true, on: :update
+  validates :phone, presence: true, on: :update, allow_nil: true
   validates :gender, inclusion: {in: [true, false],
-                                 message: "Gender is valid"}, on: :update
+                                 message: "Gender is valid"}, on: :update, allow_nil: true
   validates :wallet, numericality: {greater_than_or_equal_to: 0},
     allow_nil: true
 
   enum role: {admin: 0, owner: 1, user: 2}
 
   scope :order_confirm, ->{order("confirmed_at DESC")}
-  scope(:search, lambda do |search|
-    if search
-      where("full_name LIKE ? OR email LIKE ?", "%#{search}%", "%#{search}%")
-    end
-  end)
+  # scope(:search, lambda do |search|
+  #   if search
+  #     where("full_name LIKE ? OR email LIKE ?", "%#{search}%", "%#{search}%")
+  #   end
+  # end)
 
   scope :not_user, ->(user_id){where "id NOT IN (?)", user_id}
 end

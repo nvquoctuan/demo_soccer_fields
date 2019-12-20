@@ -47,14 +47,6 @@ class Admin::Subpitches::RatingsController < AdminController
     redirect_to get_path
   end
 
-  def load_rating_admin
-    return unless check_admin?
-
-    @ratings = Rating.search(params[:search])
-                     .paginate page: params[:page],
-                      per_page: Settings.size.s10
-  end
-
   def get_path_destroy
     if request.referer.include?("subpitches")
       path = admin_pitch_subpitch_rating_path(@rating.booking.subpitch.pitch_id, @rating.booking.subpitch_id, @rating.booking.subpitch_id)
@@ -67,12 +59,21 @@ class Admin::Subpitches::RatingsController < AdminController
      path = @subpitch ? admin_pitch_subpitch_rating_path(@subpitch.pitch_id, @rating, @rating) : admin_ratings_path
   end
 
+  def load_rating_admin
+    return unless check_admin?
+
+    @search = Rating.ransack params[:q]
+    @ratings = @search.result
+                      .paginate page: params[:page],
+                       per_page: Settings.size.s10
+  end
+
   def load_rating_owner
     return unless check_owner?
 
-    @ratings = Rating.by_owner(current_user.id)
-                     .search(params[:search])
-                     .paginate page: params[:page],
-                      per_page: Settings.size.s10
+    @search = Rating.ransack params[:q]
+    @ratings = @search.result.by_owner(current_user.id)
+                      .paginate page: params[:page],
+                       per_page: Settings.size.s10
   end
 end

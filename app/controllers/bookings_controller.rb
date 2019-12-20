@@ -8,8 +8,9 @@ class BookingsController < ApplicationController
   before_action :correct_user, only: :update
 
   def index
-    @bookings = Booking.booking_user(current_user.id)
-                       .search_booking(params[:search])
+    @search = Booking.ransack params[:q]
+    @bookings = @search.result
+                       .booking_user(current_user.id)
                        .paginate page: params[:page],
                         per_page: Settings.size.s10
   end

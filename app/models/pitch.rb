@@ -5,6 +5,7 @@ class Pitch < ApplicationRecord
               end_time(4i) end_time(5i) limit).freeze
   belongs_to :user
   has_many :subpitches, dependent: :destroy
+  has_many :bookings, through: :subpitches
 
   validates :name, presence: true, length: {maximum: Settings.size.s50}
   validates :description, length: {maximum: Settings.size.s255}
@@ -20,21 +21,15 @@ class Pitch < ApplicationRecord
 
   has_one_attached :picture
 
-  scope :latest_pitches, ->{order created_at: :desc}
+  ransack_alias :admin_revenue, :name_or_description_or_country_cont
 
-  scope :search, (lambda do |pitch_name|
-    if pitch_name
-      where("name LIKE ?", "%#{pitch_name}%")
-    else
-      all
-    end
-  end)
+  scope :latest_pitches, ->{order created_at: :desc}
 
   scope :pitch_owner, ->(id_user){where("user_id = ?", id_user)}
 
   scope(:revenue_pitch, lambda do
     joins(subpitches: :bookings)
-    .select("sum(total_price) as total_pitch, pitches.*").group("pitches.id")
+    .select("sum(bookings.total_price) as total_pitch, pitches.*").group("pitches.id")
   end)
 
   scope :revenue_owner, ->(user_id){where("pitches.user_id = ?", user_id)}
