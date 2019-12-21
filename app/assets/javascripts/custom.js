@@ -72,5 +72,3 @@ $(function () {
     format: 'YYYY-MM-DD'
   });
 });
-
-
