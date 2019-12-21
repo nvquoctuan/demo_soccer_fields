@@ -5,3 +5,4 @@
 //= require custom
 //= require moment
 //= require bootstrap-datetimepicker
+//= require social-share-button

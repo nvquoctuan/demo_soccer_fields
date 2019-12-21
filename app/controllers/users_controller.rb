@@ -17,11 +17,10 @@ class UsersController < ApplicationController
   def destroy
     if @user.destroy
       flash[:success] = t "msg.destroy_success"
-      redirect_to admin_users_path
     else
-      flash.now[:success] = t "msg.destroy_danger"
-      redirect_to admin_root_path
+      flash[:danger] = t "msg.destroy_danger"
     end
+    redirect_to admin_users_path
   end
 
   private

@@ -49,11 +49,7 @@ RSpec.describe User, type: :model do
     it {is_expected.to validate_presence_of(:email)}
     it {is_expected.to validate_length_of(:email).is_at_most(255)}
 
-    it {is_expected.to validate_presence_of(:phone).on(:update)}
-
-    it {should validate_inclusion_of(:gender).in_array([true, false]).with_message("Gender is valid").on(:update)}
-
-    # it {expect(user :wallet).to > 0}
+    it {is_expected.to allow_value(nil).for(:phone).on(:update)}
   end
 
   describe "Scope" do
