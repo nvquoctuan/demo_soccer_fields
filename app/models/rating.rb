@@ -17,11 +17,6 @@ class Rating < ApplicationRecord
     where("ratings.user_id = ?", user_id)
   end)
 
-  # scope(:search, lambda do |search|
-  #   joins(booking: :subpitch).where("(subpitches.name LIKE ?) OR
-  #     (ratings.content LIKE ?)", "%#{search}%", "%#{search}%")
-  # end)
-
   scope(:search_subpitch, lambda do |subpitch_id|
     joins(:booking).where("bookings.subpitch_id = ?", subpitch_id)
   end)

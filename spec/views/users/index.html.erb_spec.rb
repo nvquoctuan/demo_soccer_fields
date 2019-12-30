@@ -7,13 +7,12 @@ describe "users/index.html.erb" do
     before(:each) do
       create_list(:user, 2)
       @users = assign(:users, User.all)
+      assign(:search, User.ransack(params: {q: {full_name_or_email_cont: ""}}))
+      allow(view).to receive_messages(will_paginate: nil)
+      render
     end
 
     it "display both users" do
-      @search = User.ransack params: {q: {full_name_or_email_cont: ""}}
-      allow(view).to receive_messages(will_paginate: nil)
-      render
-
       expect(response).to render_template(partial: "_user")
       assert_select "table" do
         assert "tr" do
@@ -33,10 +32,6 @@ describe "users/index.html.erb" do
     end
 
     it "should have form search" do
-      @search = User.ransack params: {q: {full_name_or_email_cont: ""}}
-      allow(view).to receive_messages(will_paginate: nil)
-      render
-
       assert_select "form[action=?]", "/admin/users" do
         assert_select "input[name=?]", "q[full_name_or_email_cont]"
         assert_select "button[type=?]", "submit"

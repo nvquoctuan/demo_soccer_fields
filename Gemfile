@@ -58,6 +58,7 @@ group :test do
   gem "webdrivers"
   gem "rails-controller-testing"
   gem "rspec-activemodel-mocks"
+  gem "rspec-collection_matchers"
   gem "factory_bot_rails"
 end
 

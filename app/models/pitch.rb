@@ -75,8 +75,8 @@ class Pitch < ApplicationRecord
   private
 
   def play_time_bigger_limit
-    return if self.limit.nil?
-    return if (self.end_time - self.start_time) / 3600 >= self.limit
+    return if limit.nil?
+    return if (end_time - start_time) / 3600 >= limit
 
     errors.add :play_time_invalid, I18n.t("msg.play_time_invalid")
   end
